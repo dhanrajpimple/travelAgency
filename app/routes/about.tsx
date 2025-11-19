@@ -76,72 +76,72 @@ export default function About() {
               </div>
 
               <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="h-48 overflow-hidden">
+                <div className="h-40 sm:h-48 md:h-56 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
                     alt="Hotel Bookings"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-gray-800">Hotel Bookings</h3>
-                  <p className="text-gray-600">Best hotel deals across India and worldwide</p>
+                <div className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-gray-800">Hotel Bookings</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600">Best hotel deals across India and worldwide</p>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="h-48 overflow-hidden">
+                <div className="h-40 sm:h-48 md:h-56 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80"
                     alt="Visa Services"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-gray-800">Visa Assistance</h3>
-                  <p className="text-gray-600">Expert visa processing for all countries</p>
+                <div className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-gray-800">Visa Assistance</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600">Expert visa processing for all countries</p>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="h-48 overflow-hidden">
+                <div className="h-40 sm:h-48 md:h-56 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80"
                     alt="MICE Services"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-gray-800">MICE Services</h3>
-                  <p className="text-gray-600">Meetings, Incentives, Conferences, and Exhibitions</p>
+                <div className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-gray-800">MICE Services</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600">Meetings, Incentives, Conferences, and Exhibitions</p>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="h-48 overflow-hidden">
+                <div className="h-40 sm:h-48 md:h-56 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80"
                     alt="Trade Fair"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-gray-800">Trade Fair Packages</h3>
-                  <p className="text-gray-600">Complete travel solutions for trade fair attendees</p>
+                <div className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-gray-800">Trade Fair Packages</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600">Complete travel solutions for trade fair attendees</p>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="h-48 overflow-hidden">
+                <div className="h-40 sm:h-48 md:h-56 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80"
                     alt="Customized Holidays"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-gray-800">Customized Holidays</h3>
-                  <p className="text-gray-600">Personalized travel experiences designed for you</p>
+                <div className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-gray-800">Customized Holidays</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600">Personalized travel experiences designed for you</p>
                 </div>
               </div>
             </div>
@@ -156,30 +156,30 @@ export default function About() {
                 <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-800">Experienced Specialists</h3>
                 <p className="text-xs sm:text-sm text-gray-600">Years of expertise in travel industry</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-4xl mb-4">✈️</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-800">Customized Solutions</h3>
-                <p className="text-gray-600">Tailored travel plans for every need</p>
+              <div className="bg-blue-50 rounded-lg p-4 sm:p-5 md:p-6 text-center">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">✈️</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-800">Customized Solutions</h3>
+                <p className="text-xs sm:text-sm text-gray-600">Tailored travel plans for every need</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-4xl mb-4">💰</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-800">Competitive Pricing</h3>
-                <p className="text-gray-600">Best deals and value for money</p>
+              <div className="bg-blue-50 rounded-lg p-4 sm:p-5 md:p-6 text-center">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">💰</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-800">Competitive Pricing</h3>
+                <p className="text-xs sm:text-sm text-gray-600">Best deals and value for money</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-4xl mb-4">📞</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-800">24/7 Support</h3>
-                <p className="text-gray-600">Round-the-clock customer assistance</p>
+              <div className="bg-blue-50 rounded-lg p-4 sm:p-5 md:p-6 text-center">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">📞</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-800">24/7 Support</h3>
+                <p className="text-xs sm:text-sm text-gray-600">Round-the-clock customer assistance</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-4xl mb-4">🌍</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-800">Wide Range</h3>
-                <p className="text-gray-600">50+ destinations worldwide</p>
+              <div className="bg-blue-50 rounded-lg p-4 sm:p-5 md:p-6 text-center">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🌍</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-800">Wide Range</h3>
+                <p className="text-xs sm:text-sm text-gray-600">50+ destinations worldwide</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-4xl mb-4">⭐</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-800">Trusted by Thousands</h3>
-                <p className="text-gray-600">1000+ satisfied customers</p>
+              <div className="bg-blue-50 rounded-lg p-4 sm:p-5 md:p-6 text-center">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">⭐</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-800">Trusted by Thousands</h3>
+                <p className="text-xs sm:text-sm text-gray-600">1000+ satisfied customers</p>
               </div>
             </div>
           </div>

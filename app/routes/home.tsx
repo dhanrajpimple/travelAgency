@@ -385,16 +385,16 @@ export default function Home() {
             {holidayPackages.map((pkg) => (
               <div
                 key={pkg.title}
-                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition-shadow"
+                className="bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6 text-center hover:shadow-xl transition-shadow"
               >
-                <h3 className="text-xl font-bold mb-2 text-gray-800">{pkg.title}</h3>
-                <p className="text-gray-600 mb-4">{pkg.duration}</p>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-800">{pkg.title}</h3>
+                <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">{pkg.duration}</p>
+                <p className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                   If you want a great travel experience, Leisure n more gives you the best travelling experience with lots of joy
                 </p>
                 <Link
                   to="/contact"
-                  className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="inline-block bg-blue-600 text-white px-5 py-2 sm:px-6 sm:py-2.5 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors text-xs sm:text-sm font-semibold touch-manipulation"
                 >
                   contact us
                 </Link>
