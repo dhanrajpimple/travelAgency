@@ -3,7 +3,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Leisure N More Color Palette */
+  /* Flexi Global Holidays Color Palette */
   --primary-blue: #2563eb;
   --blue-600: #2563eb;
   --blue-700: #1d4ed8;
@@ -141,6 +141,19 @@
     }
     50% {
       transform: translateY(-10px);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
 

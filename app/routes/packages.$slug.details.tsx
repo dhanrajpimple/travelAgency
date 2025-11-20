@@ -48,7 +48,7 @@ function createDefaultPackage(slug: string): Package {
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Package Details - Leisure N More" },
+    { title: "Package Details - Flexi Global Holidays" },
     { name: "description", content: "Complete details of your tour package." },
   ];
 }

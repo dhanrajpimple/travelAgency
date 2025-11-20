@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "MICE - Leisure N More" },
+    { title: "MICE - Flexi Global Holidays" },
     { name: "description", content: "Meetings, Incentives, Conferences, and Exhibitions services." },
   ];
 }

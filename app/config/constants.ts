@@ -1,20 +1,20 @@
 // Environment variables and constants
 export const CONFIG = {
   // Contact Information
-  PHONE_PRIMARY: import.meta.env.VITE_PHONE_PRIMARY || "+91-7531987990",
-  PHONE_SECONDARY: import.meta.env.VITE_PHONE_SECONDARY || "+91-7840009996",
-  WHATSAPP_NUMBER: import.meta.env.VITE_WHATSAPP_NUMBER || "917531987990",
-  EMAIL: import.meta.env.VITE_EMAIL || "info@leisurenmore.com",
-  OFFICE_PHONE: import.meta.env.VITE_OFFICE_PHONE || "0120-4080660",
+  PHONE_PRIMARY: import.meta.env.VITE_PHONE_PRIMARY || "+91 9599476155",
+  PHONE_SECONDARY: import.meta.env.VITE_PHONE_SECONDARY || "+91 8369597936",
+  WHATSAPP_NUMBER: import.meta.env.VITE_WHATSAPP_NUMBER || "919599476155",
+  EMAIL: import.meta.env.VITE_EMAIL || "info@flexiglobalholiday.in",
+  OFFICE_PHONE: import.meta.env.VITE_OFFICE_PHONE || "+91 9599476155",
   
   // Office Addresses
   CORPORATE_OFFICE: {
-    address: "B126, LOGIX TECHNOVA, Block B, Sector 132, Noida, Uttar Pradesh 201304",
-    phone: "0120-4080660",
-    email: "info@leisurenmore.com"
+    address: "Ho- 9 floor,919 Shekhar Central , Palasia, Indore",
+    phone: "+91 9599476155",
+    email: "info@flexiglobalholiday.in"
   },
   BRANCH_OFFICE: {
-    address: "Shop No. 18, Ground Floor, Vasukamal Five Element Shivaji Nagar, Jalgaon, Maharashtra- 425001"
+    address: "Bo- A,704,Sai Shraddha CHS Phase 1,Daisar East Mumbai"
   },
   THAILAND_OFFICE: {
     address: "บ้าน, มบ.วรรณทิพย์ 1, เลขที่ 67/33 Noen Plubwan Rd, Bang Lamung District, Chon Buri 20150, Thailand"
@@ -24,11 +24,11 @@ export const CONFIG = {
   WHATSAPP_MESSAGE: "Hello! I'm interested in your travel packages.",
   
   // Business Info
-  BUSINESS_NAME: "Leisure N More",
+  BUSINESS_NAME: "Flexi Global Holidays",
   BUSINESS_TYPE: "Travel Agency",
   FOUNDED_YEAR: "2016",
   
   // SEO
-  SITE_URL: import.meta.env.VITE_SITE_URL || "https://www.leisurenmore.com",
+  SITE_URL: import.meta.env.VITE_SITE_URL || "https://www.flexiglobalholiday.in",
 };
 

@@ -6,7 +6,7 @@ import { Phone, Mail, Clock, DollarSign } from "lucide-react";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Visa Services - Leisure N More" },
+    { title: "Visa Services - Flexi Global Holidays" },
     { name: "description", content: "Get visa assistance for your international travel." },
   ];
 }

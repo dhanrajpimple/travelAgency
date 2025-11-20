@@ -38,29 +38,28 @@ export function Layout({ children }: { children: React.ReactNode }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "TravelAgency",
-              "name": "Leisure N More",
+              "name": "Flexi Global Holidays",
               "description": "Premium travel agency offering domestic and international tour packages",
-              "url": "https://www.leisurenmore.com",
-              "logo": "https://www.leisurenmore.com/logo.png",
+              "url": "https://www.flexiglobalholiday.in",
+              "logo": "https://www.flexiglobalholiday.in/logo.png",
               "foundingDate": "2016",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "B126, LOGIX TECHNOVA, Block B, Sector 132",
-                "addressLocality": "Noida",
-                "addressRegion": "Uttar Pradesh",
-                "postalCode": "201304",
+                "streetAddress": "Ho- 9 floor,919 Shekhar Central , Palasia",
+                "addressLocality": "Indore",
+                "addressRegion": "Madhya Pradesh",
                 "addressCountry": "IN"
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+91-7531987990",
+                "telephone": "+91 9599476155",
                 "contactType": "customer service",
                 "areaServed": "IN",
                 "availableLanguage": ["English", "Hindi"]
               },
               "sameAs": [
-                "https://www.facebook.com/leisurenmore",
-                "https://www.instagram.com/leisurenmore"
+                "https://www.facebook.com/flexiglobalholidays",
+                "https://www.instagram.com/flexiglobalholidays"
               ],
               "aggregateRating": {
                 "@type": "AggregateRating",

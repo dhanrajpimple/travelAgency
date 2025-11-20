@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router'
 import { Menu, X, ChevronDown, Phone } from 'lucide-react'
-import logoImage from '~/assets/logo.jpg'
+import logoImage from '~/assets/logo.png'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -49,14 +49,14 @@ export default function Navigation() {
   }
 
   return (
-    <nav className={`sticky top-0 z-[999] transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-md shadow-md'}`}>
+    <nav className={`sticky top-0 z-[999] transition-all duration-300 bg-white ${scrolled ? 'shadow-lg' : 'shadow-md'}`}>
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center animate-fadeIn">
             <img 
               src={logoImage} 
-              alt="Leisure N More" 
+              alt="Flexi Global Holidays" 
               className="h-10 sm:h-12 md:h-16 w-auto object-contain"
             />
           </Link>
@@ -138,7 +138,9 @@ export default function Navigation() {
                 </div>
               )}
             </div>
-
+            <Link to="/about" className="text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium">
+              About Us
+            </Link>
             <Link to="/trade-fair" className="text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium">
               Trade Fair
             </Link>
@@ -151,9 +153,7 @@ export default function Navigation() {
             <Link to="/visa" className="text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium">
               Visa
             </Link>
-            <Link to="/contact" className="text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium">
-              Contact
-            </Link>
+            
 
             {/* CTA Button */}
             <Link 
@@ -237,7 +237,9 @@ export default function Navigation() {
                     </div>
                   )}
                 </div>
-
+                <Link to="/about" className="text-white py-3 font-medium border-b border-white/10 hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
+                  About Us
+                </Link>
                 <Link to="/trade-fair" className="text-white py-3 font-medium border-b border-white/10 hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
                   Trade Fair
                 </Link>
@@ -250,12 +252,8 @@ export default function Navigation() {
                 <Link to="/visa" className="text-white py-3 font-medium border-b border-white/10 hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
                   Visa
                 </Link>
-                <Link to="/contact" className="text-white py-3 font-medium border-b border-white/10 hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
-                  Contact
-                </Link>
-                <Link to="/pay-online" className="text-white py-3 font-medium border-b border-white/10 hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
-                  Pay Online
-                </Link>
+              
+              
                 <Link to="/terms" className="text-white py-3 font-medium hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
                   Terms of Use
                 </Link>

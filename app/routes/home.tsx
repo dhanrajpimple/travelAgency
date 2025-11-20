@@ -6,11 +6,41 @@ import { Link } from "react-router";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, lazy, Suspense } from "react";
 import { CardSkeleton } from "~/components/LoadingSkeleton";
+// Trade Fair Images
+import tradefair1 from "~/assets/upcomingtradefair (1).png";
+import tradefair2 from "~/assets/upcomingtradefair (2).png";
+import tradefair3 from "~/assets/upcomingtradefair (3).png";
+import tradefair4 from "~/assets/upcomingtradefair (4).png";
+import tradefair5 from "~/assets/upcomingtradefair (5).png";
+import tradefair6 from "~/assets/upcomingtradefair (6).png";
+import tradefair7 from "~/assets/upcomingtradefair (7).png";
+import tradefair8 from "~/assets/upcomingtradefair (8).png";
+import tradefair9 from "~/assets/upcomingtradefair (9).png";
+import tradefair10 from "~/assets/upcomingtradefair (10).png";
+import tradefair11 from "~/assets/upcomingtradefair (11).png";
+import tradefair12 from "~/assets/upcomingtradefair (12).png";
+import tradefair13 from "~/assets/upcomingtradefair (13).png";
+import tradefair14 from "~/assets/upcomingtradefair (14).png";
+// Client Images
+import c1 from "~/assets/c1.png";
+import c2 from "~/assets/c2.png";
+import c3_1 from "~/assets/c3 (1).png";
+import c3_2 from "~/assets/c3 (2).png";
+import c3_3 from "~/assets/c3 (3).png";
+import c3_4 from "~/assets/c3 (4).png";
+import c3_6 from "~/assets/c3 (6).png";
+import c3_7 from "~/assets/c3 (7).png";
+import c3_8 from "~/assets/c3 (8).png";
+// Holiday Package Images
+import honeymoonImg from "~/assets/honeymoon.jpg";
+import familyVacationImg from "~/assets/family-vacation.jpg";
+import heroBeachImg from "~/assets/hero-beach.jpg";
+import corporateTravelImg from "~/assets/corporate-travel.jpg";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Leisure N More - Your Travel Partner" },
-    { name: "description", content: "Book your dream holiday with Leisure N More. Best tour packages for India and International destinations." },
+    { title: "Flexi Global Holidays - Your Travel Partner" },
+    { name: "description", content: "Book your dream holiday with Flexi Global Holidays. Best tour packages for India and International destinations." },
   ];
 }
 
@@ -86,13 +116,10 @@ export default function Home() {
   ];
 
   const testimonials = [
-    { name: "Sachin Ved", location: "Bali Tour", text: "The tour was well planned and organised. Food and accommodation was very good and had no complaints.", rating: 5 },
-    { name: "Manjunath Baddi", location: "Canton Fair 2025", text: "Recently we had been to canton fair 2025 phase 1 🔥 we would like to thank each one", rating: 5 },
-    { name: "KARAN P", location: "Canton Fair 2025", text: "I booked canton fair business trip april 2025 with Mr. Anuj and Mr. ashwini, the management was good. Hotel and food was up to the mark", rating: 5 },
-    { name: "Tej Prakash", location: "", text: "I had an amazing experience with Leisure N More Travel Services! Their team is incredibly professional, friendly, and efficient.", rating: 5 },
-    { name: "Qin Wang", location: "", text: "I had a wonderful trip to north India for 11 days organized by Anuj. he was very helpful, always with quick response, especially in unexpected", rating: 5 },
-    { name: "Philomena Princy", location: "Manali", text: "We booked our family Trip to Manali through leisure N More travel services. Mr Ashwin was very responsive to all our needs and queries.", rating: 5 },
-    { name: "Jenifer Mercy", location: "Manali", text: "Great service provided by Leisure n More. Kudos to Mr.Ashwin who accompanied us during our trip to Manali he made sure all our needs are", rating: 5 },
+    { name: "Customer", location: "", text: "Absolutely Exceptional Experience! the entire trip was flawlessly organized every detail was thoughtfully planned and perfectly executed. What truly sets this agency apart is their owner Siddharth's professionalism, responsiveness, and personal touch", rating: 5 },
+    { name: "Daniyal Chippa", location: "", text: "Wonderful Experience! This travel company made our trip absolutely seamless. From booking flights to hotel arrangements and sightseeing tours, everything was perfectly organized. We didn't have to worry about a single thing. Highly recommended!", rating: 5 },
+    { name: "Anikitraj Golkar", location: "", text: "Had a fantastic holiday. Well organised, smooth and exactly what we hoped for. Great service 👍🏻", rating: 5 },
+    { name: "Sunny Jain", location: "", text: "Thank You!", rating: 5 },
   ];
 
   useEffect(() => {
@@ -119,16 +146,47 @@ export default function Home() {
   };
 
   const holidayPackages = [
-    { title: "Honeymoon Package", duration: "4N / 5D" },
-    { title: "Family Package", duration: "3N / 4D" },
-    { title: "Weekend Package", duration: "2N / 3D" },
-    { title: "Group Package", duration: "4N / 5D" },
+    { title: "Honeymoon Package", duration: "4N / 5D", image: honeymoonImg },
+    { title: "Family Package", duration: "3N / 4D", image: familyVacationImg },
+    { title: "Weekend Package", duration: "2N / 3D", image: heroBeachImg },
+    { title: "Group Package", duration: "4N / 5D", image: corporateTravelImg },
   ];
 
   const tradeFairs = [
     { title: "Canton Fair 2025", description: "The 138th Canton Fair is going to be held from 14 - 19 Oct 2025 at China Import & Export Fair Pazhou Complex,Guangzhou..." },
     { title: "ProPak China 2019", description: "ProPak China 2019, will take place in a new venue, National Exhibition and Convention Center, from 19 to 21 June, 2019...." },
     { title: "Wire and cable 2019", description: "Wire and Cable taking place in Guangzhou is the largest technical fair dealing with wiring and cabling in South China and...." },
+  ];
+
+  // Upcoming Trade Fair Images
+  const upcomingTradeFairImages = [
+    tradefair1,
+    tradefair2,
+    tradefair3,
+    tradefair4,
+    tradefair5,
+    tradefair6,
+    tradefair7,
+    tradefair8,
+    tradefair9,
+    tradefair10,
+    tradefair11,
+    tradefair12,
+    tradefair13,
+    tradefair14,
+  ];
+
+  // Client Images
+  const clientImages = [
+    c1,
+    c2,
+    c3_1,
+    c3_2,
+    c3_3,
+    c3_4,
+    c3_6,
+    c3_7,
+    c3_8,
   ];
 
   const featuredPackages = [
@@ -378,59 +436,6 @@ export default function Home() {
       {/* A Holiday For Every Mood */}
       <section className="py-6 sm:py-8 md:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-gray-800 px-2">
-            A Holiday For Every Mood
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
-            {holidayPackages.map((pkg) => (
-              <div
-                key={pkg.title}
-                className="bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6 text-center hover:shadow-xl transition-shadow"
-              >
-                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-800">{pkg.title}</h3>
-                <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">{pkg.duration}</p>
-                <p className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-                  If you want a great travel experience, Leisure n more gives you the best travelling experience with lots of joy
-                </p>
-                <Link
-                  to="/contact"
-                  className="inline-block bg-blue-600 text-white px-5 py-2 sm:px-6 sm:py-2.5 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors text-xs sm:text-sm font-semibold touch-manipulation"
-                >
-                  contact us
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trade Fair */}
-      <section className="py-6 sm:py-8 md:py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-gray-800 px-2">Trade Fair</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-            {tradeFairs.map((fair) => (
-              <div
-                key={fair.title}
-                className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow"
-              >
-                <h3 className="text-xl font-bold mb-3 text-gray-800">{fair.title}</h3>
-                <p className="text-gray-600 mb-4">{fair.description}</p>
-                <Link
-                  to="/trade-fair"
-                  className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  book now
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Packages */}
-      <section className="py-6 sm:py-8 md:py-12 lg:py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
             {featuredPackages.map((pkg) => (
               <div
@@ -461,6 +466,103 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <section className="py-6 sm:py-8 md:py-12 lg:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-gray-800 px-2">
+            A Holiday For Every Mood
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+            {holidayPackages.map((pkg) => (
+              <div
+                key={pkg.title}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
+                  <img 
+                    src={pkg.image} 
+                    alt={pkg.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-4 sm:p-5 md:p-6 text-center">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-800">{pkg.title}</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">{pkg.duration}</p>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+                    If you want a great travel experience, Flexi Global Holidays gives you the best travelling experience with lots of joy
+                  </p>
+                  <Link
+                    to="/contact"
+                    className="inline-block bg-blue-600 text-white px-5 py-2 sm:px-6 sm:py-2.5 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors text-xs sm:text-sm font-semibold touch-manipulation"
+                  >
+                    contact us
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trade Fair */}
+      <section className="py-6 sm:py-8 md:py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+       
+
+          {/* Upcoming Trade Fair Images Gallery */}
+          <div className="mb-6 sm:mb-8">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-center mb-4 sm:mb-6 md:mb-8 text-gray-800 px-2">Upcoming Trade Fairs</h3>
+            
+            {/* Static Gallery Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
+              {upcomingTradeFairImages.map((image, index) => (
+                <div 
+                  key={index}
+                  className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group cursor-pointer w-full flex flex-col"
+                >
+                  <div className="aspect-[4/3] w-full overflow-hidden relative flex items-center justify-center bg-gray-50">
+                    <img 
+                      src={image}
+                      alt={`Upcoming Trade Fair ${index + 1}`}
+                      className="w-full h-full object-contain p-1 group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Clients */}
+      <section className="py-6 sm:py-8 md:py-12 lg:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-gray-800 px-2">Our Clients</h2>
+          
+          {/* Static Gallery Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
+            {clientImages.map((image, index) => (
+              <div 
+                key={index}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group cursor-pointer w-full flex flex-col"
+              >
+                <div className="aspect-[4/3] w-full overflow-hidden relative flex items-center justify-center bg-gray-50">
+                  <img 
+                    src={image}
+                    alt={`Client ${index + 1}`}
+                    className="w-full h-full object-contain p-1 group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Packages */}
+     
       <Footer />
     </div>
   );

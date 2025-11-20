@@ -7,8 +7,8 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Contact Us - Leisure N More" },
-    { name: "description", content: "Get in touch with Leisure N More for your travel needs." },
+    { title: "Contact Us - Flexi Global Holidays" },
+    { name: "description", content: "Get in touch with Flexi Global Holidays for your travel needs." },
   ];
 }
 
@@ -39,7 +39,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Leisure N More Corporate Office Location"
+                title="Flexi Global Holidays Corporate Office Location"
                 className="w-full h-full"
               ></iframe>
             </div>
@@ -97,16 +97,6 @@ export default function Contact() {
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
                     {CONFIG.BRANCH_OFFICE.address}
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
-                    <MapPin className="text-[#0066CC]" size={24} />
-                    THAILAND OFFICE
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {CONFIG.THAILAND_OFFICE.address}
                   </p>
                 </div>
               </div>

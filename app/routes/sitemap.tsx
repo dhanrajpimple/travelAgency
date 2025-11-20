@@ -5,8 +5,8 @@ import { Link } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Sitemap - Leisure N More" },
-    { name: "description", content: "Site map for Leisure N More website." },
+    { title: "Sitemap - Flexi Global Holidays" },
+    { name: "description", content: "Site map for Flexi Global Holidays website." },
   ];
 }
 

@@ -4,8 +4,8 @@ import Footer from "~/components/Footer";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Terms of Use - Leisure N More" },
-    { name: "description", content: "Terms and conditions for Leisure N More travel services." },
+    { title: "Terms of Use - Flexi Global Holidays" },
+    { name: "description", content: "Terms and conditions for Flexi Global Holidays travel services." },
   ];
 }
 
@@ -30,7 +30,7 @@ export default function Terms() {
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-gray-800">2. Use License</h2>
                 <p>
-                  Permission is granted to temporarily download one copy of the materials on Leisure N More's website for personal, non-commercial transitory viewing only.
+                  Permission is granted to temporarily download one copy of the materials on Flexi Global Holidays' website for personal, non-commercial transitory viewing only.
                 </p>
               </section>
 
@@ -51,21 +51,21 @@ export default function Terms() {
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-gray-800">5. Limitation of Liability</h2>
                 <p>
-                  Leisure N More shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use our services.
+                  Flexi Global Holidays shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use our services.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-gray-800">6. Modifications</h2>
                 <p>
-                  Leisure N More reserves the right to revise these terms of use at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms of Use.
+                  Flexi Global Holidays reserves the right to revise these terms of use at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms of Use.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-gray-800">7. Contact Information</h2>
                 <p>
-                  For any questions regarding these Terms of Use, please contact us at info@leisurenmore.com or call +91-7531987990.
+                  For any questions regarding these Terms of Use, please contact us at info@flexiglobalholiday.in or call +91 9599476155.
                 </p>
               </section>
             </div>

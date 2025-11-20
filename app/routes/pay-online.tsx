@@ -6,7 +6,7 @@ import { CreditCard, Shield, Phone, Mail } from "lucide-react";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Pay Online - Leisure N More" },
+    { title: "Pay Online - Flexi Global Holidays" },
     { name: "description", content: "Secure online payment for your travel bookings." },
   ];
 }

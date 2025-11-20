@@ -5,8 +5,8 @@ import { Link } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Trade Fair - Leisure N More" },
-    { name: "description", content: "Book your trade fair travel packages with Leisure N More." },
+    { title: "Trade Fair - Flexi Global Holidays" },
+    { name: "description", content: "Book your trade fair travel packages with Flexi Global Holidays." },
   ];
 }
 

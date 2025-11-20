@@ -14,7 +14,7 @@ export default function Footer() {
             <div>
               <img 
                 src={logoImage} 
-                alt="Leisure N More" 
+                alt="Flexi Global Holidays" 
                 className="h-12 sm:h-14 md:h-16 w-auto object-contain mb-3 sm:mb-4"
               />
               <p className="text-[#FAF8F3]/80 italic text-xs sm:text-sm leading-relaxed">
@@ -28,7 +28,7 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex gap-2 sm:gap-3">
               <a 
-                href="https://instagram.com/leisurenmore" 
+                href="https://www.instagram.com/flexiglobalholidays?igsh=dXUxZmh1MmphMjh0 " 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:scale-110 active:scale-95 transition-all duration-300 touch-manipulation"
@@ -37,7 +37,7 @@ export default function Footer() {
                 <Instagram size={18} className="sm:w-5 sm:h-5" />
               </a>
               <a 
-                href="https://facebook.com/leisurenmore" 
+                href="https://www.instagram.com/flexiglobalholidays?igsh=dXUxZmh1MmphMjh0 " 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:scale-110 active:scale-95 transition-all duration-300 touch-manipulation"
@@ -45,17 +45,9 @@ export default function Footer() {
               >
                 <Facebook size={18} className="sm:w-5 sm:h-5" />
               </a>
+             
               <a 
-                href="https://twitter.com/leisurenmore" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:scale-110 active:scale-95 transition-all duration-300 touch-manipulation"
-                aria-label="Twitter"
-              >
-                <Twitter size={18} className="sm:w-5 sm:h-5" />
-              </a>
-              <a 
-                href="https://linkedin.com/company/leisurenmore" 
+                href="https://www.linkedin.com/company/31339407/admin/page-posts/published" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:scale-110 active:scale-95 transition-all duration-300 touch-manipulation"
@@ -75,7 +67,7 @@ export default function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="text-[#D4AF37] mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <p className="text-sm text-white/60 mb-1">Corporate Office - Noida</p>
+                    <p className="text-sm text-white/60 mb-1">Head Office - Indore</p>
                     <p className="text-white/90 text-sm leading-relaxed">
                       {CONFIG.CORPORATE_OFFICE.address}
                     </p>
@@ -88,7 +80,7 @@ export default function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="text-[#D4AF37] mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <p className="text-sm text-white/60 mb-1">Branch Office - Jalgaon</p>
+                    <p className="text-sm text-white/60 mb-1">Branch Office - Mumbai</p>
                     <p className="text-white/90 text-sm leading-relaxed">
                       {CONFIG.BRANCH_OFFICE.address}
                     </p>
@@ -111,7 +103,6 @@ export default function Footer() {
                 { name: 'MICE', link: '/mice' },
                 { name: 'Visa Services', link: '/visa' },
                 { name: 'Contact Us', link: '/contact' },
-                { name: 'Pay Online', link: '/pay-online' },
                 { name: 'Terms of Use', link: '/terms' },
                 { name: 'Sitemap', link: '/sitemap' }
               ].map((item) => (
@@ -186,10 +177,10 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 md:py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm">
             <p className="text-white/60 text-center md:text-left">
-              © Dhanraj Pimple 2025 All rights reserved.
+              © Flexi Global Holidays 2025 All rights reserved.
             </p>
             <p className="text-white/60 text-center md:text-right">
-              Dhanraj Pimple
+              Flexi Global Holidays
             </p>
           </div>
         </div>

@@ -5,8 +5,8 @@ import { Link } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Hotels - Leisure N More" },
-    { name: "description", content: "Book hotels worldwide with Leisure N More." },
+    { title: "Hotels - Flexi Global Holidays" },
+    { name: "description", content: "Book hotels worldwide with Flexi Global Holidays." },
   ];
 }
 

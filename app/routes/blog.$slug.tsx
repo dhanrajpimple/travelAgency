@@ -5,7 +5,7 @@ import { useParams, Link } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Blog Post - Leisure N More" },
+    { title: "Blog Post - Flexi Global Holidays" },
     { name: "description", content: "Read our travel blog posts and guides." },
   ];
 }
@@ -55,7 +55,7 @@ const blogPosts: Record<string, {
       <h2 class="text-2xl font-bold mb-4 mt-6">10. Iceland</h2>
       <p class="mb-4">A land of fire and ice, Iceland offers unique natural wonders including geysers, glaciers, and the Northern Lights. Experience otherworldly landscapes and adventure activities.</p>
       
-      <p class="mt-6 mb-4">These destinations offer unique experiences that will create memories to last a lifetime. Plan your 2025 adventure with Leisure N More and let us help you create the perfect itinerary!</p>
+      <p class="mt-6 mb-4">These destinations offer unique experiences that will create memories to last a lifetime. Plan your 2025 adventure with Flexi Global Holidays and let us help you create the perfect itinerary!</p>
     `
   },
   "travel-tips-for-first-time-international-travelers": {
