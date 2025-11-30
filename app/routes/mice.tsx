@@ -2,12 +2,16 @@ import type { Route } from "./+types/mice";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
 import { Link } from "react-router";
+import { generateSEOTags } from "~/config/seo";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "MICE - Flexi Global Holidays" },
-    { name: "description", content: "Meetings, Incentives, Conferences, and Exhibitions services." },
-  ];
+  return generateSEOTags({
+    title: "MICE Services - Meetings, Incentives, Conferences & Exhibitions | Flexi Global Holidays",
+    description: "Professional MICE (Meetings, Incentives, Conferences, and Exhibitions) services by Flexi Global Holidays. Complete event management, corporate travel, team building, and conference planning solutions for businesses.",
+    keywords: "MICE services, corporate travel, business travel, meetings and conferences, event management, corporate events, team building, conference planning, incentive travel, exhibition services",
+    url: "/mice",
+    type: "website"
+  });
 }
 
 export default function Mice() {

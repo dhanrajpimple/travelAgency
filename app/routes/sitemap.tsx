@@ -2,12 +2,16 @@ import type { Route } from "./+types/sitemap";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
 import { Link } from "react-router";
+import { generateSEOTags } from "~/config/seo";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Sitemap - Flexi Global Holidays" },
-    { name: "description", content: "Site map for Flexi Global Holidays website." },
-  ];
+  return generateSEOTags({
+    title: "Sitemap - Site Map | Flexi Global Holidays",
+    description: "Browse the complete sitemap of Flexi Global Holidays website. Find all pages, tour packages, services, and travel information in one place.",
+    keywords: "sitemap, site map, website navigation, travel agency sitemap",
+    url: "/sitemap",
+    type: "website"
+  });
 }
 
 export default function Sitemap() {
@@ -35,10 +39,9 @@ export default function Sitemap() {
               <h2 className="text-2xl font-bold mb-4 text-gray-800">Services</h2>
               <ul className="space-y-2">
                 <li><Link to="/hotels" className="text-blue-600 hover:text-blue-700">Hotels</Link></li>
-                <li><Link to="/visa" className="text-blue-600 hover:text-blue-700">Visa</Link></li>
-                <li><Link to="/mice" className="text-blue-600 hover:text-blue-700">MICE</Link></li>
+    
                 <li><Link to="/trade-fair" className="text-blue-600 hover:text-blue-700">Trade Fair</Link></li>
-                <li><Link to="/pay-online" className="text-blue-600 hover:text-blue-700">Pay Online</Link></li>
+          
               </ul>
             </div>
 

@@ -1,277 +1,316 @@
 import { useState, useEffect } from 'react'
+import { Menu, X, ChevronDown, ChevronRight, Phone, MapPin, Globe } from 'lucide-react'
 import { Link } from 'react-router'
-import { Menu, X, ChevronDown, Phone } from 'lucide-react'
-import logoImage from '~/assets/logo.png'
+import logo from '../assets/logo.png'
+
+// Helper function to convert package name to slug
+function nameToSlug(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, '-')
+}
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null)
+  const [openSubMenu, setOpenSubMenu] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
 
+  const domesticDestinations = [
+    'Andaman Tour Packages','Kerala Tour Packages','Rajasthan Tour Packages','Gujarat Tour Packages',
+    'Himachal Pradesh Tour Packages','Uttarakhand Tour Packages','Ladakh Tour Packages',
+    'Sikkim & West Bengal Tour Packages','Kashmir Tour Packages','Goa Tour Packages'
+  ]
+
+  const internationalDestinations = [
+    'Sri Lanka Tour Packages','Europe Tour Packages','USA Tour Packages','Bali Tour Packages',
+    'Mauritius Tour Packages','Hong Kong Tour Packages','Turkey Tour Packages','Vietnam Tour Packages',
+    'Dubai Tour Packages','Thailand Tour Packages','Singapore Tour Packages','Maldives Tour Packages'
+  ]
+
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
+    const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const indiaHolidays = [
-    'Andaman Tour Packages',
-    'Kerala Tour Packages',
-    'Rajasthan Tour Packages',
-    'Gujarat Tour Packages',
-    'Himachal Pradesh Tour Packages',
-    'Uttarakhand Tour Packages',
-    'Ladakh Tour Packages',
-    'Sikkim & West Bengal Tour Packages',
-    'Kashmir Tour Packages',
-    'Goa Tour Packages'
-  ]
+  const toggleMobileMenu = (menu: string) => {
+    setOpenMobileMenu(openMobileMenu === menu ? null : menu)
+    setOpenSubMenu(null)
+  }
 
-  const internationalHolidays = [
-    'Sri Lanka Tour Packages',
-    'Europe Tour Packages',
-    'USA Tour Packages',
-    'Bali Tour Packages',
-    'Mauritius Tour Packages',
-    'Hong Kong Tour Packages',
-    'Turkey Tour Packages',
-    'Vietnam Tour Packages',
-    'Dubai Tour Packages',
-    'Thailand Tour Packages',
-    'Singapore Tour Packages',
-    'Maldives Tour Packages'
-  ]
-
-  const toggleDropdown = (name: string) => {
-    setOpenDropdown(openDropdown === name ? null : name)
+  const handleDesktopDropdown = (menu: string) => {
+    setOpenDropdown(openDropdown === menu ? null : menu)
   }
 
   return (
-    <nav className={`sticky top-0 z-[999] transition-all duration-300 bg-white ${scrolled ? 'shadow-lg' : 'shadow-md'}`}>
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-        <div className="flex justify-between items-center h-14 sm:h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center animate-fadeIn">
-            <img 
-              src={logoImage} 
-              alt="Flexi Global Holidays" 
-              className="h-10 sm:h-12 md:h-16 w-auto object-contain"
-            />
-          </Link>
+    <>
+      <nav className={`fixed w-full top-0 z-[999] transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-md'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 lg:h-20">
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {/* India Holidays Dropdown */}
-            <div 
-              className="relative group"
-              onMouseEnter={() => setOpenDropdown('india')}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <button 
-                className="flex items-center gap-1 text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium"
-                onClick={() => setOpenDropdown(openDropdown === 'india' ? null : 'india')}
-              >
-                India Holidays
-                <ChevronDown size={16} className={`transition-transform duration-200 ${openDropdown === 'india' ? 'rotate-180' : ''}`} />
-              </button>
-              {openDropdown === 'india' && (
-                <div 
-                  className="absolute top-full left-0 pt-2 w-72 animate-fadeIn z-[100]"
-                  onMouseEnter={() => setOpenDropdown('india')}
-                  onMouseLeave={() => setOpenDropdown(null)}
+            {/* Logo Image */}
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Flexi Global" className="h-12 w-auto object-contain" />
+            </Link>
+
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center gap-10 text-gray-800 font-medium">
+
+              {/* Dropdown: Holidays */}
+              <div className="relative group cursor-pointer">
+                <button 
+                  className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors duration-200 font-medium" 
+                  onClick={() => handleDesktopDropdown('holidays')}
                 >
-                  <div className="bg-white shadow-2xl rounded-xl py-3 border border-gray-100 max-h-96 overflow-y-auto">
-                    {indiaHolidays.map((item) => (
-                      <Link
-                        key={item}
-                        to={`/packages/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block px-5 py-2.5 text-sm text-[#4B5563] hover:bg-[#FAF8F3] hover:text-[#0066CC] hover:pl-6 transition-all duration-200 cursor-pointer"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setOpenDropdown(null);
-                        }}
-                      >
-                        {item}
-                      </Link>
-                    ))}
+                  Holidays <ChevronDown size={18} className={`${openDropdown === 'holidays' ? 'rotate-180' : ''} transition-transform duration-300`} />
+                </button>
+
+                {openDropdown === 'holidays' && (
+                  <div className="absolute left-0 top-full mt-2 bg-white shadow-2xl rounded-xl p-6 grid grid-cols-2 gap-8 w-[500px] border border-gray-100 animate-fadeIn">
+                    {/* Domestic */}
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-base">
+                        <MapPin size={18} className="text-[#D4AF37]"/> 
+                        <span>Domestic</span>
+                      </h3>
+                      <ul className="space-y-2">
+                        {domesticDestinations.map(item => (
+                          <li key={item}>
+                            <Link 
+                              to={`/packages/${nameToSlug(item)}`}
+                              className="text-gray-600 hover:text-[#D4AF37] hover:font-semibold transition-all duration-200 text-sm py-1 block border-l-2 border-transparent hover:border-[#D4AF37] hover:pl-2 pl-0"
+                              onClick={() => setOpenDropdown(null)}
+                            >
+                              {item}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* International */}
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-base">
+                        <Globe size={18} className="text-[#D4AF37]"/> 
+                        <span>International</span>
+                      </h3>
+                      <ul className="space-y-2">
+                        {internationalDestinations.map(item => (
+                          <li key={item}>
+                            <Link 
+                              to={`/packages/${nameToSlug(item)}`}
+                              className="text-gray-600 hover:text-[#D4AF37] hover:font-semibold transition-all duration-200 text-sm py-1 block border-l-2 border-transparent hover:border-[#D4AF37] hover:pl-2 pl-0"
+                              onClick={() => setOpenDropdown(null)}
+                            >
+                              {item}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <Link to="/about" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">About Us</Link>
+              <Link to="/trade-fair" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">Trade Fair</Link>
+              <Link to="/hotels" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">Hotels</Link>
+
+              <Link to="/contact" className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-white px-6 py-3 rounded-lg flex items-center gap-2 font-semibold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300">
+                <Phone size={18}/> Plan Your Journey
+              </Link>
+            </div>
+
+            {/* Mobile Toggle */}
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors duration-200"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={26} className="text-gray-800"/> : <Menu size={26} className="text-gray-800"/>}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+
+      {/* MOBILE MENU */}
+      {isOpen && (
+        <div className="lg:hidden fixed inset-0 top-16 bg-gradient-to-b from-[#0D1829] via-[#1a2b4a] to-[#0D1829] z-[998] overflow-y-auto animate-slideDown">
+          <div className="px-4 py-6 space-y-3">
+            
+            {/* Holidays Dropdown */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+              <button 
+                className="flex justify-between items-center w-full px-4 py-4 text-white font-bold text-lg hover:bg-white/10 active:bg-white/20 transition-all duration-200"
+                onClick={() => toggleMobileMenu('holidays')}
+              >
+                <span className="flex items-center gap-2">
+                  <span className="w-1 h-6 bg-gradient-to-b from-[#D4AF37] to-[#FFD700] rounded-full"></span>
+                  Holidays
+                </span>
+                <ChevronDown 
+                  size={20} 
+                  className={`${openMobileMenu === 'holidays' ? 'rotate-180' : ''} transition-transform duration-300 text-[#D4AF37]`} 
+                />
+              </button>
+
+              {openMobileMenu === 'holidays' && (
+                <div className="px-2 pb-4 space-y-3 animate-fadeInUp">
+                  
+                  {/* Domestic */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg overflow-hidden mx-2 hover:bg-white/15 transition-all duration-300">
+                    <button 
+                      className="flex justify-between items-center w-full px-4 py-3.5 text-white hover:bg-white/10 active:bg-white/20 transition-all duration-200 rounded-t-xl"
+                      onClick={() => setOpenSubMenu(openSubMenu === 'domestic' ? null : 'domestic')}
+                    >
+                      <span className="flex items-center gap-2.5 font-semibold">
+                        <MapPin size={18} className="text-[#D4AF37]"/> 
+                        <span>Domestic</span>
+                      </span>
+                      <ChevronRight 
+                        size={18} 
+                        className={`${openSubMenu === 'domestic' ? 'rotate-90' : ''} transition-transform duration-300 text-[#D4AF37]`} 
+                      />
+                    </button>
+                    {openSubMenu === 'domestic' && (
+                      <div className="px-4 pb-3 space-y-1 animate-fadeInUp">
+                        {domesticDestinations.map((item, index) => (
+                          <Link 
+                            key={item} 
+                            to={`/packages/${nameToSlug(item)}`}
+                            className="block text-gray-200 hover:text-[#D4AF37] py-2.5 px-3 rounded-lg hover:bg-white/10 active:bg-white/20 transition-all duration-200 font-medium text-sm border-l-2 border-transparent hover:border-[#D4AF37] pl-3"
+                            style={{ animationDelay: `${index * 20}ms` }}
+                            onClick={() => {
+                              setIsOpen(false)
+                              setOpenMobileMenu(null)
+                              setOpenSubMenu(null)
+                            }}
+                          >
+                            {item}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* International */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg overflow-hidden mx-2 hover:bg-white/15 transition-all duration-300">
+                    <button 
+                      className="flex justify-between items-center w-full px-4 py-3.5 text-white hover:bg-white/10 active:bg-white/20 transition-all duration-200 rounded-t-xl"
+                      onClick={() => setOpenSubMenu(openSubMenu === 'international' ? null : 'international')}
+                    >
+                      <span className="flex items-center gap-2.5 font-semibold">
+                        <Globe size={18} className="text-[#D4AF37]"/> 
+                        <span>International</span>
+                      </span>
+                      <ChevronRight 
+                        size={18} 
+                        className={`${openSubMenu === 'international' ? 'rotate-90' : ''} transition-transform duration-300 text-[#D4AF37]`} 
+                      />
+                    </button>
+                    {openSubMenu === 'international' && (
+                      <div className="px-4 pb-3 space-y-1 animate-fadeInUp">
+                        {internationalDestinations.map((item, index) => (
+                          <Link 
+                            key={item} 
+                            to={`/packages/${nameToSlug(item)}`}
+                            className="block text-gray-200 hover:text-[#D4AF37] py-2.5 px-3 rounded-lg hover:bg-white/10 active:bg-white/20 transition-all duration-200 font-medium text-sm border-l-2 border-transparent hover:border-[#D4AF37] pl-3"
+                            style={{ animationDelay: `${index * 20}ms` }}
+                            onClick={() => {
+                              setIsOpen(false)
+                              setOpenMobileMenu(null)
+                              setOpenSubMenu(null)
+                            }}
+                          >
+                            {item}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
             </div>
 
-            {/* International Holidays Dropdown */}
-            <div 
-              className="relative group"
-              onMouseEnter={() => setOpenDropdown('international')}
-              onMouseLeave={() => setOpenDropdown(null)}
+            {/* Navigation Links */}
+            <Link 
+              to="/about" 
+              className="block text-white text-lg font-semibold py-3.5 px-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-[#D4AF37]/50 active:bg-white/25 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+              onClick={() => setIsOpen(false)}
             >
-              <button 
-                className="flex items-center gap-1 text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium"
-                onClick={() => setOpenDropdown(openDropdown === 'international' ? null : 'international')}
-              >
-                International Holidays
-                <ChevronDown size={16} className={`transition-transform duration-200 ${openDropdown === 'international' ? 'rotate-180' : ''}`} />
-              </button>
-              {openDropdown === 'international' && (
-                <div 
-                  className="absolute top-full left-0 pt-2 w-72 animate-fadeIn z-[100]"
-                  onMouseEnter={() => setOpenDropdown('international')}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <div className="bg-white shadow-2xl rounded-xl py-3 border border-gray-100 max-h-96 overflow-y-auto">
-                    {internationalHolidays.map((item) => (
-                      <Link
-                        key={item}
-                        to={`/packages/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block px-5 py-2.5 text-sm text-[#4B5563] hover:bg-[#FAF8F3] hover:text-[#0066CC] hover:pl-6 transition-all duration-200 cursor-pointer"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setOpenDropdown(null);
-                        }}
-                      >
-                        {item}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-            <Link to="/about" className="text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium">
               About Us
             </Link>
-            <Link to="/trade-fair" className="text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium">
+            <Link 
+              to="/trade-fair" 
+              className="block text-white text-lg font-semibold py-3.5 px-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-[#D4AF37]/50 active:bg-white/25 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+              onClick={() => setIsOpen(false)}
+            >
               Trade Fair
             </Link>
-            <Link to="/hotels" className="text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium">
+            <Link 
+              to="/hotels" 
+              className="block text-white text-lg font-semibold py-3.5 px-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-[#D4AF37]/50 active:bg-white/25 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+              onClick={() => setIsOpen(false)}
+            >
               Hotels
             </Link>
-            <Link to="/mice" className="text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium">
-              MICE
-            </Link>
-            <Link to="/visa" className="text-[#1A2B4A] hover:text-[#0066CC] transition-colors duration-200 font-medium">
-              Visa
-            </Link>
-            
 
             {/* CTA Button */}
             <Link 
               to="/contact" 
-              className="bg-gradient-to-r from-[#D4AF37] to-[#C9A634] text-white px-6 py-2.5 rounded-full font-semibold hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+              className="block bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-center text-white font-bold py-4 px-6 rounded-2xl shadow-2xl hover:shadow-[#D4AF37]/50 hover:scale-105 active:scale-95 transition-all duration-300 mt-4"
+              onClick={() => setIsOpen(false)}
             >
-              <Phone size={16} />
-              Plan Your Journey
+              <Phone size={20} className="inline-block mr-2"/> Plan Your Journey
             </Link>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 -mr-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} className="text-[#1A2B4A] sm:w-7 sm:h-7" /> : <Menu size={24} className="text-[#1A2B4A] sm:w-7 sm:h-7" />}
-          </button>
         </div>
+      )}
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="lg:hidden fixed inset-0 top-14 sm:top-16 md:top-20 bg-[#1A2B4A] bg-opacity-98 backdrop-blur-md z-40 animate-fadeIn">
-            <div className="h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] overflow-y-auto px-4 py-4 sm:py-6">
-              <div className="flex flex-col gap-1">
-                {/* India Holidays Mobile */}
-                <div className="border-b border-white/10 pb-2 mb-2">
-                  <button
-                    className="flex items-center justify-between w-full text-white py-3 font-medium"
-                    onClick={() => toggleDropdown('mobile-india')}
-                  >
-                    India Holidays
-                    <ChevronDown size={20} className={`transition-transform duration-200 ${openDropdown === 'mobile-india' ? 'rotate-180' : ''}`} />
-                  </button>
-                  {openDropdown === 'mobile-india' && (
-                    <div className="pl-4 mt-2 space-y-1 animate-fadeIn">
-                      {indiaHolidays.map((item, index) => (
-                        <Link
-                          key={item}
-                          to={`/packages/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="block text-[#FAF8F3] py-2 text-sm hover:text-[#D4AF37] transition-colors"
-                          style={{ animationDelay: `${index * 0.05}s` }}
-                          onClick={() => {
-                            setIsOpen(false)
-                            setOpenDropdown(null)
-                          }}
-                        >
-                          {item}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* International Holidays Mobile */}
-                <div className="border-b border-white/10 pb-2 mb-2">
-                  <button
-                    className="flex items-center justify-between w-full text-white py-3 font-medium"
-                    onClick={() => toggleDropdown('mobile-international')}
-                  >
-                    International Holidays
-                    <ChevronDown size={20} className={`transition-transform duration-200 ${openDropdown === 'mobile-international' ? 'rotate-180' : ''}`} />
-                  </button>
-                  {openDropdown === 'mobile-international' && (
-                    <div className="pl-4 mt-2 space-y-1 animate-fadeIn">
-                      {internationalHolidays.map((item, index) => (
-                        <Link
-                          key={item}
-                          to={`/packages/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="block text-[#FAF8F3] py-2 text-sm hover:text-[#D4AF37] transition-colors"
-                          style={{ animationDelay: `${index * 0.05}s` }}
-                          onClick={() => {
-                            setIsOpen(false)
-                            setOpenDropdown(null)
-                          }}
-                        >
-                          {item}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <Link to="/about" className="text-white py-3 font-medium border-b border-white/10 hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
-                  About Us
-                </Link>
-                <Link to="/trade-fair" className="text-white py-3 font-medium border-b border-white/10 hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
-                  Trade Fair
-                </Link>
-                <Link to="/hotels" className="text-white py-3 font-medium border-b border-white/10 hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
-                  Hotels
-                </Link>
-                <Link to="/mice" className="text-white py-3 font-medium border-b border-white/10 hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
-                  MICE
-                </Link>
-                <Link to="/visa" className="text-white py-3 font-medium border-b border-white/10 hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
-                  Visa
-                </Link>
-              
-              
-                <Link to="/terms" className="text-white py-3 font-medium hover:text-[#D4AF37] transition-colors" onClick={() => setIsOpen(false)}>
-                  Terms of Use
-                </Link>
-
-                {/* Mobile CTA */}
-                <Link 
-                  to="/contact" 
-                  className="mt-6 bg-gradient-to-r from-[#D4AF37] to-[#C9A634] text-white px-6 py-4 rounded-full font-semibold text-center flex items-center justify-center gap-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Phone size={18} />
-                  Plan Your Journey
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+      <style>{`
+        @keyframes fadeIn {
+          from {opacity: 0; transform: translateY(-10px);}
+          to {opacity: 1; transform: translateY(0);}
+        }
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeIn { 
+          animation: fadeIn 0.3s ease-out; 
+        }
+        .animate-slideDown { 
+          animation: slideDown 0.4s ease-out; 
+        }
+        .animate-fadeInUp { 
+          animation: fadeInUp 0.3s ease-out forwards;
+          opacity: 0;
+        }
+        
+        /* Smooth scrolling for mobile menu */
+        @media (max-width: 1024px) {
+          .lg\\:hidden {
+            -webkit-overflow-scrolling: touch;
+          }
+        }
+      `}</style>
+    </>
   )
 }

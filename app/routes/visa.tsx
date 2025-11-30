@@ -2,13 +2,18 @@ import type { Route } from "./+types/visa";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
 import { CONFIG } from "~/config/constants";
-import { Phone, Mail, Clock, DollarSign } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
+import { Link } from "react-router";
+import { generateSEOTags } from "~/config/seo";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Visa Services - Flexi Global Holidays" },
-    { name: "description", content: "Get visa assistance for your international travel." },
-  ];
+  return generateSEOTags({
+    title: "Visa Services - Visa Application Assistance | Flexi Global Holidays",
+    description: "Get expert visa assistance for USA, UK, Europe, Canada, Australia, Dubai, Singapore, Thailand, and more. Fast visa processing with complete documentation support. Contact Flexi Global Holidays for visa services.",
+    keywords: "visa services, visa application, visa assistance, USA visa, UK visa, Europe visa, Schengen visa, Canada visa, Australia visa, Dubai visa, Singapore visa, Thailand visa, visa processing, visa documentation",
+    url: "/visa",
+    type: "website"
+  });
 }
 
 export default function Visa() {
@@ -41,22 +46,27 @@ export default function Visa() {
                 className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow border border-gray-200"
               >
                 <h3 className="text-xl font-bold mb-3 text-gray-800">{service.country}</h3>
-                <div className="flex items-center gap-2 text-gray-600 mb-2">
+                <div className="flex items-center gap-2 text-gray-600 mb-4">
                   <Clock size={16} />
                   <span className="text-sm">
                     <span className="font-semibold">Processing:</span> {service.processingTime}
                   </span>
                 </div>
-                <div className="flex items-center gap-2 mb-4">
-                  <DollarSign size={20} className="text-[#0066CC]" />
-                  <p className="text-2xl font-bold text-[#0066CC]">{service.price}</p>
-                </div>
-                <a 
-                  href={`tel:${CONFIG.PHONE_PRIMARY}`}
+                <Link
+                  to="/contact"
+                  className="text-[#0066CC] hover:text-[#0052A3] font-semibold underline mb-4 block transition-colors flex items-center gap-2"
+                >
+                  Contact for best pricing
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+                <Link
+                  to="/contact"
                   className="block w-full bg-gradient-to-r from-[#D4AF37] to-[#C9A634] text-white py-2 rounded-lg hover:opacity-90 transition-opacity text-center font-semibold"
                 >
                   Contact Us
-                </a>
+                </Link>
               </div>
             ))}
           </div>

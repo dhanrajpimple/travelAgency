@@ -2,12 +2,16 @@ import type { Route } from "./+types/blog";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
 import { Link } from "react-router";
+import { generateSEOTags } from "~/config/seo";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Blog - Flexi Global Holidays" },
-    { name: "description", content: "Travel tips, guides, and stories from Flexi Global Holidays." },
-  ];
+  return generateSEOTags({
+    title: "Travel Blog - Travel Tips, Guides & Stories | Flexi Global Holidays",
+    description: "Read travel tips, destination guides, and travel stories from Flexi Global Holidays. Expert advice on planning your perfect vacation, travel hacks, destination insights, and travel inspiration.",
+    keywords: "travel blog, travel tips, travel guides, travel stories, destination guides, travel advice, vacation planning, travel inspiration, travel hacks, travel articles",
+    url: "/blog",
+    type: "website"
+  });
 }
 
 export default function Blog() {

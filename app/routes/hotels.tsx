@@ -2,12 +2,16 @@ import type { Route } from "./+types/hotels";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
 import { Link } from "react-router";
+import { generateSEOTags } from "~/config/seo";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Hotels - Flexi Global Holidays" },
-    { name: "description", content: "Book hotels worldwide with Flexi Global Holidays." },
-  ];
+  return generateSEOTags({
+    title: "Hotels Booking - Luxury Hotels India & Worldwide | Flexi Global Holidays",
+    description: "Book luxury hotels across India and worldwide with Flexi Global Holidays. Best hotel deals for Taj, Oberoi, Leela, ITC, and more premium properties. Get exclusive rates and special offers on hotel bookings.",
+    keywords: "hotel booking, luxury hotels, hotel booking India, hotel deals, hotel reservation, 5 star hotels, hotel booking online, best hotel rates, hotel packages, hotel booking Indore",
+    url: "/hotels",
+    type: "website"
+  });
 }
 
 export default function Hotels() {
@@ -126,10 +130,23 @@ export default function Hotels() {
     <div className="min-h-screen bg-white">
       <Navigation />
       
+      {/* Hero Section */}
+      <section className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80"
+          alt="Hotels"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1A2B4A]/80 to-[#1A2B4A]/50 flex items-center justify-center">
+          <div className="text-center px-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">Hotels</h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mt-4">Discover luxury accommodations across India</p>
+          </div>
+        </div>
+      </section>
+      
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center mb-4 text-gray-800">Hotels</h1>
-          <p className="text-center text-gray-600 mb-12">Discover luxury accommodations across India</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {domesticHotels.map((hotel) => (
@@ -181,10 +198,7 @@ export default function Hotels() {
                   </div>
                   
                   <div className="flex items-center justify-between pt-4 border-t">
-                    <div>
-                      <p className="text-2xl font-bold text-[#0066CC]">₹{hotel.price.toLocaleString()}</p>
-                      <p className="text-sm text-gray-600">per night</p>
-                    </div>
+                   
                     <Link
                       to="/contact"
                       className="bg-gradient-to-r from-[#D4AF37] to-[#C9A634] text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity font-semibold"

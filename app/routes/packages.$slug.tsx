@@ -5,6 +5,7 @@ import ImageLightbox from "~/components/ImageLightbox";
 import { useParams, Link } from "react-router";
 import { getPackageBySlug, type Package } from "~/data/packages";
 import { useState } from "react";
+import { generateSEOTags } from "~/config/seo";
 
 function createDefaultPackage(slug: string): Package {
   const name = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
@@ -46,11 +47,31 @@ function createDefaultPackage(slug: string): Package {
   };
 }
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Tour Package - Flexi Global Holidays" },
-    { name: "description", content: "Book your dream tour package with Flexi Global Holidays." },
-  ];
+export function meta({ params }: Route.MetaArgs) {
+  const slug = params.slug || '';
+  const pkg = slug ? (getPackageBySlug(slug) || null) : null;
+  
+  if (pkg) {
+    const category = pkg.category === 'international' ? 'International' : 'India';
+    return generateSEOTags({
+      title: `${pkg.name} - ${category} Tour Package | Flexi Global Holidays`,
+      description: `${pkg.shortDescription} Book ${pkg.name} with Flexi Global Holidays. ${pkg.duration} package including ${pkg.includes.slice(0, 3).join(', ')}. Best deals and expert travel planning.`,
+      keywords: `${pkg.name.toLowerCase()}, ${category.toLowerCase()} tour packages, ${pkg.location.toLowerCase()} tour, ${pkg.duration} tour package, travel package, holiday package, ${pkg.category === 'international' ? 'international travel' : 'domestic travel'}`,
+      url: `/packages/${slug}`,
+      type: "website",
+      image: pkg.images[0]
+    });
+  }
+  
+  // Default SEO for unknown packages
+  const name = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  return generateSEOTags({
+    title: `${name} Tour Package - Book Now | Flexi Global Holidays`,
+    description: `Book ${name} tour package with Flexi Global Holidays. Best deals on ${name} travel packages with hotel, sightseeing, and transfers included.`,
+    keywords: `${name.toLowerCase()} tour package, ${name.toLowerCase()} travel, ${name.toLowerCase()} holiday package`,
+    url: `/packages/${slug}`,
+    type: "website"
+  });
 }
 
 export default function PackageDetail() {
@@ -243,8 +264,7 @@ export default function PackageDetail() {
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">Book Now</h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-600 mb-1">Starting from</p>
-                    <p className="text-3xl font-bold text-blue-600">{pkg.price}</p>
+                    
                     <p className="text-sm text-gray-600">{pkg.minPax}</p>
                     <p className="text-sm text-gray-600 mt-2">{pkg.duration}</p>
                   </div>

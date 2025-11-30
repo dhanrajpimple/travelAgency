@@ -2,12 +2,35 @@ import type { Route } from "./+types/blog.$slug";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
 import { useParams, Link } from "react-router";
+import { generateSEOTags } from "~/config/seo";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Blog Post - Flexi Global Holidays" },
-    { name: "description", content: "Read our travel blog posts and guides." },
-  ];
+export function meta({ params }: Route.MetaArgs) {
+  const slug = params.slug || '';
+  const post = blogPosts[slug];
+  
+  if (post) {
+    // Convert date string to ISO format for publishedTime
+    const publishedDate = new Date(post.date).toISOString();
+    
+    return generateSEOTags({
+      title: `${post.title} | Travel Blog - Flexi Global Holidays`,
+      description: post.excerpt,
+      keywords: `travel blog, ${post.title.toLowerCase()}, travel tips, travel guide, travel advice, ${slug.replace(/-/g, ', ')}`,
+      url: `/blog/${slug}`,
+      type: "article",
+      image: post.image,
+      publishedTime: publishedDate
+    });
+  }
+  
+  // Default SEO for unknown blog posts
+  return generateSEOTags({
+    title: "Travel Blog Post - Flexi Global Holidays",
+    description: "Read travel tips, guides, and stories from Flexi Global Holidays travel blog.",
+    keywords: "travel blog, travel tips, travel guides, travel stories",
+    url: `/blog/${slug}`,
+    type: "article"
+  });
 }
 
 const blogPosts: Record<string, {

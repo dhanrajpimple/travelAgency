@@ -1,12 +1,16 @@
 import type { Route } from "./+types/terms";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
+import { generateSEOTags } from "~/config/seo";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Terms of Use - Flexi Global Holidays" },
-    { name: "description", content: "Terms and conditions for Flexi Global Holidays travel services." },
-  ];
+  return generateSEOTags({
+    title: "Terms & Conditions - Terms of Use | Flexi Global Holidays",
+    description: "Read the terms and conditions for Flexi Global Holidays travel services. Understand our booking policies, cancellation terms, payment terms, and service agreements.",
+    keywords: "terms and conditions, travel terms, booking terms, cancellation policy, travel agency terms, service agreement, terms of use",
+    url: "/terms",
+    type: "website"
+  });
 }
 
 export default function Terms() {

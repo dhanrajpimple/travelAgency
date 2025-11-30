@@ -3,12 +3,16 @@ import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
 import { CONFIG } from "~/config/constants";
 import { CreditCard, Shield, Phone, Mail } from "lucide-react";
+import { generateSEOTags } from "~/config/seo";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Pay Online - Flexi Global Holidays" },
-    { name: "description", content: "Secure online payment for your travel bookings." },
-  ];
+  return generateSEOTags({
+    title: "Pay Online - Secure Payment Gateway | Flexi Global Holidays",
+    description: "Make secure online payments for your travel bookings with Flexi Global Holidays. Safe and encrypted payment gateway supporting all major credit cards, debit cards, UPI, and net banking. 100% secure transactions.",
+    keywords: "online payment, secure payment, travel payment, payment gateway, credit card payment, debit card payment, UPI payment, net banking, secure booking payment",
+    url: "/pay-online",
+    type: "website"
+  });
 }
 
 export default function PayOnline() {

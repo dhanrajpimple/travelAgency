@@ -1,6 +1,6 @@
 import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react'
 import { CONFIG } from '~/config/constants'
-import logoImage from '~/assets/logo.jpg'
+import logoImage from '~/assets/logo.png'
 
 export default function Footer() {
 
@@ -36,8 +36,7 @@ export default function Footer() {
               >
                 <Instagram size={18} className="sm:w-5 sm:h-5" />
               </a>
-              <a 
-                href="https://www.instagram.com/flexiglobalholidays?igsh=dXUxZmh1MmphMjh0 " 
+              <a  href="https://www.facebook.com/people/Flexi-Global-Holidays/61576773903048/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:scale-110 active:scale-95 transition-all duration-300 touch-manipulation"
@@ -100,7 +99,6 @@ export default function Footer() {
                 { name: 'Destinations', link: '/destinations' },
                 { name: 'Trade Fairs', link: '/trade-fair' },
                 { name: 'Hotels', link: '/hotels' },
-                { name: 'MICE', link: '/mice' },
                 { name: 'Visa Services', link: '/visa' },
                 { name: 'Contact Us', link: '/contact' },
                 { name: 'Terms of Use', link: '/terms' },

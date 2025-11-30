@@ -4,12 +4,16 @@ import Footer from "~/components/Footer";
 import WhatsAppButton from "~/components/WhatsAppButton";
 import { CONFIG } from "~/config/constants";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { generateSEOTags } from "~/config/seo";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Contact Us - Flexi Global Holidays" },
-    { name: "description", content: "Get in touch with Flexi Global Holidays for your travel needs." },
-  ];
+  return generateSEOTags({
+    title: "Contact Us - Flexi Global Holidays | Get Free Travel Quote",
+    description: "Contact Flexi Global Holidays for your travel needs. Call +91 9599476155 or visit our office in Indore. Get free quotes for tour packages, hotel bookings, visa services, and MICE solutions. We're available 24/7 to help plan your perfect trip.",
+    keywords: "contact travel agency, travel agent contact, Flexi Global Holidays contact, travel agency Indore, travel booking contact, tour package inquiry, travel quote",
+    url: "/contact",
+    type: "website"
+  });
 }
 
 export default function Contact() {
