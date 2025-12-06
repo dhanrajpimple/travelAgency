@@ -1,6 +1,7 @@
 import type { Route } from "./+types/terms";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
+import WhatsAppButton from "~/components/WhatsAppButton";
 import { generateSEOTags } from "~/config/seo";
 
 export function meta({}: Route.MetaArgs) {
@@ -78,6 +79,7 @@ export default function Terms() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

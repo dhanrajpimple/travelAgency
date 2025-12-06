@@ -1,6 +1,7 @@
 import type { Route } from "./+types/mice";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
+import WhatsAppButton from "~/components/WhatsAppButton";
 import { Link } from "react-router";
 import { generateSEOTags } from "~/config/seo";
 
@@ -172,6 +173,7 @@ export default function Mice() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

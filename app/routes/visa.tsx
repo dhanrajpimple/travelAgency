@@ -3,6 +3,7 @@ import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
 import { CONFIG } from "~/config/constants";
 import { Phone, Mail, Clock } from "lucide-react";
+import WhatsAppButton from "~/components/WhatsAppButton";
 import { Link } from "react-router";
 import { generateSEOTags } from "~/config/seo";
 
@@ -97,6 +98,7 @@ export default function Visa() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Route } from "./+types/blog.$slug";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
+import WhatsAppButton from "~/components/WhatsAppButton";
 import { useParams, Link } from "react-router";
 import { generateSEOTags } from "~/config/seo";
 
@@ -277,6 +278,7 @@ export default function BlogPost() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

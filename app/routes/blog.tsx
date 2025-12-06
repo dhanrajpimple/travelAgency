@@ -3,7 +3,7 @@ import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
 import { Link } from "react-router";
 import { generateSEOTags } from "~/config/seo";
-
+import WhatsAppButton from "~/components/WhatsAppButton";
 export function meta({}: Route.MetaArgs) {
   return generateSEOTags({
     title: "Travel Blog - Travel Tips, Guides & Stories | Flexi Global Holidays",
@@ -84,6 +84,7 @@ export default function Blog() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

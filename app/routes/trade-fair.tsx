@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '~/componets/Navbar';
 import Footer from '~/components/Footer';
+import WhatsAppButton from '~/components/WhatsAppButton';
 import { Link } from 'react-router';
 import type { Route } from "./+types/trade-fair";
 import { generateSEOTags } from "~/config/seo";
@@ -8,8 +9,8 @@ import { generateSEOTags } from "~/config/seo";
 export function meta({}: Route.MetaArgs) {
   return generateSEOTags({
     title: "Trade Fair Travel Packages - Global Trade Exhibitions 2025-2026 | Flexi Global Holidays",
-    description: "Book travel packages for global trade fairs and exhibitions including CES 2026, Mobile World Congress, Canton Fair, Anuga, Hannover Messe, and more. Complete travel solutions with flights, hotels, visa assistance, and exhibition registration.",
-    keywords: "trade fair travel, exhibition travel, trade show packages, CES 2026, Mobile World Congress, Canton Fair, trade fair booking, exhibition travel packages, business travel, trade fair tours",
+    description: "Book travel packages for global trade fairs and exhibitions including CPHI Milan, Hannover Messe, CHINAPLAS, Canton Fair, Gulfood, Interpack, ARABHEALTH, and more. Complete travel solutions with flights, hotels, visa assistance, and exhibition registration.",
+    keywords: "trade fair travel, exhibition travel, trade show packages, CPHI Milan 2026, Hannover Messe 2026, CHINAPLAS 2026, Canton Fair 2026, Gulfood 2026, Interpack 2026, ARABHEALTH 2026, trade fair booking, exhibition travel packages, business travel, trade fair tours",
     url: "/trade-fair",
     type: "website"
   });
@@ -18,83 +19,83 @@ export function meta({}: Route.MetaArgs) {
 export default function TradeFair() {
   const tradeFairs = [
     {
-      title: "CES 2026",
-      date: "January 6-9, 2026",
-      location: "Las Vegas Convention Center, Nevada, USA",
-      description: "The world's most powerful tech event featuring groundbreaking innovations in AI, 5G, AR/VR, robotics, and consumer electronics. Over 4,500 exhibitors and 140,000+ attendees from across the globe.",
+      title: "CPHI Milan 2026",
+      date: "October 6-8, 2026",
+      location: "Fiera Milano, Milan, Italy",
+      description: "The world's leading pharmaceutical and biopharmaceutical trade fair featuring APIs, excipients, finished dosages, machinery, drug-delivery systems, packaging, and contract services. Connect with global pharma industry leaders.",
       price: "Contact for pricing",
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
-      category: "Technology",
+      image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80",
+      category: "Pharmaceutical",
       featured: true
     },
     {
-      title: "Mobile World Congress 2026",
-      date: "March 2-5, 2026",
-      location: "Fira Gran Via, Barcelona, Spain",
-      description: "The world's largest connectivity event showcasing mobile technology, AI trends, and telecommunications. Join 3,000+ exhibitors and 109,000+ professionals in exploring The IQ Era.",
+      title: "HANNOVER MESSE 2026",
+      date: "April 20-24, 2026",
+      location: "Hannover Exhibition Grounds, Hanover, Germany",
+      description: "The world's leading industrial technology trade fair showcasing Industry 4.0, automation, industrial transformation, AI in industry, engineering innovations, and digital manufacturing solutions.",
       price: "Contact for pricing",
-      image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=80",
-      category: "Mobile & Telecom",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+      category: "Industrial",
       featured: true
     },
     {
-      title: "Canton Fair 2025",
-      date: "October 14-19, 2025",
-      location: "China Import & Export Fair Pazhou Complex, Guangzhou",
-      description: "The 138th Canton Fair, China's largest trade fair showcasing consumer goods, electronics, machinery, and textiles. Connect with global manufacturers and suppliers.",
+      title: "CHINAPLAS 2026",
+      date: "April 21-24, 2026",
+      location: "National Exhibition and Convention Center (NECC), Hongqiao, Shanghai, China",
+      description: "Asia's premier plastics and rubber industries trade fair featuring machinery, raw materials, processing technologies, recycling solutions, packaging innovations, and smart manufacturing for plastics and rubber industries.",
+      price: "Contact for pricing",
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80",
+      category: "Plastics & Rubber"
+    },
+    {
+      title: "CPHI & PMEC China 2026",
+      date: "June 16-18, 2026",
+      location: "Shanghai New International Expo Center (SNIEC), Shanghai, China",
+      description: "China's premier pharmaceutical and biotech trade show bringing together pharma supply-chain stakeholders, APIs, manufacturing equipment, packaging solutions, and pharmaceutical machinery from across the globe.",
+      price: "Contact for pricing",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80",
+      category: "Pharmaceutical"
+    },
+    {
+      title: "Canton Fair 2026",
+      date: "Phase 1: April 15-19; Phase 2: April 23-27; Phase 3: May 1-5, 2026",
+      location: "China Import & Export Fair Complex (Pazhou), Guangzhou, China",
+      description: "The world's largest multi-industry trade fair showcasing electronics, machinery, home goods, furniture, textiles, clothing, consumer goods, toys, medical supplies, and more. Connect with global manufacturers and suppliers.",
       price: "Contact for pricing",
       image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
-      category: "General Trade"
+      category: "General Trade",
+      featured: true
     },
     {
-      title: "Anuga 2025",
-      date: "October 4-8, 2025",
-      location: "Koelnmesse, Cologne, Germany",
-      description: "The world's leading food and beverage trade fair featuring 10 specialized exhibitions covering everything from organic foods to frozen products and beverages.",
+      title: "Gulfood 2026",
+      date: "January 26-30, 2026",
+      location: "Dubai World Trade Centre / Dubai Exhibition Centre / Expo City, Dubai, UAE",
+      description: "The world's largest annual food and beverage sourcing event featuring global food trade, hospitality supplies, F&B innovations, distributors, importers, and networking opportunities for the food industry.",
       price: "Contact for pricing",
       image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80",
       category: "Food & Beverage"
     },
-  
     {
-      title: "Hannover Messe 2026",
-      date: "April 20-24, 2026",
-      location: "Hannover Exhibition Grounds, Germany",
-      description: "The world's leading industrial technology trade fair showcasing Industry 4.0, automation, energy solutions, and digital transformation for manufacturing.",
+      title: "Interpack 2026",
+      date: "May 2026",
+      location: "Düsseldorf, Germany",
+      description: "The world's leading trade fair for packaging machinery, materials, and packaging solutions. Discover innovations in packaging for food, pharma, consumer goods, and industrial applications.",
       price: "Contact for pricing",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
-      category: "Industrial"
+      image: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=800&q=80",
+      category: "Packaging"
     },
     {
-      title: "FRUIT LOGISTICA 2026",
-      date: "February 4-6, 2026",
-      location: "Messe Berlin, Germany",
-      description: "The world's most influential fresh produce trade fair with 2,600+ exhibitors from 151 countries. Discover innovations in sustainability, logistics, and technology.",
+      title: "ARABHEALTH 2026",
+      date: "February 9-12, 2026",
+      location: "Dubai, UAE",
+      description: "The Middle East's largest healthcare and medical industry expo featuring medical equipment, healthcare technology, pharmaceuticals, hospital supplies, and healthcare innovations from leading global manufacturers.",
       price: "Contact for pricing",
-      image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80",
-      category: "Agriculture"
-    },
-    {
-      title: "gamescom 2026",
-      date: "August 26-30, 2026",
-      location: "Koelnmesse, Cologne, Germany",
-      description: "The world's largest trade fair for interactive games and entertainment. Experience the latest in gaming hardware, software, esports, and virtual reality.",
-      price: "Contact for pricing",
-      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80",
-      category: "Gaming & Entertainment"
-    },
-    {
-      title: "Ambiente 2026",
-      date: "February 6-10, 2026",
-      location: "Messe Frankfurt, Germany",
-      description: "The leading international consumer goods fair showcasing dining, living, and giving products. Discover trends in design, sustainability, and lifestyle products.",
-      price: "Contact for pricing",
-      image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80",
-      category: "Consumer Goods"
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80",
+      category: "Healthcare"
     }
   ];
 
-  const categories = ["All", "Technology", "Mobile & Telecom", "Food & Beverage", "Industrial", "General Trade"];
+  const categories = ["All", "Pharmaceutical", "Industrial", "Plastics & Rubber", "Food & Beverage", "General Trade", "Packaging", "Healthcare"];
   const [activeCategory, setActiveCategory] = React.useState("All");
   const [searchTerm, setSearchTerm] = React.useState("");
 
@@ -381,6 +382,7 @@ export default function TradeFair() {
      
     </div>
      <Footer />
+     <WhatsAppButton />
     </>
   );
 }

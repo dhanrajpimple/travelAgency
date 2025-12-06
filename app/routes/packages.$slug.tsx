@@ -1,6 +1,7 @@
 import type { Route } from "./+types/packages.$slug";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
+import WhatsAppButton from "~/components/WhatsAppButton";
 import ImageLightbox from "~/components/ImageLightbox";
 import { useParams, Link } from "react-router";
 import { getPackageBySlug, type Package } from "~/data/packages";
@@ -317,6 +318,7 @@ export default function PackageDetail() {
       />
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

@@ -8,35 +8,35 @@ import { useState, useEffect, lazy, Suspense } from "react";
 import { CardSkeleton } from "~/components/LoadingSkeleton";
 import { generateSEOTags } from "~/config/seo";
 // Trade Fair Images
-import tradefair1 from "~/assets/upcomingtradefair (1).png";
-import tradefair2 from "~/assets/upcomingtradefair (2).png";
-import tradefair3 from "~/assets/upcomingtradefair (3).png";
-import tradefair4 from "~/assets/upcomingtradefair (4).png";
-import tradefair5 from "~/assets/upcomingtradefair (5).png";
-import tradefair6 from "~/assets/upcomingtradefair (6).png";
-import tradefair7 from "~/assets/upcomingtradefair (7).png";
-import tradefair8 from "~/assets/upcomingtradefair (8).png";
-import tradefair9 from "~/assets/upcomingtradefair (9).png";
-import tradefair10 from "~/assets/upcomingtradefair (10).png";
-import tradefair11 from "~/assets/upcomingtradefair (11).png";
-import tradefair12 from "~/assets/upcomingtradefair (12).png";
-import tradefair13 from "~/assets/upcomingtradefair (13).png";
-import tradefair14 from "~/assets/upcomingtradefair (14).png";
+import tradefair1 from "~/assets/upcomingtradefair (1).webp";
+import tradefair2 from "~/assets/upcomingtradefair (2).webp";
+import tradefair3 from "~/assets/upcomingtradefair (3).webp";
+import tradefair4 from "~/assets/upcomingtradefair (4).webp";
+import tradefair5 from "~/assets/upcomingtradefair (5).webp";
+import tradefair6 from "~/assets/upcomingtradefair (6).webp";
+import tradefair7 from "~/assets/upcomingtradefair (7).webp";
+import tradefair8 from "~/assets/upcomingtradefair (8).webp";
+import tradefair9 from "~/assets/upcomingtradefair (9).webp";
+import tradefair10 from "~/assets/upcomingtradefair (10).webp";
+import tradefair11 from "~/assets/upcomingtradefair (11).webp";
+import tradefair12 from "~/assets/upcomingtradefair (12).webp";
+import tradefair13 from "~/assets/upcomingtradefair (13).webp";
+import tradefair14 from "~/assets/upcomingtradefair (14).webp";
 // Client Images
-import c1 from "~/assets/c1.png";
-import c2 from "~/assets/c2.png";
-import c3_1 from "~/assets/c3 (1).png";
-import c3_2 from "~/assets/c3 (2).png";
-import c3_3 from "~/assets/c3 (3).png";
-import c3_4 from "~/assets/c3 (4).png";
-import c3_6 from "~/assets/c3 (6).png";
-import c3_7 from "~/assets/c3 (7).png";
-import c3_8 from "~/assets/c3 (8).png";
+import c1 from "~/assets/brand1.webp";
+import c2 from "~/assets/brand2.webp";
+import c3_1 from "~/assets/brand3.webp";
+import c3_2 from "~/assets/brand4.webp";
+import c3_3 from "~/assets/brand5.webp";
+import c3_4 from "~/assets/brand6.webp";
+import c3_6 from "~/assets/brand7.webp";
+import c3_7 from "~/assets/brand8.webp";
+import c3_8 from "~/assets/brand9.webp";
 // Holiday Package Images
-import honeymoonImg from "~/assets/honeymoon.jpg";
-import familyVacationImg from "~/assets/family-vacation.jpg";
-import heroBeachImg from "~/assets/hero-beach.jpg";
-import corporateTravelImg from "~/assets/corporate-travel.jpg";
+import honeymoonImg from "~/assets/honeymoon.webp";
+import familyVacationImg from "~/assets/family-vacation.webp";
+import heroBeachImg from "~/assets/hero-beach.webp";
+import corporateTravelImg from "~/assets/corporate-travel.webp";
 
 export function meta({}: Route.MetaArgs) {
   return generateSEOTags({

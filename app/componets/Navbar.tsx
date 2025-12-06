@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown, ChevronRight, Phone, MapPin, Globe } from 'lucide-react'
+import { Menu, X, ChevronDown, ChevronRight, MapPin, Globe } from 'lucide-react'
 import { Link } from 'react-router'
-import logo from '../assets/logo.png'
+import logo from '../assets/Navlog.png'
 
 // Helper function to convert package name to slug
 function nameToSlug(name: string): string {
@@ -50,7 +50,9 @@ export default function Navigation() {
 
             {/* Logo Image */}
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Flexi Global" className="h-12 w-auto object-contain" />
+              <div className="bg-[#F5F5F5] rounded-lg">
+                <img src={logo} alt="Flexi Global" className="h-14  lg:h-20 w-auto object-contain" />
+              </div>
             </Link>
 
             {/* Desktop Menu */}
@@ -116,9 +118,7 @@ export default function Navigation() {
               <Link to="/trade-fair" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">Trade Fair</Link>
               <Link to="/hotels" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">Hotels</Link>
 
-              <Link to="/contact" className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-white px-6 py-3 rounded-lg flex items-center gap-2 font-semibold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300">
-                <Phone size={18}/> Plan Your Journey
-              </Link>
+              <Link to="/contact" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">Contact Us</Link>
             </div>
 
             {/* Mobile Toggle */}
@@ -256,13 +256,12 @@ export default function Navigation() {
               Hotels
             </Link>
 
-            {/* CTA Button */}
             <Link 
               to="/contact" 
-              className="block bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-center text-white font-bold py-4 px-6 rounded-2xl shadow-2xl hover:shadow-[#D4AF37]/50 hover:scale-105 active:scale-95 transition-all duration-300 mt-4"
+              className="block text-white text-lg font-semibold py-3.5 px-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-[#D4AF37]/50 active:bg-white/25 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
               onClick={() => setIsOpen(false)}
             >
-              <Phone size={20} className="inline-block mr-2"/> Plan Your Journey
+              Contact Us
             </Link>
           </div>
         </div>

@@ -1,35 +1,42 @@
 import type { Route } from "./+types/about";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
+import WhatsAppButton from "~/components/WhatsAppButton";
 import { Link } from "react-router";
-import owner1 from "~/assets/owner (1).png";
-import owner2 from "~/assets/owner (2).png";
+import owner1 from "~/assets/founder.webp";
+import owner2 from "~/assets/cofounder.webp";
 import logo from "~/assets/logo.png";
 import { generateSEOTags } from "~/config/seo";
 
-import React, { useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-// Gallery images
-import gallery1_1 from "~/assets/gallery1 (1).png";
-import gallery1_2 from "~/assets/gallery1 (2).png";
-import gallery1_3 from "~/assets/gallery1 (3).png";
-import gallery1_4 from "~/assets/gallery1 (4).png";
-import gallery1_5 from "~/assets/gallery1 (5).png";
-import gallery1_6 from "~/assets/gallery1 (6).png";
-import gallery1_7 from "~/assets/gallery1 (7).png";
-import gallery1_8 from "~/assets/gallery1 (8).png";
-import f1 from "~/assets/f1.jpg";
-import f2 from "~/assets/f2.jpg";
-import f3 from "~/assets/f3.jpg";
-import f4 from "~/assets/f4.jpg";
-import f5 from "~/assets/f5.jpg";
-import f6 from "~/assets/f6.jpg";
-import f7 from "~/assets/f7.jpg";
-import f8 from "~/assets/f8.jpg";
-import f9 from "~/assets/f9.jpg";
-import f11 from "~/assets/f11.jpg";
-import f12 from "~/assets/f12.jpg";
-import f14 from "~/assets/f14.jpg";
+import React, { useState, useEffect, useRef } from 'react';
+import { X, ChevronLeft, ChevronRight, Pause, Play, ZoomIn, ZoomOut, RotateCw } from 'lucide-react';
+
+import f1 from "~/assets/f1.webp"; 
+import f2 from "~/assets/f2.webp";
+import f3 from "~/assets/f3.webp";
+import f4 from "~/assets/f4.webp";
+import f5 from "~/assets/f5.webp";
+import f6 from "~/assets/f6.webp";
+import f7 from "~/assets/f7.webp";
+import f8 from "~/assets/f8.webp";
+import f9 from "~/assets/f9.webp";
+import f11 from "~/assets/f11.webp";
+import f12 from "~/assets/f12.webp";
+import f14 from "~/assets/f14.webp";
+import f15 from "~/assets/g1.webp";
+import f16 from "~/assets/g2.webp";
+import f17 from "~/assets/g3.webp";
+import f18 from "~/assets/g4.webp";
+import f19 from "~/assets/g5.webp";
+import f20 from "~/assets/g6.webp";
+import f21 from "~/assets/g7.webp";
+import f22 from "~/assets/g8.webp";
+import f23 from "~/assets/g9.webp";
+import f24 from "~/assets/g10.webp";
+import f25 from "~/assets/g11.webp";
+import f26 from "~/assets/g12.webp";
+import f28 from "~/assets/g13.webp";
+import f27 from "~/assets/g14.webp";
 export function meta({}: Route.MetaArgs) {
   return generateSEOTags({
     title: "About Us - Flexi Global Holidays | Leading Travel Agency Since 2016",
@@ -42,14 +49,6 @@ export function meta({}: Route.MetaArgs) {
 
 export default function About() {
   const galleryImages = [
-    // { src: gallery1_1, name: "Gallery 1" },
-    // { src: gallery1_2, name: "Gallery 2" },
-    // { src: gallery1_3, name: "Gallery 3" },
-    // { src: gallery1_4, name: "Gallery 4" },
-    // { src: gallery1_5, name: "Gallery 5" },
-    // { src: gallery1_6, name: "Gallery 6" },
-    // { src: gallery1_7, name: "Gallery 7" },
-    // { src: gallery1_8, name: "Gallery 8" },
     { src: f1, name: "Gallery 9" },
     { src: f2, name: "Gallery 10" },
     { src: f3, name: "Gallery 11" },
@@ -62,23 +61,218 @@ export default function About() {
     { src: f11, name: "Gallery 19" },
     { src: f12, name: "Gallery 20" },  
     { src: f14, name: "Gallery 22" },
+    { src: f15, name: "Gallery 23" },
+    { src: f16, name: "Gallery 24" },
+    { src: f17, name: "Gallery 25" },
+    { src: f18, name: "Gallery 26" },
+    { src: f19, name: "Gallery 27" },
+    { src: f20, name: "Gallery 28" },
+    { src: f21, name: "Gallery 29" },
+    { src: f22, name: "Gallery 30" },
+    { src: f23, name: "Gallery 31" },
+    { src: f24, name: "Gallery 32" },
+    { src: f25, name: "Gallery 33" },
+    { src: f26, name: "Gallery 34" },
+    { src: f28, name: "Gallery 35" },
+    { src: f27, name: "Gallery 36" },
   ];
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [zoom, setZoom] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
+  const pinchStartDistance = useRef<number>(0);
+  const pinchStartZoom = useRef<number>(1);
 
-  const openLightbox = (index) => {
+  const openLightbox = (index: number) => {
     setSelectedImage(index);
+    setZoom(1);
+    setPosition({ x: 0, y: 0 });
   };
 
   const closeLightbox = () => {
     setSelectedImage(null);
+    setZoom(1);
+    setPosition({ x: 0, y: 0 });
   };
 
   const goToPrevious = () => {
-    setSelectedImage((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+    setCurrentIndex((prev) => {
+      const newIndex = prev - 1;
+      // Handle infinite loop - if we go below the middle set, jump to end of second set
+      if (newIndex < galleryImages.length) {
+        return galleryImages.length * 2 - 1;
+      }
+      return newIndex;
+    });
+    if (selectedImage !== null) {
+      setSelectedImage((prev) => (prev === 0 ? galleryImages.length - 1 : (prev || 0) - 1));
+      setZoom(1);
+      setPosition({ x: 0, y: 0 });
+    }
   };
 
   const goToNext = () => {
-    setSelectedImage((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => {
+      const newIndex = prev + 1;
+      // Handle infinite loop - if we go past the second set, jump to start of middle set
+      if (newIndex >= galleryImages.length * 2) {
+        return galleryImages.length;
+      }
+      return newIndex;
+    });
+    if (selectedImage !== null) {
+      setSelectedImage((prev) => ((prev || 0) === galleryImages.length - 1 ? 0 : (prev || 0) + 1));
+      setZoom(1);
+      setPosition({ x: 0, y: 0 });
+    }
+  };
+
+  const goToSlide = (index: number) => {
+    // Ensure we're in the middle set for infinite loop
+    setCurrentIndex(index + galleryImages.length);
+  };
+
+  // Touch handlers for swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    // Handle pinch zoom in lightbox
+    if (selectedImage !== null && e.touches.length === 2) {
+      const touch1 = e.touches[0];
+      const touch2 = e.touches[1];
+      pinchStartDistance.current = Math.hypot(
+        touch2.clientX - touch1.clientX,
+        touch2.clientY - touch1.clientY
+      );
+      pinchStartZoom.current = zoom;
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (selectedImage !== null && e.touches.length === 2) {
+      // Handle pinch zoom
+      const touch1 = e.touches[0];
+      const touch2 = e.touches[1];
+      const distance = Math.hypot(
+        touch2.clientX - touch1.clientX,
+        touch2.clientY - touch1.clientY
+      );
+      const scale = (distance / pinchStartDistance.current) * pinchStartZoom.current;
+      setZoom(Math.max(1, Math.min(scale, 3)));
+    } else {
+      touchEndX.current = e.touches[0].clientX;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (selectedImage === null) {
+      // Only handle swipe when not in lightbox
+      if (!touchStartX.current || !touchEndX.current) return;
+      const distance = touchStartX.current - touchEndX.current;
+      const minSwipeDistance = 50;
+
+      if (distance > minSwipeDistance) {
+        goToNext();
+      } else if (distance < -minSwipeDistance) {
+        goToPrevious();
+      }
+    }
+  };
+
+  // Mouse drag for zoomed image
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (zoom > 1) {
+      setIsDragging(true);
+      setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && zoom > 1) {
+      setPosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y,
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  // Zoom functions
+  const handleZoomIn = () => {
+    setZoom((prev) => Math.min(prev + 0.5, 3));
+  };
+
+  const handleZoomOut = () => {
+    setZoom((prev) => Math.max(prev - 0.5, 1));
+    if (zoom <= 1) {
+      setPosition({ x: 0, y: 0 });
+    }
+  };
+
+  const handleResetZoom = () => {
+    setZoom(1);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  // Initialize carousel to middle set for infinite loop
+  useEffect(() => {
+    setCurrentIndex(galleryImages.length);
+  }, [galleryImages.length]);
+
+  // Handle infinite loop reset
+  useEffect(() => {
+    if (currentIndex >= galleryImages.length * 2) {
+      // Reset to middle set without animation
+      const timer = setTimeout(() => {
+        setCurrentIndex(galleryImages.length);
+      }, 50);
+      return () => clearTimeout(timer);
+    } else if (currentIndex < galleryImages.length) {
+      // Reset to middle set without animation
+      const timer = setTimeout(() => {
+        setCurrentIndex(galleryImages.length + currentIndex);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, galleryImages.length]);
+
+  // Auto-play carousel
+  useEffect(() => {
+    if (!isPaused && selectedImage === null) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prev) => {
+          const newIndex = prev + 1;
+          if (newIndex >= galleryImages.length * 2) {
+            return galleryImages.length;
+          }
+          return newIndex;
+        });
+      }, 3000);
+    } else {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [isPaused, galleryImages.length, selectedImage]);
+
+  const togglePause = () => {
+    setIsPaused(!isPaused);
   };
 
   return (
@@ -348,7 +542,7 @@ export default function About() {
               </div>
               <div className="p-6 sm:p-8 text-center bg-gradient-to-b from-white to-blue-50">
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">Siddharth Gupta</h3>
-                <p className="text-base sm:text-lg text-[#1A2B4A] font-semibold">Co-Founder</p>
+                <p className="text-base sm:text-lg text-[#1A2B4A] font-semibold">Founder</p>
               </div>
             </div>
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
@@ -368,83 +562,126 @@ export default function About() {
         </div>
       </section>
 
-      {/* 6. Gallery */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-blue-50 to-white overflow-hidden relative">
-        {/* Subtle decorative elements */}
-        <div className="absolute top-10 right-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        <div className="absolute bottom-10 left-10 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
+     {/* 6. Gallery */}
+     <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
           <div className="text-center space-y-3">
-            
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">Our Gallery</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Click any image to view in full screen</p>
+            <p className="text-base text-gray-600">Capturing moments from our journeys</p>
           </div>
         </div>
         
-        <div className="relative">
-          <div className="flex animate-marquee gap-6">
-            {galleryImages.map((image, index) => (
-              <div 
-                key={`first-${index}`}
-                onClick={() => openLightbox(index)}
-                className="shrink-0 w-72 sm:w-80 md:w-96 h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer relative"
+        {/* Marquee Gallery */}
+        <div className="relative w-full">
+          {/* Marquee Container */}
+          <div 
+            className="flex gap-4 sm:gap-6"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            style={{
+              animation: isPaused ? 'none' : 'scroll 60s linear infinite',
+            }}
+          >
+            {/* Triple the images for seamless loop */}
+            {[...galleryImages, ...galleryImages, ...galleryImages].map((image, index) => (
+              <div
+                key={`marquee-${index}`}
+                onClick={() => openLightbox(index % galleryImages.length)}
+                className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[420px] h-[200px] sm:h-[240px] md:h-[280px] lg:h-[320px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
-                <img 
-                  src={image.src}
-                  alt={image.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                  <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg">
-                    <p className="text-gray-800 font-semibold">Click to view</p>
+                <div className="relative w-full h-full overflow-hidden">
+                  <img 
+                    src={image.src}
+                    alt={image.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                    <h3 className="text-base sm:text-lg font-bold">{image.name}</h3>
                   </div>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
-                  <h3 className="text-white text-lg font-bold drop-shadow-lg">{image.name}</h3>
-                </div>
-              </div>
-            ))}
-            {galleryImages.map((image, index) => (
-              <div 
-                key={`second-${index}`}
-                onClick={() => openLightbox(index)}
-                className="shrink-0 w-72 sm:w-80 md:w-96 h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer relative"
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
-                <img 
-                  src={image.src}
-                  alt={image.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                  <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg">
-                    <p className="text-gray-800 font-semibold">Click to view</p>
-                  </div>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
-                  <h3 className="text-white text-lg font-bold drop-shadow-lg">{image.name}</h3>
                 </div>
               </div>
             ))}
           </div>
+          
+          {/* Gradient Overlays */}
+          <div className="absolute top-0 left-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-blue-50 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute top-0 right-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+        </div>
+        
+        {/* Control Button */}
+        <div className="text-center mt-8">
+          <button
+            onClick={togglePause}
+            className="inline-flex items-center gap-2 bg-[#1A2B4A] text-white px-6 py-3 rounded-full hover:bg-[#2A3B5A] transition-colors duration-300 shadow-lg hover:shadow-xl"
+          >
+            {isPaused ? (
+              <>
+                <Play size={20} />
+                <span>Play</span>
+              </>
+            ) : (
+              <>
+                <Pause size={20} />
+                <span>Pause</span>
+              </>
+            )}
+          </button>
         </div>
       </section>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal with Zoom */}
       {selectedImage !== null && (
         <div 
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center"
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center overflow-hidden"
           onClick={closeLightbox}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
         >
           {/* Close button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-gray-300 transition-colors z-50 bg-white/10 backdrop-blur-sm rounded-full p-2 hover:bg-white/20"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 text-white hover:text-gray-300 transition-colors z-50 bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 hover:bg-white/20 touch-manipulation"
           >
-            <X size={32} />
+            <X size={24} className="sm:w-8 sm:h-8" />
           </button>
+
+          {/* Zoom Controls */}
+          <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-6 z-50 flex flex-col gap-2 sm:gap-3">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleZoomIn();
+              }}
+              className="bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 hover:bg-white/20 text-white transition-colors touch-manipulation"
+              aria-label="Zoom in"
+            >
+              <ZoomIn size={20} className="sm:w-6 sm:h-6" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleZoomOut();
+              }}
+              className="bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 hover:bg-white/20 text-white transition-colors touch-manipulation"
+              aria-label="Zoom out"
+            >
+              <ZoomOut size={20} className="sm:w-6 sm:h-6" />
+            </button>
+            {zoom > 1 && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleResetZoom();
+                }}
+                className="bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 hover:bg-white/20 text-white transition-colors touch-manipulation"
+                aria-label="Reset zoom"
+              >
+                <RotateCw size={20} className="sm:w-6 sm:h-6" />
+              </button>
+            )}
+          </div>
 
           {/* Previous button */}
           <button
@@ -452,9 +689,9 @@ export default function About() {
               e.stopPropagation();
               goToPrevious();
             }}
-            className="absolute left-4 sm:left-8 text-white hover:text-gray-300 transition-colors z-50 bg-white/10 backdrop-blur-sm rounded-full p-3 hover:bg-white/20"
+            className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-50 bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 md:p-4 hover:bg-white/20 touch-manipulation"
           >
-            <ChevronLeft size={32} />
+            <ChevronLeft size={24} className="sm:w-8 sm:h-8" />
           </button>
 
           {/* Next button */}
@@ -463,48 +700,93 @@ export default function About() {
               e.stopPropagation();
               goToNext();
             }}
-            className="absolute right-4 sm:right-8 text-white hover:text-gray-300 transition-colors z-50 bg-white/10 backdrop-blur-sm rounded-full p-3 hover:bg-white/20"
+            className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-50 bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 md:p-4 hover:bg-white/20 touch-manipulation"
           >
-            <ChevronRight size={32} />
+            <ChevronRight size={24} className="sm:w-8 sm:h-8" />
           </button>
 
-          {/* Image */}
+          {/* Image with Zoom */}
           <div 
-            className="max-w-7xl max-h-[90vh] mx-4"
+            className="w-full h-full flex items-center justify-center p-2 sm:p-4 md:p-8 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
+            onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            style={{ cursor: zoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default', touchAction: 'none' }}
           >
-            <img
-              src={galleryImages[selectedImage].src}
-              alt={galleryImages[selectedImage].name}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-            />
-            <div className="text-center mt-4">
-              <h3 className="text-white text-xl sm:text-2xl font-bold">{galleryImages[selectedImage].name}</h3>
-              <p className="text-gray-400 mt-2">{selectedImage + 1} / {galleryImages.length}</p>
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+              <img
+                ref={imageRef}
+                src={galleryImages[selectedImage].src}
+                alt={galleryImages[selectedImage].name}
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl select-none"
+                style={{
+                  transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
+                  transition: isDragging ? 'none' : 'transform 0.3s ease-out',
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                }}
+                draggable={false}
+              />
             </div>
+          </div>
+
+          {/* Image Info */}
+          <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-50 text-center bg-black/50 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3">
+            <h3 className="text-white text-sm sm:text-base md:text-lg font-bold">{galleryImages[selectedImage].name}</h3>
+            <p className="text-gray-300 text-xs sm:text-sm mt-1">{selectedImage + 1} / {galleryImages.length}</p>
+            {zoom > 1 && (
+              <p className="text-gray-300 text-xs sm:text-sm mt-1">Zoom: {Math.round(zoom * 100)}%</p>
+            )}
           </div>
         </div>
       )}
 
-
       <Footer />
+      <WhatsAppButton />
 
      <style>{`
-        @keyframes marquee {
+        @keyframes scroll {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(calc(-280px * ${galleryImages.length} - ${galleryImages.length * 16}px));
           }
         }
         
-        .animate-marquee {
-          animation: marquee 20s linear infinite;
+        @media (min-width: 640px) {
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-320px * ${galleryImages.length} - ${galleryImages.length * 24}px));
+            }
+          }
         }
         
-        .animate-marquee:hover {
-          animation-play-state: paused;
+        @media (min-width: 768px) {
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-380px * ${galleryImages.length} - ${galleryImages.length * 24}px));
+            }
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-420px * ${galleryImages.length} - ${galleryImages.length * 24}px));
+            }
+          }
         }
       `}</style>
     </div>

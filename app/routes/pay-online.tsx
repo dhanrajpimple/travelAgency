@@ -1,6 +1,7 @@
 import type { Route } from "./+types/pay-online";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
+import WhatsAppButton from "~/components/WhatsAppButton";
 import { CONFIG } from "~/config/constants";
 import { CreditCard, Shield, Phone, Mail } from "lucide-react";
 import { generateSEOTags } from "~/config/seo";
@@ -97,6 +98,7 @@ export default function PayOnline() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
