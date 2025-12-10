@@ -29,6 +29,6 @@ export const CONFIG = {
   FOUNDED_YEAR: "2016",
   
   // SEO
-  SITE_URL: import.meta.env.VITE_SITE_URL || "https://www.flexiglobalholiday.in",
+  SITE_URL: import.meta.env.VITE_SITE_URL || "https://flexiglobalholidays.in",
 };
 

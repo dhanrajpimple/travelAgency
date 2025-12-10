@@ -1,6 +1,6 @@
 import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react'
 import { CONFIG } from '~/config/constants'
-import logoImage from '~/assets/logo.png'
+import logoImage from '~/assets/logo.jpg'
 
 export default function Footer() {
 

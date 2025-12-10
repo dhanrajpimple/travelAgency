@@ -52,9 +52,6 @@ export function generateSEOTags(data: SEOData) {
     { name: "geo.position", content: "22.7196;75.8577" },
     { name: "ICBM", content: "22.7196, 75.8577" },
     
-    // Canonical URL - Note: React Router handles this via Links export, but we include it in meta for reference
-    // Canonical should be added in root.tsx or via Links export
-    
     // Article specific (if type is article)
     ...(data.type === "article" && data.publishedTime ? [
       { property: "article:published_time", content: data.publishedTime },

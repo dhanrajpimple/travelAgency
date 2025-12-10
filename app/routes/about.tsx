@@ -5,7 +5,7 @@ import WhatsAppButton from "~/components/WhatsAppButton";
 import { Link } from "react-router";
 import owner1 from "~/assets/founder.webp";
 import owner2 from "~/assets/cofounder.webp";
-import logo from "~/assets/logo.png";
+import logo from "~/assets/logo.jpg";
 import { generateSEOTags } from "~/config/seo";
 
 import React, { useState, useEffect, useRef } from 'react';

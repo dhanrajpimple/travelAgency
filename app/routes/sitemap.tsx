@@ -4,6 +4,7 @@ import Footer from "~/components/Footer";
 import WhatsAppButton from "~/components/WhatsAppButton";
 import { Link } from "react-router";
 import { generateSEOTags } from "~/config/seo";
+import { packages } from "~/data/packages";
 
 export function meta({}: Route.MetaArgs) {
   return generateSEOTags({
@@ -38,33 +39,48 @@ export default function Sitemap() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4 text-gray-800">Services</h2>
-              <ul className="space-y-2">
-                <li><Link to="/hotels" className="text-blue-600 hover:text-blue-700">Hotels</Link></li>
-    
-                <li><Link to="/trade-fair" className="text-blue-600 hover:text-blue-700">Trade Fair</Link></li>
-          
+              <ul className="space-y-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <li><Link to="/hotels" className="text-blue-600 hover:text-blue-700 hover:underline transition-colors">Hotels Booking</Link></li>
+                <li><Link to="/visa" className="text-blue-600 hover:text-blue-700 hover:underline transition-colors">Visa Services</Link></li>
+                <li><Link to="/trade-fair" className="text-blue-600 hover:text-blue-700 hover:underline transition-colors">Trade Fair Packages</Link></li>
+                <li><Link to="/mice" className="text-blue-600 hover:text-blue-700 hover:underline transition-colors">MICE Services</Link></li>
+                <li><Link to="/pay-online" className="text-blue-600 hover:text-blue-700 hover:underline transition-colors">Pay Online</Link></li>
               </ul>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold mb-4 text-gray-800">India Holidays</h2>
-              <ul className="space-y-2 grid grid-cols-2">
-                <li><Link to="/packages/andaman-tour-packages" className="text-blue-600 hover:text-blue-700">Andaman Tour Packages</Link></li>
-                <li><Link to="/packages/kerala-tour-packages" className="text-blue-600 hover:text-blue-700">Kerala Tour Packages</Link></li>
-                <li><Link to="/packages/rajasthan-tour-packages" className="text-blue-600 hover:text-blue-700">Rajasthan Tour Packages</Link></li>
-                <li><Link to="/packages/goa-tour-packages" className="text-blue-600 hover:text-blue-700">Goa Tour Packages</Link></li>
-                <li><Link to="/packages/kashmir-tour-packages" className="text-blue-600 hover:text-blue-700">Kashmir Tour Packages</Link></li>
+              <h2 className="text-2xl font-bold mb-4 text-gray-800">India Tour Packages</h2>
+              <ul className="space-y-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {packages
+                  .filter(pkg => pkg.category === 'india')
+                  .map(pkg => (
+                    <li key={pkg.id}>
+                      <Link 
+                        to={`/packages/${pkg.slug}`} 
+                        className="text-blue-600 hover:text-blue-700 hover:underline transition-colors"
+                      >
+                        {pkg.name}
+                      </Link>
+                    </li>
+                  ))}
               </ul>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold mb-4 text-gray-800">International Holidays</h2>
-              <ul className="space-y-2 grid grid-cols-2">
-                <li><Link to="/packages/europe-tour-packages" className="text-blue-600 hover:text-blue-700">Europe Tour Packages</Link></li>
-                <li><Link to="/packages/dubai-tour-packages" className="text-blue-600 hover:text-blue-700">Dubai Tour Packages</Link></li>
-                <li><Link to="/packages/thailand-tour-packages" className="text-blue-600 hover:text-blue-700">Thailand Tour Packages</Link></li>
-                <li><Link to="/packages/singapore-tour-packages" className="text-blue-600 hover:text-blue-700">Singapore Tour Packages</Link></li>
-                <li><Link to="/packages/bali-tour-packages" className="text-blue-600 hover:text-blue-700">Bali Tour Packages</Link></li>
+              <h2 className="text-2xl font-bold mb-4 text-gray-800">International Tour Packages</h2>
+              <ul className="space-y-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {packages
+                  .filter(pkg => pkg.category === 'international')
+                  .map(pkg => (
+                    <li key={pkg.id}>
+                      <Link 
+                        to={`/packages/${pkg.slug}`} 
+                        className="text-blue-600 hover:text-blue-700 hover:underline transition-colors"
+                      >
+                        {pkg.name}
+                      </Link>
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>

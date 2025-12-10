@@ -21,6 +21,12 @@ export const links = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  // Favicons
+  { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+  { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },
+  { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+  { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+  { rel: "manifest", href: "/site.webmanifest" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -30,6 +36,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1A2B4A" />
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="v_aJnz3t-yWWYyzmUJ7EaClu6MCY0jXfNeJ_7DruQa8" />
+        {/* Additional SEO Meta Tags */}
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Flexi Global Holidays" />
+        <meta name="application-name" content="Flexi Global Holidays" />
+        <meta name="msapplication-TileColor" content="#1A2B4A" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
         <Meta />
         <Links />
         <script
@@ -39,9 +56,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
               "@context": "https://schema.org",
               "@type": "TravelAgency",
               "name": "Flexi Global Holidays",
-              "description": "Premium travel agency offering domestic and international tour packages",
-              "url": "https://www.flexiglobalholiday.in",
-              "logo": "https://www.flexiglobalholiday.in/logo.png",
+              "description": "Premium travel agency offering domestic and international tour packages, hotel bookings, visa services, and MICE solutions. Best travel agency in Indore, India since 2016.",
+              "url": "https://flexiglobalholidays.in",
+              "logo": "https://flexiglobalholidays.in/logo.png",
+              "image": "https://flexiglobalholidays.in/logo.png",
+              "sameAs": [
+                "https://www.facebook.com/flexiglobalholidays",
+                "https://www.instagram.com/flexiglobalholidays"
+              ],
               "foundingDate": "2016",
               "address": {
                 "@type": "PostalAddress",
@@ -57,10 +79,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 "areaServed": "IN",
                 "availableLanguage": ["English", "Hindi"]
               },
-              "sameAs": [
-                "https://www.facebook.com/flexiglobalholidays",
-                "https://www.instagram.com/flexiglobalholidays"
-              ],
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
