@@ -1,6 +1,6 @@
 import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react'
 import { CONFIG } from '~/config/constants'
-import logoImage from '~/assets/logo.jpg'
+import logoImage from '~/assets/Navlog.png'
 
 export default function Footer() {
 
@@ -15,7 +15,7 @@ export default function Footer() {
               <img 
                 src={logoImage} 
                 alt="Flexi Global Holidays" 
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain mb-3 sm:mb-4"
+                className="h-14 sm:h-18 md:h-18 w-auto object-contain mb-3 sm:mb-4 bg-[#FFFFFF]"
               />
               <p className="text-[#FAF8F3]/80 italic text-xs sm:text-sm leading-relaxed">
                 "Creating Memories Beyond Destinations"
