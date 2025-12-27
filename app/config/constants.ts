@@ -2,7 +2,7 @@
 export const CONFIG = {
   // Contact Information
   PHONE_PRIMARY: import.meta.env.VITE_PHONE_PRIMARY || "+91 9599476155",
-  PHONE_SECONDARY: import.meta.env.VITE_PHONE_SECONDARY || "+91 8369597936",
+  PHONE_SECONDARY: import.meta.env.VITE_PHONE_SECONDARY || "+91 8369597935",
   WHATSAPP_NUMBER: import.meta.env.VITE_WHATSAPP_NUMBER || "919599476155",
   EMAIL: import.meta.env.VITE_EMAIL || "info@flexiglobalholiday.in",
   OFFICE_PHONE: import.meta.env.VITE_OFFICE_PHONE || "+91 9599476155",
