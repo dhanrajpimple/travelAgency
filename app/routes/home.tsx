@@ -38,11 +38,11 @@ import familyVacationImg from "~/assets/family-vacation.webp";
 import heroBeachImg from "~/assets/hero-beach.webp";
 import corporateTravelImg from "~/assets/corporate-travel.webp";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return generateSEOTags({
-    title: "Flexi Global Holidays - Best Travel Agency | Tour Packages India & International",
-    description: "Book your dream holiday with Flexi Global Holidays. Premium travel agency offering best tour packages for India and International destinations including Dubai, Thailand, Singapore, Europe, USA, and more. Hotel bookings, visa services, and MICE solutions.",
-    keywords: "travel agency, tour packages, holiday packages, India tours, international tours, Dubai packages, Thailand packages, Singapore packages, Europe tours, USA tours, travel agent Indore, best travel agency, hotel booking, visa services, MICE",
+    title: "Flexi Global Holidays - Best Travel Agency in Indore | Tour Packages India & International",
+    description: "Flexi Global Holidays: Your top travel agency in Indore for domestic & international tour packages. Specializing in Dubai, Thailand, Europe & Bali tours. Best prices for hotel bookings, visa services, and MICE. Book your dream vacation today!",
+    keywords: "best travel agency in Indore, tour packages from India, international holiday packages, domestic tours India, Dubai tour packages, Thailand holiday packages, Europe tour agent, Bali vacation packages, travel agency near me, hotel booking services, visa assistance, MICE travel solutions, Flexi Global Holidays",
     url: "/",
     type: "website"
   });
@@ -57,44 +57,44 @@ export default function Home() {
   const [lightboxTitle, setLightboxTitle] = useState('');
 
   const internationalDestinations = [
-    { 
-      name: "Europe", 
+    {
+      name: "Europe",
       price: "₹88,490",
       image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1200&q=80",
       route: "Paris → Rome → Barcelona → Amsterdam"
     },
-    { 
-      name: "Dubai", 
+    {
+      name: "Dubai",
       price: "₹23,999",
       image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80",
       route: "Burj Khalifa → Palm Jumeirah → Desert Safari → Dubai Mall"
     },
-    { 
-      name: "Australia", 
+    {
+      name: "Australia",
       price: "₹71,000",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
       route: "Sydney → Melbourne → Gold Coast → Great Barrier Reef"
     },
-    { 
-      name: "Singapore", 
+    {
+      name: "Singapore",
       price: "₹22,900",
       image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1200&q=80",
       route: "Marina Bay → Sentosa → Universal Studios → Gardens by the Bay"
     },
-    { 
-      name: "Bali", 
+    {
+      name: "Bali",
       price: "₹16,490",
       image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80",
       route: "Ubud → Seminyak → Tanah Lot → Mount Batur"
     },
-    { 
-      name: "USA", 
+    {
+      name: "USA",
       price: "₹63,500",
       image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1200&q=80",
       route: "New York → Los Angeles → Las Vegas → Grand Canyon"
     },
-    { 
-      name: "Thailand", 
+    {
+      name: "Thailand",
       price: "₹7,499",
       image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80",
       route: "Bangkok → Pattaya → Phuket → Phi Phi Islands"
@@ -102,18 +102,18 @@ export default function Home() {
   ];
 
   const domesticPackages = [
-    { 
-      name: "Goa Tour Packages", 
+    {
+      name: "Goa Tour Packages",
       price: "₹5,990/- P.P",
       image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=80"
     },
-    { 
-      name: "Kerala Tour Packages", 
+    {
+      name: "Kerala Tour Packages",
       price: "₹9,999/- P.P",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
     },
-    { 
-      name: "Kashmir Tour Packages", 
+    {
+      name: "Kashmir Tour Packages",
       price: "₹10,999/- P.P",
       image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80"
     },
@@ -130,18 +130,18 @@ export default function Home() {
     const timer1 = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % internationalDestinations.length);
     }, 4000);
-    
+
     const timer2 = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 5000);
-    
+
     return () => {
       clearInterval(timer1);
       clearInterval(timer2);
     };
   }, [internationalDestinations.length, testimonials.length]);
 
- useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % internationalDestinations.length);
     }, 4000);
@@ -200,31 +200,31 @@ export default function Home() {
   ];
 
   const featuredPackages = [
-    { 
-      name: "Singapore", 
-      duration: "03 Nights / 04 Days", 
-      price: "₹22,900/-", 
+    {
+      name: "Singapore",
+      duration: "03 Nights / 04 Days",
+      price: "₹22,900/-",
       minPax: "Min 2 pax",
       image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80"
     },
-    { 
-      name: "Thailand", 
-      duration: "03 Nights / 04 Days", 
-      price: "₹7,499/-", 
+    {
+      name: "Thailand",
+      duration: "03 Nights / 04 Days",
+      price: "₹7,499/-",
       minPax: "Min 2 pax",
       image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80"
     },
-    { 
-      name: "Goa", 
-      duration: "03 Nights / 04 Days", 
-      price: "₹5,990/-", 
+    {
+      name: "Goa",
+      duration: "03 Nights / 04 Days",
+      price: "₹5,990/-",
       minPax: "Min 2 pax",
       image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=80"
     },
-    { 
-      name: "Europe", 
-      duration: "06 Nights / 07 Days", 
-      price: "₹72,999/-", 
+    {
+      name: "Europe",
+      duration: "06 Nights / 07 Days",
+      price: "₹72,999/-",
       minPax: "Min 2 pax",
       image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80"
     },
@@ -234,52 +234,52 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Navigation />
       <WhatsAppButton />
-      
+
       {/* Hero Section */}
-       <section id="home" className="relative h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80)`,
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A2B4A]/85 via-[#1A2B4A]/70 to-[#1A2B4A]/50" />
-      </div>
-
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-        <h1 className="font-display text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 sm:mb-5 leading-tight animate-fadeInScale">
-          Your Journey Begins Here
-        </h1>
-      
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-5 sm:mb-8 text-[#D4AF37] animate-fadeIn">
-          <span className="flex items-center gap-1.5 text-xs sm:text-base">
-            ✨ 1000+ Travelers
-          </span>
-          <span className="flex items-center gap-1.5 text-xs sm:text-base">
-            🌍 50+ Destinations
-          </span>
-          <span className="flex items-center gap-1.5 text-xs sm:text-base">
-            ⭐ 4.9/5 Rating
-          </span>
+      <section id="home" className="relative h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80)`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1A2B4A]/85 via-[#1A2B4A]/70 to-[#1A2B4A]/50" />
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fadeUp max-w-md sm:max-w-none mx-auto">
-          <a
-            href="#destinations"
-            className="bg-gradient-to-r from-[#D4AF37] to-[#C9A634] text-white rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold hover:scale-105 active:scale-95 transition-transform shadow-xl"
-          >
-            Explore Destinations
-          </a>
-          <a
-            href="/contact"
-            className="rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-[#1A2B4A] transition-all"
-          >
-            Get Free Quote
-          </a>
-        </div>
-      </div>
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
+          <h1 className="font-display text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 sm:mb-5 leading-tight animate-fadeInScale">
+            Your Journey Begins Here
+          </h1>
 
-      <style jsx>{`
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-5 sm:mb-8 text-[#D4AF37] animate-fadeIn">
+            <span className="flex items-center gap-1.5 text-xs sm:text-base">
+              ✨ 1000+ Travelers
+            </span>
+            <span className="flex items-center gap-1.5 text-xs sm:text-base">
+              🌍 50+ Destinations
+            </span>
+            <span className="flex items-center gap-1.5 text-xs sm:text-base">
+              ⭐ 4.9/5 Rating
+            </span>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fadeUp max-w-md sm:max-w-none mx-auto">
+            <a
+              href="#destinations"
+              className="bg-gradient-to-r from-[#D4AF37] to-[#C9A634] text-white rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold hover:scale-105 active:scale-95 transition-transform shadow-xl"
+            >
+              Explore Destinations
+            </a>
+            <a
+              href="/contact"
+              className="rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-[#1A2B4A] transition-all"
+            >
+              Get Free Quote
+            </a>
+          </div>
+        </div>
+
+        <style jsx>{`
         @keyframes fadeInScale {
           from {
             opacity: 0;
@@ -325,92 +325,91 @@ export default function Home() {
           opacity: 0;
         }
       `}</style>
-    </section>
+      </section>
 
       {/* International Destinations - Marquee Slider */}
       <section id="destinations" className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-gray-800">
-          International Destinations
-        </h2>
-        
-        {/* Circular Image Slider */}
-        <div className="relative max-w-2xl mx-auto">
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95"
-            aria-label="Previous destination"
-          >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" />
-          </button>
-          
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95"
-            aria-label="Next destination"
-          >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" />
-          </button>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-gray-800">
+            International Destinations
+          </h2>
 
-          {/* Circular Image Container */}
-          <div className="flex flex-col items-center justify-center px-8 sm:px-12">
-            {/* Circular Image */}
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mb-6 sm:mb-8">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#D4AF37] via-[#F4E5A6] to-[#D4AF37] p-1 shadow-2xl">
-                <div 
-                  className="w-full h-full rounded-full overflow-hidden transition-all duration-700 ease-in-out"
-                  style={{
-                    backgroundImage: `url(${internationalDestinations[currentSlide].image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                >
-                  <div className="w-full h-full bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+          {/* Circular Image Slider */}
+          <div className="relative max-w-2xl mx-auto">
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95"
+              aria-label="Previous destination"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" />
+            </button>
+
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95"
+              aria-label="Next destination"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" />
+            </button>
+
+            {/* Circular Image Container */}
+            <div className="flex flex-col items-center justify-center px-8 sm:px-12">
+              {/* Circular Image */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mb-6 sm:mb-8">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#D4AF37] via-[#F4E5A6] to-[#D4AF37] p-1 shadow-2xl">
+                  <div
+                    className="w-full h-full rounded-full overflow-hidden transition-all duration-700 ease-in-out"
+                    style={{
+                      backgroundImage: `url(${internationalDestinations[currentSlide].image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}
+                  >
+                    <div className="w-full h-full bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  </div>
                 </div>
+
+                {/* Decorative Ring */}
+                <div className="absolute -inset-2 rounded-full border-2 border-dashed border-[#D4AF37]/30 animate-spin-slow"></div>
               </div>
-              
-              {/* Decorative Ring */}
-              <div className="absolute -inset-2 rounded-full border-2 border-dashed border-[#D4AF37]/30 animate-spin-slow"></div>
+
+              {/* Content Below Circle */}
+              <div className="text-center max-w-md">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-gray-800">
+                  {internationalDestinations[currentSlide].name}
+                </h3>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-3 sm:mb-4">
+                  {internationalDestinations[currentSlide].route}
+                </p>
+
+                <Link
+                  to="/contact"
+                  className="inline-block bg-gradient-to-r from-[#D4AF37] to-[#C9A634] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold hover:scale-105 active:scale-95 transition-transform text-sm sm:text-base shadow-lg hover:shadow-xl"
+                >
+                  Explore Package
+                </Link>
+              </div>
             </div>
 
-            {/* Content Below Circle */}
-            <div className="text-center max-w-md">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-gray-800">
-                {internationalDestinations[currentSlide].name}
-              </h3>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-3 sm:mb-4">
-                {internationalDestinations[currentSlide].route}
-              </p>
-          
-              <Link
-                to="/contact"
-                className="inline-block bg-gradient-to-r from-[#D4AF37] to-[#C9A634] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold hover:scale-105 active:scale-95 transition-transform text-sm sm:text-base shadow-lg hover:shadow-xl"
-              >
-                Explore Package
-              </Link>
-            </div>
-          </div>
-
-          {/* Slide Indicators */}
-          <div className="flex justify-center gap-2 sm:gap-3 mt-8 sm:mt-10">
-            {internationalDestinations.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`h-2 sm:h-2.5 rounded-full transition-all ${
-                  index === currentSlide 
-                    ? 'bg-[#D4AF37] w-8 sm:w-10' 
+            {/* Slide Indicators */}
+            <div className="flex justify-center gap-2 sm:gap-3 mt-8 sm:mt-10">
+              {internationalDestinations.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-2 sm:h-2.5 rounded-full transition-all ${index === currentSlide
+                    ? 'bg-[#D4AF37] w-8 sm:w-10'
                     : 'bg-gray-300 w-2 sm:w-2.5 hover:bg-gray-400'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+                    }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <style jsx>{`
+        <style jsx>{`
         @keyframes spin-slow {
           from {
             transform: rotate(0deg);
@@ -424,7 +423,7 @@ export default function Home() {
           animation: spin-slow 20s linear infinite;
         }
       `}</style>
-    </section>
+      </section>
 
       {/* Domestic Destinations */}
       <section className="py-6 sm:py-8 md:py-12 lg:py-16">
@@ -439,8 +438,8 @@ export default function Home() {
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:scale-105"
               >
                 <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
-                  <img 
-                    src={pkg.image} 
+                  <img
+                    src={pkg.image}
                     alt={pkg.name}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
@@ -451,9 +450,9 @@ export default function Home() {
                     <span className="bg-blue-100 text-blue-800 text-[10px] sm:text-xs px-2 py-0.5 sm:py-1 rounded">Hotel</span>
                     <span className="bg-blue-100 text-blue-800 text-[10px] sm:text-xs px-2 py-0.5 sm:py-1 rounded">Sightseeing</span>
                     <span className="bg-blue-100 text-blue-800 text-[10px] sm:text-xs px-2 py-0.5 sm:py-1 rounded">Meals</span>
-    
+
                   </div>
-                 
+
                   <Link
                     to={`/packages/${pkg.name.toLowerCase().replace(/\s+/g, '-')}`}
                     className="block w-full bg-blue-600 text-white text-center py-2.5 sm:py-3 md:py-2.5 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors text-xs sm:text-sm md:text-base font-semibold touch-manipulation"
@@ -474,16 +473,15 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-gray-800 px-2">
             See What Our Customers Say About Us
           </h2>
-          
+
           {/* Marquee Container */}
           <div className="relative h-72 sm:h-80 md:h-96 lg:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl">
             <div className="absolute inset-0">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentTestimonial ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentTestimonial ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
                   <div className="h-full flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12">
                     <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-6 md:p-8 max-w-3xl w-full mx-2 sm:mx-4">
@@ -499,11 +497,11 @@ export default function Home() {
                           </svg>
                         ))}
                       </div>
-                      
+
                       <p className="text-gray-700 text-center text-sm sm:text-base md:text-lg mb-3 sm:mb-4 italic leading-relaxed px-1">
                         "{testimonial.text}"
                       </p>
-                      
+
                       <div className="text-center">
                         <h4 className="font-bold text-gray-800 text-base sm:text-lg md:text-xl">{testimonial.name}</h4>
                         {testimonial.location && (
@@ -515,16 +513,15 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            
+
             {/* Navigation Dots */}
             <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-10">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`h-1.5 w-1.5 sm:h-2 sm:w-2 md:h-3 md:w-3 rounded-full transition-all touch-manipulation ${
-                    index === currentTestimonial ? 'bg-[#D4AF37] w-5 sm:w-6 md:w-8' : 'bg-white/50 hover:bg-white/70'
-                  }`}
+                  className={`h-1.5 w-1.5 sm:h-2 sm:w-2 md:h-3 md:w-3 rounded-full transition-all touch-manipulation ${index === currentTestimonial ? 'bg-[#D4AF37] w-5 sm:w-6 md:w-8' : 'bg-white/50 hover:bg-white/70'
+                    }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
@@ -543,8 +540,8 @@ export default function Home() {
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="h-44 sm:h-48 md:h-52 overflow-hidden">
-                  <img 
-                    src={pkg.image} 
+                  <img
+                    src={pkg.image}
                     alt={pkg.name}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
@@ -552,7 +549,7 @@ export default function Home() {
                 <div className="p-4 sm:p-5 md:p-6">
                   <p className="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2">{pkg.duration}</p>
                   <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-gray-800">{pkg.name}</h3>
-                 
+
                   <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">{pkg.minPax}</p>
                   <Link
                     to="/contact"
@@ -566,7 +563,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       <section className="py-6 sm:py-8 md:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-gray-800 px-2">
@@ -579,8 +576,8 @@ export default function Home() {
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
-                  <img 
-                    src={pkg.image} 
+                  <img
+                    src={pkg.image}
                     alt={pkg.title}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
@@ -607,21 +604,21 @@ export default function Home() {
       {/* Trade Fair */}
       <section className="py-6 sm:py-8 md:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-       
+
 
           {/* Upcoming Trade Fair Images Gallery */}
           <div className="mb-6 sm:mb-8">
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-center mb-4 sm:mb-6 md:mb-8 text-gray-800 px-2">Upcoming Trade Fairs</h3>
-            
+
             {/* Static Gallery Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               {upcomingTradeFairImages.map((image, index) => (
-                <div 
+                <div
                   key={index}
                   className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group cursor-pointer w-full flex flex-col"
                 >
                   <div className="aspect-[4/3] w-full overflow-hidden relative flex items-center justify-center bg-gray-50">
-                    <img 
+                    <img
                       src={image}
                       alt={`Upcoming Trade Fair ${index + 1}`}
                       className="w-full h-full object-contain p-1 group-hover:scale-105 transition-transform duration-300"
@@ -639,16 +636,16 @@ export default function Home() {
       <section className="py-6 sm:py-8 md:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-gray-800 px-2">Our Clients</h2>
-          
+
           {/* Static Gallery Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
             {clientImages.map((image, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group cursor-pointer w-full flex flex-col"
               >
                 <div className="aspect-[4/3] w-full overflow-hidden relative flex items-center justify-center bg-gray-50">
-                  <img 
+                  <img
                     src={image}
                     alt={`Client ${index + 1}`}
                     className="w-full h-full object-contain p-1 group-hover:scale-105 transition-transform duration-300"
@@ -661,8 +658,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Packages */}
-     
+
       <Footer />
     </div>
   );

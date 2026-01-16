@@ -1,16 +1,13 @@
 import { CONFIG } from "~/config/constants";
 import { packages } from "~/data/packages";
 
-// Blog posts slugs
-const blogPosts = [
-  "top-10-destinations-to-visit-in-2025",
-  "travel-tips-for-first-time-international-travelers"
-];
+import { blogPosts } from "~/data/blogData";
+const blogPostSlugs = blogPosts.map(p => p.slug);
 
 export async function loader() {
   const siteUrl = CONFIG.SITE_URL;
   const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
-  
+
   // Static routes with priorities
   const staticRoutes = [
     { path: "", priority: "1.0", changefreq: "weekly" }, // Home
@@ -41,7 +38,7 @@ export async function loader() {
   }));
 
   // Blog post routes
-  const blogRoutes = blogPosts.map(slug => ({
+  const blogRoutes = blogPostSlugs.map(slug => ({
     path: `/blog/${slug}`,
     priority: "0.6",
     changefreq: "monthly"

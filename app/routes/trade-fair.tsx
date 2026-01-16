@@ -90,7 +90,7 @@ export default function TradeFair() {
       location: "Dubai, UAE",
       description: "The Middle East's largest healthcare and medical industry expo featuring medical equipment, healthcare technology, pharmaceuticals, hospital supplies, and healthcare innovations from leading global manufacturers.",
       price: "Contact for pricing",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhbHRofGVufDB8fDB8fHww",
       category: "Healthcare"
     }
   ];

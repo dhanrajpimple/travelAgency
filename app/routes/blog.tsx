@@ -4,79 +4,90 @@ import Footer from "~/components/Footer";
 import { Link } from "react-router";
 import { generateSEOTags } from "~/config/seo";
 import WhatsAppButton from "~/components/WhatsAppButton";
-export function meta({}: Route.MetaArgs) {
+import { blogPosts } from "~/data/blogData";
+
+export function meta({ }: Route.MetaArgs) {
   return generateSEOTags({
-    title: "Travel Blog - Travel Tips, Guides & Stories | Flexi Global Holidays",
-    description: "Read travel tips, destination guides, and travel stories from Flexi Global Holidays. Expert advice on planning your perfect vacation, travel hacks, destination insights, and travel inspiration.",
-    keywords: "travel blog, travel tips, travel guides, travel stories, destination guides, travel advice, vacation planning, travel inspiration, travel hacks, travel articles",
+    title: "Travel Blog - Expert Travel Tips & Guides | Flexi Global Holidays",
+    description: "Explore the Flexi Global Holidays travel blog for expert advice on international tours, domestic packages, and travel hacks. Get AI-powered travel insights and plan your perfect trip.",
+    keywords: "travel blog, travel tips, international tours blog, domestic travel guide, AI travel suggestions, Flexi Global Holidays blog, holiday planning tips",
     url: "/blog",
     type: "website"
   });
 }
 
 export default function Blog() {
-  const blogPosts = [
-    {
-      slug: "top-10-destinations-to-visit-in-2025",
-      title: "Top 10 Destinations to Visit in 2025",
-      excerpt: "Discover the most amazing destinations to explore this year.",
-      date: "January 15, 2025",
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80"
-    },
-    {
-      slug: "travel-tips-for-first-time-international-travelers",
-      title: "Travel Tips for First-Time International Travelers",
-      excerpt: "Essential tips to make your first international trip smooth and enjoyable.",
-      date: "January 10, 2025",
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80"
-    },
-    {
-      slug: "best-time-to-visit-kashmir",
-      title: "Best Time to Visit Kashmir",
-      excerpt: "Plan your Kashmir trip at the perfect time of the year.",
-      date: "January 5, 2025",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"
-    },
-    {
-      slug: "how-to-get-a-visa-for-europe",
-      title: "How to Get a Visa for Europe",
-      excerpt: "Complete guide to applying for a Schengen visa.",
-      date: "December 28, 2024",
-      image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1200&q=80"
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50/50">
       <Navigation />
-      
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">Blog</h1>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <section className="py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Our Travel Blog</h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Expert insights, travel guides, and AI-powered recommendations to help you explore the world.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {blogPosts.map((post, index) => (
               <article
                 key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group"
+                className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col md:flex-row"
               >
-                <Link to={`/blog/${post.slug}`}>
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={post.image} 
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <p className="text-sm text-gray-500 mb-2">{post.date}</p>
-                    <h2 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors">{post.title}</h2>
-                    <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                    <span className="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center gap-1">
-                      Read More →
+                <Link to={`/blog/${post.slug}`} className="md:w-2/5 relative overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-64 md:h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-[#1A2B4A] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                      {post.category}
                     </span>
                   </div>
                 </Link>
+
+                <div className="p-6 md:p-8 md:w-3/5 flex flex-col">
+                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-3 font-medium">
+                    <span>{post.date}</span>
+                    <span className="text-[#D4AF37]">•</span>
+                    <span>By {post.author}</span>
+                  </div>
+
+                  <Link to={`/blog/${post.slug}`}>
+                    <h2 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-[#D4AF37] transition-colors line-clamp-2 leading-tight">
+                      {post.title}
+                    </h2>
+                  </Link>
+
+                  <p className="text-gray-600 mb-6 line-clamp-3 text-sm leading-relaxed">
+                    {post.excerpt}
+                  </p>
+
+                  {post.aiInsight && (
+                    <div className="bg-blue-50/50 border-l-4 border-[#D4AF37] p-4 mb-6 rounded-r-lg group-hover:bg-blue-50 transition-colors">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-lg">✨</span>
+                        <span className="text-[10px] font-bold text-[#1A2B4A] uppercase tracking-widest">AI Travel Insight</span>
+                      </div>
+                      <p className="text-xs text-[#1A2B4A]/80 italic leading-relaxed">
+                        {post.aiInsight}
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="mt-auto">
+                    <Link
+                      to={`/blog/${post.slug}`}
+                      className="inline-flex items-center gap-2 text-[#1A2B4A] font-bold hover:text-[#D4AF37] transition-all group/link text-sm"
+                    >
+                      Read Full Article
+                      <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+                    </Link>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
@@ -88,4 +99,3 @@ export default function Blog() {
     </div>
   );
 }
-

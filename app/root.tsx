@@ -23,7 +23,9 @@ export const links = () => [
   },
   // Favicons
   { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+  { rel: "shortcut icon", href: "/favicon.ico" },
   { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },
+  { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-96x96.png" },
   { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
   { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
   { rel: "manifest", href: "/site.webmanifest" },
@@ -47,44 +49,83 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="application-name" content="Flexi Global Holidays" />
         <meta name="msapplication-TileColor" content="#1A2B4A" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="dcterms.audience" content="Travelers, Tourists, Business Travelers, Honeymooners" />
+        <meta name="dcterms.subject" content="International Tour Packages, Domestic India Tours, Visa Services, Hotel Bookings" />
         <Meta />
         <Links />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "TravelAgency",
-              "name": "Flexi Global Holidays",
-              "description": "Premium travel agency offering domestic and international tour packages, hotel bookings, visa services, and MICE solutions. Best travel agency in Indore, India since 2016.",
-              "url": "https://flexiglobalholidays.in",
-              "logo": "https://flexiglobalholidays.in/logo.png",
-              "image": "https://flexiglobalholidays.in/logo.png",
-              "sameAs": [
-                "https://www.facebook.com/flexiglobalholidays",
-                "https://www.instagram.com/flexiglobalholidays"
-              ],
-              "foundingDate": "2016",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Ho- 9 floor,919 Shekhar Central , Palasia",
-                "addressLocality": "Indore",
-                "addressRegion": "Madhya Pradesh",
-                "addressCountry": "IN"
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "TravelAgency",
+                "name": "Flexi Global Holidays",
+                "description": "Flexi Global Holidays is the best travel agency in Indore, offering premium domestic and international tour packages. We specialize in Dubai, Thailand, Europe, and Bali tours, along with hotel bookings, visa services, and MICE solutions. Trusted by thousands since 2016.",
+                "url": "https://flexiglobalholidays.in",
+                "logo": "https://flexiglobalholidays.in/logo.png",
+                "image": "https://flexiglobalholidays.in/logo.png",
+                "priceRange": "$$",
+                "areaServed": ["India", "United Arab Emirates", "Thailand", "Europe", "Singapore", "Bali"],
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "Travel Services",
+                  "itemListElement": [
+                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Tour Packages" } },
+                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Domestic India Tours" } },
+                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Visa Assistance" } },
+                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate Travel (MICE)" } }
+                  ]
+                },
+                "sameAs": [
+                  "https://www.facebook.com/flexiglobalholidays",
+                  "https://www.instagram.com/flexiglobalholidays",
+                  "https://www.linkedin.com/company/flexiglobalholidays"
+                ],
+                "foundingDate": "2016",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Ho- 9 floor,919 Shekhar Central , Palasia",
+                  "addressLocality": "Indore",
+                  "addressRegion": "Madhya Pradesh",
+                  "addressCountry": "IN"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+91 9599476155",
+                  "contactType": "customer service",
+                  "areaServed": "IN",
+                  "availableLanguage": ["English", "Hindi"]
+                },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "reviewCount": "1000"
+                }
               },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91 9599476155",
-                "contactType": "customer service",
-                "areaServed": "IN",
-                "availableLanguage": ["English", "Hindi"]
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "1000"
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Which is the best travel agency in Indore for international tours?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Flexi Global Holidays is highly rated as the best travel agency in Indore for international tours, specializing in packages for Dubai, Thailand, Europe, and Bali with comprehensive visa and hotel assistance."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Does Flexi Global Holidays provide corporate travel services?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, Flexi Global Holidays offers specialized MICE (Meetings, Incentives, Conferences, and Exhibitions) solutions for corporate clients worldwide."
+                    }
+                  }
+                ]
               }
-            })
+            ])
           }}
         />
       </head>
