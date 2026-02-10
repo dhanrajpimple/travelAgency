@@ -118,7 +118,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 }
               },
               {
-                "@context": "https://schema.org",
+                "@context": "https://schema.org",  
                 "@type": "FAQPage",
                 "mainEntity": [
                   {
