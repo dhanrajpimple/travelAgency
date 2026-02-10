@@ -5,8 +5,10 @@ export async function loader() {
 
   const robotsTxt = `User-agent: *
 Allow: /
+Disallow: /?*
+Disallow: /*?*
 
-# Specifically allow AI crawlers
+# SEO Optimized: Specifically allow AI crawlers for better reach
 User-agent: GPTBot
 Allow: /
 
@@ -22,9 +24,21 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-# Disallow admin or private areas (if any)
-# Disallow: /admin/
-# Disallow: /private/
+User-agent: Google-Extended
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Block some aggressive/useless crawlers
+User-agent: CCBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
 
 # Sitemap location
 Sitemap: ${siteUrl}/sitemap.xml

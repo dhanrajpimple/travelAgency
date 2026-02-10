@@ -19,9 +19,9 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
     {
         slug: "top-10-destinations-to-visit-in-2025",
-        title: "Top 10 International Destinations to Visit in 2025",
-        excerpt: "Discover the most amazing global destinations to explore this year, from the beaches of Bali to the peaks of the Alps.",
-        content: "Traveling in 2025 is all about unique experiences and sustainable journeys. Here are our top 10 picks for international travel:\n\n1. Bali, Indonesia: The island of gods offers a perfect blend of culture and relaxation.\n2. Switzerland: Experience the majesty of the Alps and pristine lakes.\n3. Japan: From cherry blossoms to futuristic cities.\n4. Iceland: A land of fire and ice.\n5. Portugal: Stunning coastlines and rich history.\n6. Peru: For the adventurous souls looking to conquer Machu Picchu.\n7. Greece: Iconic white-washed buildings and turquoise waters.\n8. Morocco: Vibrant markets and Saharan dunes.\n9. New Zealand: A paradise for nature lovers.\n10. Egypt: Explore the ancient mysteries of the Giza Pyramids.\n\nAt Flexi Global Holidays, we specialize in creating custom itineraries for all these destinations.",
+        title: "Top 10 International Destinations to Visit in 2025 - Best Tour Packages from India",
+        excerpt: "Discover the most amazing global destinations to explore this year with the best travel agency in India. From the beaches of Bali to the peaks of the Alps, we have the perfect package for you.",
+        content: "Traveling in 2025 is all about unique experiences and sustainable journeys. As a leading **Indian travel agency**, we have curated the top 10 picks for international travel:\n\n1. **Bali, Indonesia**: The island of gods offers a perfect blend of culture and relaxation. Check out our **Bali tour packages from India**.\n2. **Switzerland**: Experience the majesty of the Alps and pristine lakes with our exclusive Europe tour packages.\n3. **Japan**: From cherry blossoms to futuristic cities.\n4. **Iceland**: A land of fire and ice.\n5. **Portugal**: Stunning coastlines and rich history.\n6. **Peru**: For the adventurous souls looking to conquer Machu Picchu.\n7. **Greece**: Iconic white-washed buildings and turquoise waters.\n8. **Morocco**: Vibrant markets and Saharan dunes.\n9. **New Zealand**: A paradise for nature lovers.\n10. **Egypt**: Explore the ancient mysteries of the Giza Pyramids.\n\nAt **Flexi Global Holidays**, the **best travel agency in Indore** and India, we specialize in creating custom itineraries for all these destinations. (Humare paas sabse saste international tour packages uplabdh hain).",
         date: "January 15, 2025",
         image: heroBeach,
         author: "Siddharth Jain",
@@ -30,9 +30,9 @@ export const blogPosts: BlogPost[] = [
     },
     {
         slug: "travel-tips-for-first-time-international-travelers",
-        title: "7 Essential Tips for First-Time International Travelers",
-        excerpt: "Going abroad for the first time? Here's everything you need to know for a stress-free international trip.",
-        content: "Stepping onto foreign soil for the first time is exhilarating, but it can also be overwhelming. Follow these tips for a smooth journey:\n\n1. Check your passport validity: Most countries require at least 6 months validity from your travel date.\n2. Get travel insurance: Never travel without it. It covers medical emergencies and flight cancellations.\n3. Notify your bank: Ensure your cards work abroad without being blocked for 'suspicious activity'.\n4. Pack light: You'll thank yourself when navigating trains or busy streets.\n5. Learn basic local phrases: A simple 'Thank you' in the local language goes a long way.\n6. Carry some local currency: Not everywhere accepts cards.\n7. Keep digital copies of important documents: Save them on your email or cloud storage.",
+        title: "7 Essential Tips for First-Time International Travelers from India",
+        excerpt: "Going abroad for the first time? Here's everything you need to know for a stress-free international trip from the experts at Flexi Global Holidays.",
+        content: "Stepping onto foreign soil for the first time is exhilarating, but it can also be overwhelming, especially for Indian travelers. Follow these tips from your trusted **travel agents in India** for a smooth journey:\n\n1. check your passport validity: Most countries require at least 6 months validity from your travel date. We offer **visa assistance India** services to help you.\n2. Get travel insurance: Never travel without it. It covers medical emergencies and flight cancellations.\n3. Notify your bank: Ensure your cards work abroad without being blocked for 'suspicious activity'.\n4. Pack light: You'll thank yourself when navigating trains or busy streets.\n5. Learn basic local phrases: A simple 'Thank you' in the local language goes a long way.\n6. Carry some local currency: Not everywhere accepts cards.\n7. Keep digital copies of important documents: Save them on your email or cloud storage.\n\nFor any help, contact **Flexi Global Holidays**, your partner for **international tour packages**.",
         date: "January 10, 2025",
         image: corporateTravel,
         author: "Flexi Expert",
@@ -41,9 +41,9 @@ export const blogPosts: BlogPost[] = [
     },
     {
         slug: "best-family-vacation-spots-india",
-        title: "Best Family Vacation Spots in India for Summer 2025",
-        excerpt: "Plan the perfect domestic getaway with your loved ones to beat the heat this summer.",
-        content: "India offers diverse landscapes for families. Whether you like the mountains or the south, there's something for everyone:\n\n1. Kashmir: The 'Paradise on Earth' is perfect for escaping the summer heat.\n2. Leh Ladakh: Ideal for families with older children who love adventure.\n3. Munnar, Kerala: Beautiful tea plantations and serene weather.\n4. Manali: The quintessential hill station experience.\n5. Andaman Islands: For families who love beaches and water sports.\n\nFlexi Global Holidays offers specialized family packages that include kid-friendly activities and comfortable stays.",
+        title: "Best Family Vacation Spots in India for Summer 2025 - Domestic Tour Packages",
+        excerpt: "Plan the perfect domestic getaway with your loved ones to beat the heat this summer. Affordable family holiday packages available.",
+        content: "India offers diverse landscapes for families. Whether you like the mountains or the south, there's something for everyone. As the **best tour operators in India**, we recommend:\n\n1. **Kashmir**: The 'Paradise on Earth' is perfect for escaping the summer heat. Book our **Kashmir tour package**.\n2. **Leh Ladakh**: Ideal for families with older children who love adventure.\n3. **Munnar, Kerala**: Beautiful tea plantations and serene weather. Explore our **Kerala tour packages**.\n4. **Manali**: The quintessential hill station experience. (Manali ghumne ka sabse accha time).\n5. **Andaman Islands**: For families who love beaches and water sports.\n\n**Flexi Global Holidays** offers specialized **family packages** that include kid-friendly activities and comfortable stays. Humare domestic tour packages sabse saste aur acche hain.",
         date: "January 20, 2025",
         image: familyVacation,
         author: "Local Guide",
@@ -52,13 +52,24 @@ export const blogPosts: BlogPost[] = [
     },
     {
         slug: "romantic-honeymoon-destinations-2025",
-        title: "Most Romantic Honeymoon Destinations for 2025",
-        excerpt: "Begin your forever in the most beautiful corners of the world with our curated honeymoon guide.",
-        content: "A honeymoon is the trip of a lifetime. Here are our top picks for romance:\n\n1. Maldives: Overwater villas and private dinners on the beach.\n2. Paris, France: The city of love never goes out of style.\n3. Santorini, Greece: Breathtaking sunsets and infinity pools.\n4. Bora Bora: Exotic luxury at its best.\n5. Fiordland, New Zealand: For couples who find romance in nature's grandeur.",
+        title: "Most Romantic Honeymoon Destinations for 2025 - Honeymoon Packages India",
+        excerpt: "Begin your forever in the most beautiful corners of the world with our curated honeymoon guide and exclusive honeymoon packages.",
+        content: "A honeymoon is the trip of a lifetime. Here are our top picks for romance from the **best travel agency in India**:\n\n1. **Maldives**: Overwater villas and private dinners on the beach. Perfect for couples. Check our **Maldives honeymoon package**.\n2. **Paris, France**: The city of love never goes out of style. Included in our **Europe tour packages**.\n3. **Santorini, Greece**: Breathtaking sunsets and infinity pools.\n4. **Bora Bora**: Exotic luxury at its best.\n5. **Fiordland, New Zealand**: For couples who find romance in nature's grandeur.\n\nWe offer the best **honeymoon packages India** (Madhu marks tour packages) customized for your needs.",
         date: "January 22, 2025",
         image: honeymoon,
         author: "Romance Specialist",
         category: "Honeymoon",
         aiInsight: "AI suggests: Consider 'Hidden Gems' like the Amalfi Coast in Italy or the Dalmatian Coast in Croatia for a more unique and less crowded romantic experience."
+    },
+    {
+        slug: "why-choose-flexi-global-holidays",
+        title: "Why Choose Flexi Global Holidays? The Best Travel Agency in Indore",
+        excerpt: "Discover why thousands of travelers trust Flexi Global Holidays for their international and domestic travel needs.",
+        content: "Looking for the **best travel agency in Indore** or a reliable **Indian travel agency**? Look no further than **Flexi Global Holidays**.\n\nWe offer:\n- **Customized Tour Packages**: Tailor-made itineraries for Dubai, Thailand, Singapore, Bali, and Europe.\n- **Visa Assistance**: Hassle-free visa services for all major countries.\n- **Flight Bookings**: Get the **cheapest flight bookings India** with us.\n- **24/7 Support**: We are with you at every step of your journey.\n\nWhether you need a **luxury travel agent** or a **budget travel agent**, we cater to all needs. Humare paas har budget ke liye travel packages hain. Book your dream vacation today!",
+        date: "February 01, 2025",
+        image: corporateTravel, // Reusing image for now
+        author: "Flexi Team",
+        category: "Company News",
+        aiInsight: "AI suggests: Booking through a travel agency often provides better cancellation policies and support during emergencies compared to self-booking."
     }
 ];

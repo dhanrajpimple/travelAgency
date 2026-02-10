@@ -10,6 +10,20 @@ import {
 // removed missing local type import; using inline types below
 import "./app.css";
 
+export const meta = () => [
+  { title: "Flexi Global Holidays - Best Travel Agency in India | International & Domestic Tours" },
+  { name: "description", content: "Flexi Global Holidays is the best travel agency in India offering premium international and domestic tour packages. We specialize in Dubai, Thailand, Europe, and Bali tours. Book flights, hotels, and visas with us. (Bharat ki sabse acchi travel agency)." },
+  { name: "keywords", content: "Indian travel agency, Best travel agency in India, best tour operators in India, luxury travel agents India, budget travel agents India, honeymoon packages India, international tour packages from India, Dubai tour packages from India, Thailand tour packages from India, Europe tour packages from India, Bali tour packages from India, cheapest flight bookings India, visa assistance India, Bharat ki sabse acchi travel agency, sasti flight tickets, international ghumne ke liye best package, madhu marks tour packages, family holiday packages" },
+  { property: "og:title", content: "Flexi Global Holidays - Best Travel Agency in India" },
+  { property: "og:description", content: "Plan your perfect holiday with Flexi Global Holidays. Best international and domestic tour packages." },
+  { property: "og:image", content: "https://flexiglobalholidays.in/logo.png" },
+  { property: "og:type", content: "website" },
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:title", content: "Flexi Global Holidays - Best Travel Agency in India" },
+  { name: "twitter:description", content: "Book your dream vacation with the top travel agency in India." },
+];
+
+
 export const links = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {

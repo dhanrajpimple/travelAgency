@@ -10,7 +10,7 @@ export function meta({ }: Route.MetaArgs) {
   return generateSEOTags({
     title: "Travel Blog - Expert Travel Tips & Guides | Flexi Global Holidays",
     description: "Explore the Flexi Global Holidays travel blog for expert advice on international tours, domestic packages, and travel hacks. Get AI-powered travel insights and plan your perfect trip.",
-    keywords: "travel blog, travel tips, international tours blog, domestic travel guide, AI travel suggestions, Flexi Global Holidays blog, holiday planning tips",
+    keywords: "travel blog, travel tips, international tours blog, domestic travel guide, AI travel suggestions, Flexi Global Holidays blog, holiday planning tips, Indian travel agency blog, best travel agency in India tips, travel hacks India, Hindi travel blog, international travel guide for Indians, budget travel tips, luxury travel guide",
     url: "/blog",
     type: "website"
   });

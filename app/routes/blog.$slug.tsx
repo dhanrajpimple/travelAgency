@@ -20,7 +20,7 @@ export function meta({ params }: Route.MetaArgs) {
     return generateSEOTags({
       title: `${post.title} | Travel Blog - Flexi Global Holidays`,
       description: post.excerpt,
-      keywords: `travel blog, ${post.title.toLowerCase()}, travel tips, travel guide, travel advice, ${slug.replace(/-/g, ', ')}`,
+      keywords: `travel blog, ${post.title.toLowerCase()}, travel tips, travel guide, travel advice, ${slug.replace(/-/g, ', ')}, Indian travel agency, best travel deals, holiday packages India, international tour packages, domestic tour packages`,
       url: `/blog/${slug}`,
       type: "article",
       image: post.image,
