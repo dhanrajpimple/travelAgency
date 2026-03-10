@@ -11,7 +11,7 @@ import { generateSEOTags } from "~/config/seo";
 import React, { useState, useEffect, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight, Pause, Play, ZoomIn, ZoomOut, RotateCw } from 'lucide-react';
 
-import f1 from "~/assets/f1.webp"; 
+import f1 from "~/assets/f1.webp";
 import f2 from "~/assets/f2.webp";
 import f3 from "~/assets/f3.webp";
 import f4 from "~/assets/f4.webp";
@@ -37,7 +37,7 @@ import f25 from "~/assets/g11.webp";
 import f26 from "~/assets/g12.webp";
 import f28 from "~/assets/g13.webp";
 import f27 from "~/assets/g14.webp";
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return generateSEOTags({
     title: "About Us - Flexi Global Holidays | Leading Travel Agency Since 2016",
     description: "Learn about Flexi Global Holidays - a premium travel agency based in Indore, India. Founded in 2016, we specialize in domestic and international tour packages, hotel bookings, visa services, and MICE solutions. Trusted by 1000+ travelers with 4.9/5 rating.",
@@ -59,7 +59,7 @@ export default function About() {
     { src: f8, name: "Gallery 16" },
     { src: f9, name: "Gallery 17" },
     { src: f11, name: "Gallery 19" },
-    { src: f12, name: "Gallery 20" },  
+    { src: f12, name: "Gallery 20" },
     { src: f14, name: "Gallery 22" },
     { src: f15, name: "Gallery 23" },
     { src: f16, name: "Gallery 24" },
@@ -278,10 +278,10 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden">
-        <img 
+        <img
           src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80"
           alt="About Flexi Global Holidays"
           className="w-full h-full object-cover"
@@ -300,14 +300,14 @@ export default function About() {
             {/* Logo Image */}
             <div className="w-full">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img 
+                <img
                   src={logo}
                   alt="Flexi Global Holidays"
                   className="w-full h-auto object-contain"
                 />
               </div>
             </div>
-            
+
             {/* Content */}
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">Welcome to Flexi Global Holidays</h2>
@@ -330,19 +330,19 @@ export default function About() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-800">
             Vision & Mission
           </h2>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Images */}
             <div className="relative h-[400px] sm:h-[500px] lg:h-[600px]">
               <div className="absolute top-0 left-0 w-4/5 sm:w-3/4 h-3/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80"
                   alt="Global Travel"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute bottom-0 right-0 w-4/5 sm:w-3/4 h-3/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
                   alt="Adventure Travel"
                   className="w-full h-full object-cover"
@@ -365,7 +365,7 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-[#1A2B4A] rounded-full flex items-center justify-center">
@@ -391,7 +391,7 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-56 sm:h-64 overflow-hidden">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80"
                   alt="Trade Fair"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -405,7 +405,7 @@ export default function About() {
 
             <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-56 sm:h-64 overflow-hidden">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80"
                   alt="Corporate Travel Solutions"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -419,7 +419,7 @@ export default function About() {
 
             <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-56 sm:h-64 overflow-hidden">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
                   alt="Event Management"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -433,7 +433,7 @@ export default function About() {
 
             <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-56 sm:h-64 overflow-hidden">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
                   alt="Leisure and Family Holidays"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -447,7 +447,7 @@ export default function About() {
 
             <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-56 sm:h-64 overflow-hidden">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80"
                   alt="Visa Services"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -461,7 +461,7 @@ export default function About() {
 
             <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-56 sm:h-64 overflow-hidden">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80"
                   alt="Personalized Consultation"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -530,24 +530,11 @@ export default function About() {
       {/* 5. Our Team */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-800">Meet Our Leaders</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 max-w-5xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-800">Meet Our Leader</h2>
+          <div className="max-w-sm mx-auto">
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="aspect-[3/4] overflow-hidden">
-                <img 
-                  src={owner1}
-                  alt="Siddharth Gupta"
-                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 sm:p-8 text-center bg-gradient-to-b from-white to-blue-50">
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">Siddharth Gupta</h3>
-                <p className="text-base sm:text-lg text-[#1A2B4A] font-semibold">Founder</p>
-              </div>
-            </div>
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="aspect-[3/4] overflow-hidden">
-                <img 
+                <img
                   src={owner2}
                   alt="S.Ranjan Mahapatra"
                   className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
@@ -555,26 +542,26 @@ export default function About() {
               </div>
               <div className="p-6 sm:p-8 text-center bg-gradient-to-b from-white to-blue-50">
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">S.Ranjan Mahapatra</h3>
-                <p className="text-base sm:text-lg text-[#1A2B4A] font-semibold">Co-Founder</p>
+                <p className="text-base sm:text-lg text-[#1A2B4A] font-semibold">Founder</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-     {/* 6. Gallery */}
-     <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
+      {/* 6. Gallery */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
           <div className="text-center space-y-3">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">Our Gallery</h2>
             <p className="text-base text-gray-600">Capturing moments from our journeys</p>
           </div>
         </div>
-        
+
         {/* Marquee Gallery */}
         <div className="relative w-full">
           {/* Marquee Container */}
-          <div 
+          <div
             className="flex gap-4 sm:gap-6"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -590,7 +577,7 @@ export default function About() {
                 className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[420px] h-[200px] sm:h-[240px] md:h-[280px] lg:h-[320px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group"
               >
                 <div className="relative w-full h-full overflow-hidden">
-                  <img 
+                  <img
                     src={image.src}
                     alt={image.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -603,12 +590,12 @@ export default function About() {
               </div>
             ))}
           </div>
-          
+
           {/* Gradient Overlays */}
           <div className="absolute top-0 left-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-blue-50 to-transparent pointer-events-none z-10"></div>
           <div className="absolute top-0 right-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
         </div>
-        
+
         {/* Control Button */}
         <div className="text-center mt-8">
           <button
@@ -632,7 +619,7 @@ export default function About() {
 
       {/* Lightbox Modal with Zoom */}
       {selectedImage !== null && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center overflow-hidden"
           onClick={closeLightbox}
           onMouseMove={handleMouseMove}
@@ -706,7 +693,7 @@ export default function About() {
           </button>
 
           {/* Image with Zoom */}
-          <div 
+          <div
             className="w-full h-full flex items-center justify-center p-2 sm:p-4 md:p-8 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
             onMouseDown={handleMouseDown}
@@ -746,7 +733,7 @@ export default function About() {
       <Footer />
       <WhatsAppButton />
 
-     <style>{`
+      <style>{`
         @keyframes scroll {
           0% {
             transform: translateX(0);
