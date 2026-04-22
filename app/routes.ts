@@ -7,6 +7,7 @@ export default [
   route("hotels", "routes/hotels.tsx"),
   route("visa", "routes/visa.tsx"),
   route("trade-fair", "routes/trade-fair.tsx"),
+  route("trade-fair/cphi-china", "routes/trade-fair.cphi-china.tsx"),
   route("mice", "routes/mice.tsx"),
   route("pay-online", "routes/pay-online.tsx"),
   route("about", "routes/about.tsx"),

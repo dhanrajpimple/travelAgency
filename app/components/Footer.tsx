@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react'
+import { MapPin, Phone, Mail, Instagram, Facebook, Linkedin } from 'lucide-react'
 import { CONFIG } from '~/config/constants'
 import logoImage from '~/assets/Navlog.png'
 
@@ -16,6 +16,8 @@ export default function Footer() {
                 src={logoImage} 
                 alt="Flexi Global Holidays" 
                 className="h-14 sm:h-18 md:h-18 w-auto object-contain mb-3 sm:mb-4 bg-[#FFFFFF]"
+                loading="lazy"
+                decoding="async"
               />
               <p className="text-[#FAF8F3]/80 italic text-xs sm:text-sm leading-relaxed">
                 "Creating Memories Beyond Destinations"
@@ -95,9 +97,9 @@ export default function Footer() {
             <ul className="space-y-2 sm:space-y-3">
               {[
                 { name: 'About Us', link: '/about' },
-                { name: 'Our Services', link: '/services' },
-                { name: 'Destinations', link: '/destinations' },
+                { name: 'Holiday Packages', link: '/#destinations' },
                 { name: 'Trade Fairs', link: '/trade-fair' },
+                { name: 'CPHI China Travel', link: '/trade-fair/cphi-china' },
                 { name: 'Hotels', link: '/hotels' },
                 { name: 'Visa Services', link: '/visa' },
                 { name: 'Contact Us', link: '/contact' },
@@ -175,7 +177,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 md:py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm">
             <p className="text-white/60 text-center md:text-left">
-              © Flexi Global Holidays 2025 All rights reserved.
+              © Flexi Global Holidays {new Date().getFullYear()} All rights reserved.
             </p>
             <p className="text-white/60 text-center md:text-right">
               Built with ❤️ by <a href="https://dhanrajpimple.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:underline">Dhanraj Pimple</a>

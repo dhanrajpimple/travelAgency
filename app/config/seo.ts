@@ -6,6 +6,7 @@ export interface SEOData {
   description: string;
   keywords?: string;
   image?: string;
+  imageAlt?: string;
   url?: string;
   type?: string;
   author?: string;
@@ -25,7 +26,8 @@ export function generateSEOTags(data: SEOData) {
     { name: "description", content: data.description },
     { name: "keywords", content: data.keywords || "travel, tour packages, holiday packages, travel agency, India tours, international tours, Flexi Global Holidays" },
     { name: "author", content: data.author || "Flexi Global Holidays" },
-    { name: "robots", content: "index, follow" },
+    { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+    { name: "googlebot", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
     { name: "language", content: "English" },
     { name: "revisit-after", content: "7 days" },
     
@@ -33,6 +35,7 @@ export function generateSEOTags(data: SEOData) {
     { property: "og:title", content: data.title },
     { property: "og:description", content: data.description },
     { property: "og:image", content: imageUrl },
+    { property: "og:image:alt", content: data.imageAlt || data.title },
     { property: "og:url", content: fullUrl },
     { property: "og:type", content: data.type || "website" },
     { property: "og:site_name", content: "Flexi Global Holidays" },
@@ -43,6 +46,7 @@ export function generateSEOTags(data: SEOData) {
     { name: "twitter:title", content: data.title },
     { name: "twitter:description", content: data.description },
     { name: "twitter:image", content: imageUrl },
+    { name: "twitter:image:alt", content: data.imageAlt || data.title },
     { name: "twitter:site", content: "@flexiglobalholidays" },
     { name: "twitter:creator", content: "@flexiglobalholidays" },
     

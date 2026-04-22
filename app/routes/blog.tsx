@@ -41,6 +41,8 @@ export default function Blog() {
                     src={post.image}
                     alt={post.title}
                     className="w-full h-64 md:h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-[#1A2B4A] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">

@@ -5,6 +5,7 @@ import WhatsAppButton from "~/components/WhatsAppButton";
 import { useParams, Link } from "react-router";
 import { generateSEOTags } from "~/config/seo";
 import { blogPosts } from "~/data/blogData";
+import { CONFIG } from "~/config/constants";
 
 export function meta({ params }: Route.MetaArgs) {
   const slug = params.slug || '';
@@ -54,9 +55,37 @@ export default function BlogPost() {
     );
   }
 
+  const publishedDate = new Date(post.date).toISOString();
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image,
+    datePublished: publishedDate,
+    dateModified: publishedDate,
+    author: {
+      "@type": "Person",
+      name: post.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Flexi Global Holidays",
+      logo: {
+        "@type": "ImageObject",
+        url: `${CONFIG.SITE_URL}/logo.png`,
+      },
+    },
+    mainEntityOfPage: `${CONFIG.SITE_URL}/blog/${post.slug}`,
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
 
       <main className="py-12 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -85,6 +114,9 @@ export default function BlogPost() {
               src={post.image}
               alt={post.title}
               className="w-full h-[300px] md:h-[500px] object-cover"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
             />
           </div>
 
@@ -129,6 +161,21 @@ export default function BlogPost() {
                   Get Free Consultation
                 </Link>
               </div>
+
+              {post.relatedRoute && post.relatedLabel && (
+                <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">Related Service</h3>
+                  <p className="text-sm text-gray-600 mb-6">
+                    Explore the dedicated travel support page connected to this article.
+                  </p>
+                  <Link
+                    to={post.relatedRoute}
+                    className="block w-full bg-[#1A2B4A] text-white text-center py-4 rounded-xl font-bold hover:bg-[#243554] transition-colors"
+                  >
+                    {post.relatedLabel}
+                  </Link>
+                </div>
+              )}
             </aside>
           </div>
 

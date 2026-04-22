@@ -14,9 +14,24 @@ export interface BlogPost {
     author: string;
     category: string;
     aiInsight?: string; // Added AI-powered suggestion/insight
+    relatedRoute?: string;
+    relatedLabel?: string;
 }
 
 export const blogPosts: BlogPost[] = [
+    {
+        slug: "cphi-china-travel-guide-2026",
+        title: "CPHI China 2026 Travel Guide from India: Flights, Hotels, Visa Support and Pharma Trade Fair Planning",
+        excerpt: "Planning to attend CPHI China 2026? This guide covers the event, who should attend, the best travel window, hotel strategy, visa preparation, and how Flexi Global Holidays supports pharma exhibitors and buyers from India.",
+        content: "CPHI China 2026 is one of the most important pharmaceutical trade fairs for manufacturers, API suppliers, packaging companies, machinery vendors, biotech teams, and sourcing professionals. If your team is travelling from India, the biggest challenge is rarely the exhibition itself. It is coordinating flights, hotel stays near SNIEC, visa documents, airport transfers, and a schedule that gives you enough time for meetings without adding unnecessary travel fatigue.\n\nThe event is scheduled for 16 to 18 June 2026 at the Shanghai New International Expo Center (SNIEC), Shanghai, China. For Indian delegates, we recommend planning arrival at least one day before the first show day so your team can settle in, test local transport, and stay ready for supplier meetings from the opening morning.\n\nA strong CPHI China travel plan usually includes: return international flights, hotel options close to the venue, visa guidance, travel insurance, airport transfers, breakfast-ready stays, and a buffer day for high-value business appointments. This is especially useful for pharma companies attending with multiple team members, because group coordination becomes more complex when bookings are handled separately.\n\nThe best hotel strategy is to stay in Pudong or near direct access routes to SNIEC. That reduces daily travel time and helps your team reach the venue early for registrations, hall visits, and networking sessions. Business travelers attending CPHI China often lose time by choosing hotels that look cheaper but are too far from the venue.\n\nFlexi Global Holidays helps Indian businesses attending CPHI China with practical travel support instead of generic holiday packaging. Our team can help you structure a business-focused itinerary around the exhibition dates, meeting plans, check-in timing, visa documentation, and return travel. That includes support for pharmaceutical delegations, contract manufacturing teams, packaging suppliers, ingredient companies, and first-time China trade fair visitors.\n\nIf you want a CPHI China travel package from India with business-friendly flights, hotel shortlists, visa support, and on-ground coordination planning, use our dedicated CPHI China service page to start the process with your preferred departure city and team size.",
+        date: "April 22, 2026",
+        image: aboutTravelers,
+        author: "Flexi Trade Fair Desk",
+        category: "Trade Fair Travel",
+        aiInsight: "AI suggests: For pharma trade fairs in Shanghai, booking a refundable hotel near Pudong 8 to 12 weeks before travel usually gives better rate flexibility without losing venue access.",
+        relatedRoute: "/trade-fair/cphi-china",
+        relatedLabel: "View CPHI China Travel Package"
+    },
     {
         slug: "top-10-destinations-to-visit-in-2025",
         title: "Top 10 International Destinations to Visit in 2025 - Best Tour Packages from India",
