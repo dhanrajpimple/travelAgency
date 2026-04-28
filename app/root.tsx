@@ -53,6 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const path = location.pathname === "/" ? "/" : location.pathname.replace(/\/+$/, "");
   const canonicalUrl = `${CONFIG.SITE_URL}${path}`;
+  const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
   const siteSchemas = [
     {
       "@context": "https://schema.org",
@@ -146,6 +147,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="canonical" href={canonicalUrl} />
         <Meta />
         <Links />
+        {gaMeasurementId ? (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaMeasurementId}', { page_path: '${path}' });
+                `,
+              }}
+            />
+          </>
+        ) : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

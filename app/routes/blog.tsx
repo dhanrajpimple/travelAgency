@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { generateSEOTags } from "~/config/seo";
 import WhatsAppButton from "~/components/WhatsAppButton";
 import { blogPosts } from "~/data/blogData";
+import { supportSeoPages } from "~/data/cphiSeo";
 
 export function meta({ }: Route.MetaArgs) {
   return generateSEOTags({
@@ -28,6 +29,30 @@ export default function Blog() {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Expert insights, travel guides, and AI-powered recommendations to help you explore the world.
             </p>
+          </div>
+
+          <div className="mb-16 rounded-3xl bg-[#1A2B4A] p-8 text-white shadow-xl">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">Featured SEO cluster</p>
+                <h2 className="mt-3 text-3xl font-bold">CPHI Milan travel guides for Indian business travellers</h2>
+                <p className="mt-4 text-sm leading-7 text-blue-100">
+                  Explore our dedicated CPHI tour packages, CPHI 2026, CPHI Milan, Italy visa, hotel, and business travel content built for pharma exhibition planning.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Link to="/cphi-tour-packages" className="rounded-full bg-[#D4AF37] px-5 py-3 font-semibold text-[#1A2B4A]">CPHI Tour Packages</Link>
+                <Link to="/cphi-2026" className="rounded-full border border-white/20 px-5 py-3 font-semibold text-white">CPHI 2026</Link>
+                <Link to="/cphi-milan-tour-packages" className="rounded-full border border-white/20 px-5 py-3 font-semibold text-white">CPHI Milan</Link>
+              </div>
+            </div>
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {supportSeoPages.slice(0, 6).map((post) => (
+                <Link key={post.slug} to={`/guides/${post.slug}`} className="rounded-2xl bg-white/8 p-4 text-sm font-semibold text-white hover:bg-white/12">
+                  {post.title}
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">

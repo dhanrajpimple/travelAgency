@@ -1,6 +1,7 @@
 import { CONFIG } from "~/config/constants";
 import { packages } from "~/data/packages";
 import { blogPosts } from "~/data/blogData";
+import { mainSeoPages, supportSeoPages } from "~/data/cphiSeo";
 
 export async function loader() {
   const siteUrl = CONFIG.SITE_URL;
@@ -14,6 +15,9 @@ export async function loader() {
     { path: "/hotels", priority: "0.8", changefreq: "weekly" },
     { path: "/visa", priority: "0.8", changefreq: "weekly" },
     { path: "/trade-fair", priority: "0.8", changefreq: "weekly" },
+    { path: "/cphi-tour-packages", priority: "0.95", changefreq: "weekly" },
+    { path: "/cphi-2026", priority: "0.95", changefreq: "weekly" },
+    { path: "/cphi-milan-tour-packages", priority: "0.95", changefreq: "weekly" },
     { path: "/mice", priority: "0.7", changefreq: "monthly" },
     { path: "/blog", priority: "0.7", changefreq: "weekly" },
     { path: "/terms", priority: "0.5", changefreq: "monthly" },
@@ -42,12 +46,26 @@ export async function loader() {
     changefreq: "monthly"
   }));
 
+  const cphiGuideRoutes = supportSeoPages.map((page) => ({
+    path: `/guides/${page.slug}`,
+    priority: "0.8",
+    changefreq: "weekly",
+  }));
+
+  const cphiLandingRoutes = mainSeoPages.map((page) => ({
+    path: page.slug,
+    priority: "0.9",
+    changefreq: "weekly",
+  }));
+
   // Combine all routes
   const allRoutes = [
     ...staticRoutes,
+    ...cphiLandingRoutes,
     ...packageRoutes,
     ...packageDetailRoutes,
-    ...blogRoutes
+    ...blogRoutes,
+    ...cphiGuideRoutes,
   ];
 
   // Generate XML

@@ -173,6 +173,42 @@ export default function TradeFair() {
           </div>
         </div>
       </section>
+
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">CPHI Milan travel pages built for Indian pharma teams</h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              If your focus is CPHI Milan 2026, use our dedicated pages for packages, dates, visa guidance, Milan travel packages, business travel planning, and pharma conference travel support.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "CPHI Tour Packages",
+                copy: "Package-first planning with flights, hotels, Italy visa support, transfers, and CTA-led enquiry flow.",
+                href: "/cphi-tour-packages",
+              },
+              {
+                title: "CPHI 2026",
+                copy: "Confirmed date-driven planning around the 6-8 October 2026 Milan event window and business travel budgeting.",
+                href: "/cphi-2026",
+              },
+              {
+                title: "CPHI Milan",
+                copy: "Milan-specific hotel zones, airport routing, venue access, and pharma exhibition travel guidance.",
+                href: "/cphi-milan-tour-packages",
+              },
+            ].map((item) => (
+              <Link key={item.href} to={item.href} className="rounded-3xl border border-gray-100 bg-gray-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-gray-700">{item.copy}</p>
+                <span className="mt-6 inline-flex items-center gap-2 font-semibold text-[#0066CC]">Open page <span>→</span></span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
       
       {/* Trade Fairs Grid */}
       <section className="py-16">
