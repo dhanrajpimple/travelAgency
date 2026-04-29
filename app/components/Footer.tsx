@@ -183,7 +183,7 @@ export default function Footer() {
               © Flexi Global Holidays {new Date().getFullYear()} All rights reserved.
             </p>
             <p className="text-white/60 text-center md:text-right">
-              Built with ❤️ by <a href="https://dhanrajpimple.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:underline">Dhanraj Pimple</a>
+              Built by <a href="https://dhanrajpimple.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:underline">Dhanraj Pimple</a>
             </p>
           </div>
         </div>

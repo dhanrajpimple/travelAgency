@@ -89,19 +89,38 @@
   }
 
   .animate-fadeIn {
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 1s ease-in-out forwards;
   }
 
   .animate-fadeInScale {
-    animation: fadeInScale 1s ease-in-out;
+    animation: fadeInScale 1s ease-in-out forwards;
   }
 
   .animate-fadeUp {
-    animation: fadeUp 1s ease-in-out;
+    animation: fadeUp 1s ease-in-out forwards;
+  }
+
+  /* Hero specific animations with delays */
+  .animate-hero-fadeInScale {
+    animation: fadeInScale 0.8s ease-out forwards;
+  }
+
+  .animate-hero-fadeIn {
+    animation: fadeIn 1s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .animate-hero-fadeUp {
+    animation: fadeUp 1s ease-out 0.6s forwards;
+    opacity: 0;
   }
 
   .animate-bounce-slow {
     animation: bounceSlow 2s infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
   }
 
   @keyframes fadeIn {
@@ -141,6 +160,15 @@
     }
     50% {
       transform: translateY(-10px);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
     }
   }
 

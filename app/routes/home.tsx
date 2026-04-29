@@ -247,11 +247,11 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-          <h1 className="font-display text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 sm:mb-5 leading-tight animate-fadeInScale">
+          <h1 className="font-display text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 sm:mb-5 leading-tight animate-hero-fadeInScale">
             Your Journey Begins Here
           </h1>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-5 sm:mb-8 text-[#D4AF37] animate-fadeIn">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-5 sm:mb-8 text-[#D4AF37] animate-hero-fadeIn">
             <span className="flex items-center gap-1.5 text-xs sm:text-base">
               ✨ 1000+ Travelers
             </span>
@@ -263,7 +263,7 @@ export default function Home() {
             </span>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fadeUp max-w-md sm:max-w-none mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-hero-fadeUp max-w-md sm:max-w-none mx-auto">
             <a
               href="#destinations"
               className="bg-gradient-to-r from-[#D4AF37] to-[#C9A634] text-white rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold hover:scale-105 active:scale-95 transition-transform shadow-xl"
@@ -279,52 +279,6 @@ export default function Home() {
           </div>
         </div>
 
-        <style jsx>{`
-        @keyframes fadeInScale {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fadeInScale {
-          animation: fadeInScale 0.8s ease-out forwards;
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 1s ease-out 0.3s forwards;
-          opacity: 0;
-        }
-
-        .animate-fadeUp {
-          animation: fadeUp 1s ease-out 0.6s forwards;
-          opacity: 0;
-        }
-      `}</style>
       </section>
 
       {/* International Destinations - Marquee Slider */}
@@ -409,20 +363,6 @@ export default function Home() {
           </div>
         </div>
 
-        <style jsx>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
-      `}</style>
       </section>
 
       {/* Domestic Destinations */}
