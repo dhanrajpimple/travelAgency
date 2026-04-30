@@ -21,7 +21,7 @@ function CtaCard({ title, description }: { title: string; description: string })
             Request Quote
           </Link>
           <a
-            href={`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello, I need a CPHI travel package quote.")}`}
+            href={`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello, I need CPHI travel details.")}`}
             target="_blank"
             rel="noreferrer"
             className="rounded-full border border-white/30 px-5 py-3 text-center font-semibold text-white"
@@ -75,7 +75,7 @@ export function buildMainPageSchema(page: MainSeoPage) {
 
   const schemas: Record<string, unknown>[] = [faqSchema, tripSchema];
 
-  if (page.slug === "/cphi-2026") {
+  if (page.slug === "/cphi-2026" || page.slug === "/cphi-milan-tour-packages") {
     schemas.push({
       "@context": "https://schema.org",
       "@type": "Event",
@@ -168,7 +168,7 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
             <CtaCard title="Want the itinerary adapted for your company?" description="We can shorten, extend, or redesign the trip around exhibitor setup, buyer meetings, or leadership travel preferences." />
 
             <section className="mt-12">
-              <h2 className="text-3xl font-bold text-gray-900">Suggested day-by-day itinerary</h2>
+              <h2 className="text-3xl font-bold text-gray-900">Event itinerary</h2>
               <div className="mt-8 space-y-6">
                 {page.itinerary.map((day, index) => (
                   <div key={day.title} className="rounded-3xl border border-gray-100 bg-gray-50 p-6">
@@ -180,10 +180,10 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
               </div>
             </section>
 
-            <CtaCard title="Need pricing with and without flights?" description="Ask for two quote formats if your finance team wants to compare a full package against land-only support." />
+            <CtaCard title="Need pricing with and without flights?" description="Ask for two quote formats if your finance team wants to compare full support against land-only options." />
 
             <section className="mt-12">
-              <h2 className="text-3xl font-bold text-gray-900">Pricing guidance</h2>
+              <h2 className="text-3xl font-bold text-gray-900">Connect for more info</h2>
               <div className="mt-6 space-y-6 text-base leading-8 text-gray-700">
                 {page.pricingIntro.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -217,7 +217,7 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
               </div>
             </section>
 
-            <CtaCard title="Want a fast comparison quote?" description="Send your city, dates, traveller count, and preferred hotel style. We will reply with a practical package range." />
+            <CtaCard title="Want a fast comparison quote?" description="Send your city, dates, traveller count, and preferred hotel style. We will reply with a practical cost range." />
 
             <section className="mt-12">
               <h2 className="text-3xl font-bold text-gray-900">Testimonials from business travellers</h2>

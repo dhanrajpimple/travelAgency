@@ -65,121 +65,104 @@ export interface SupportSeoPage {
 export const mainSeoPages: MainSeoPage[] = [
   {
     slug: "/cphi-tour-packages",
-    keyword: "CPHI tour packages",
-    title: "CPHI Tour Packages from India",
-    metaTitle: "CPHI Tour Packages from India (Visa + Hotel + Flights) | Flexi Global Holidays",
+    keyword: "CPHI Milan 2026",
+    title: "CPHI Milan 2026",
+    metaTitle: "CPHI Milan 2026 | Europe’s leading pharmaceutical exhibition",
     metaDescription:
-      "CPHI tour packages from India for Milan 2026 with hotel, visa help, flights, transfers and business travel support. Limited slots. Get your quote today.",
-    heroEyebrow: "Trade Fair Travel Desk",
-    hookHeadline: "Secure your CPHI tour package before hotel rates in Milan climb again.",
+      "Explore CPHI Milan 2026, Europe’s leading pharmaceutical exhibition in Italy. It brings together global pharma leaders showcasing APIs, excipients, finished formulations, contract manufacturing, and packaging innovations.",
+    heroEyebrow: "6 – 8 October, 2026 | Fiera Milano, Milan, Italy",
+    hookHeadline: "Explore CPHI Milan 2026, Europe’s leading pharmaceutical exhibition in Italy. It brings together global pharma leaders showcasing APIs, excipients, finished formulations, contract manufacturing, and packaging innovations.",
     intro: [
-      "CPHI tour packages are the fastest way for Indian pharma teams to lock in a business-ready Milan trip without losing time on fragmented bookings. If your team is travelling for a pharma exhibition, meetings with API suppliers, packaging partners, CDMO discussions, or business travel around CPHI Milan, this page gives you a practical plan with hotel strategy, Italy visa guidance, airport transfers, and day-by-day trip flow built for corporate travellers rather than leisure tourists.",
-      "At Flexi Global Holidays, we build CPHI tour packages for delegates, exhibitors, sourcing teams, directors, and first-time European trade fair visitors who need clarity. Instead of pushing a generic Milan travel package, we align your flights, stay duration, meeting calendar, visa document checklist, and local transport around the event. That matters because pharma conference travel is rarely just about reaching Italy. It is about arriving rested, staying close to the venue, and keeping your team productive during a high-value week.",
-      "Our package approach is especially useful for Indian business travellers who want one accountable travel partner for the entire trip. You get pre-travel planning, hotel recommendations near Fiera Milano, support for Italy visa documentation, advice on arrival dates, and flexible options for solo delegates or larger corporate groups. When timelines are tight, one coordinated package usually saves more money and stress than trying to assemble flights, hotels, transfers, and visa support separately.",
+      "CPHI Milan 2026 is Europe’s leading pharmaceutical exhibition, bringing together the entire global pharma value chain under one roof. Hosted in Milan, the event serves as a premier international platform for pharmaceutical ingredients, APIs, biotech solutions, contract development and manufacturing (CDMO), advanced packaging technologies, and industry services.",
+      "A Defining Era for Global Pharmaceutical Innovation in Milan.",
     ],
     overview: [
-      "A strong CPHI package starts with the correct travel window. For most Indian delegates, the best arrival plan is to reach Milan one day before the exhibition opens. That allows time for immigration, hotel check-in, SIM activation, rest, and any pre-event partner meetings. A rushed same-day arrival usually damages the first exhibition day, especially after overnight travel. We therefore recommend business-friendly flight timing, not just the cheapest fare visible online.",
-      "Hotel strategy is equally important. During a global pharma exhibition, rates near the venue can move quickly and room availability changes faster than many buyers expect. We shortlist properties based on venue access, breakfast timing, Wi-Fi reliability, late check-in support, and suitability for business travellers carrying samples, presentation materials, or packed schedules. This helps you avoid false savings from hotels that look inexpensive but add long daily commute times and hidden transport costs.",
-      "For Indian teams attending with sales, procurement, regulatory, or leadership members, group coordination is another reason to choose a managed package. Shared arrival windows, neighboring rooms, airport meet-and-greet planning, and an aligned return schedule keep the team efficient. We also help shape optional extensions for Rome, Switzerland, or other Europe meetings after CPHI Milan when the trip needs to create broader business value.",
-      "Because many travellers compare only airfare and hotel headline prices, they often underestimate visa documentation effort, baggage rules, city tax, local transport, transfer delays, and cancellation flexibility. Our packaging process is built to surface those details early. That allows you to compare a true trip cost rather than a misleading base fare. For companies working on annual travel approvals, that level of clarity is often the difference between fast sign-off and repeated internal back-and-forth.",
+      "At CPHI Milan, visitors typically come from a variety of industries and roles such as: Pharmaceutical Manufacturers, API & Intermediate Manufacturers, Chemical & Specialty Ingredient Companies, Quality Control, Testing & Regulatory Services, Distributors, Traders & Supply Chain Companies, Healthcare, Medical & Life Sciences Companies.",
+      "Dear Valued Client, We are excited to introduce Flexi Global Holidays, your dedicated partner in trade fair travel solutions. Built on decades of mastery in logistics and event management, we transform the complexities of trade fair travel into effortless, tailor-made experiences.",
+      "At Flexi Global Holidays, our philosophy is simple: Travel Made Personal. Whether you’re traveling alone or with a team, we provide comprehensive support—from logistics and accommodation to on-ground assistance—so you can focus on what matters most: your business.",
+      "We look forward to helping you make your next trade fair experience successful and stress-free. Please do not hesitate to reach out for customized travel solutions or any assistance you may require.",
     ],
     itinerary: [
       {
-        title: "Day 1: Departure from India and controlled arrival into Milan",
+        title: "Day 1: Arrival in Milan",
         description:
-          "Fly from your preferred Indian gateway such as Mumbai, Delhi, Ahmedabad, Hyderabad, Bengaluru, or Chennai with business-friendly connection timing. On arrival in Milan, use a preplanned airport transfer or rail route to your hotel. The day is intentionally light so your team can check in, recover from the journey, review next-day appointments, and confirm exhibition badges, local transport cards, and venue directions.",
+          "On arrival in Milan, use a preplanned airport transfer to your hotel. The day is for your team to check in, recover from the journey, and prepare for the exhibition.",
       },
       {
-        title: "Day 2: Pre-event setup and supplier meeting buffer",
+        title: "Day 2: Pre-event setup",
         description:
-          "Use the buffer day for partner meetings, exhibitor booth setup, registration formalities, or a short familiarisation visit around the venue district. This is the best time to fix small issues before the exhibition starts. Delegates can align meeting priorities, organize printed material, test commuting time to Fiera Milano, and avoid losing core exhibition hours to logistics.",
+          "Use the buffer day for partner meetings, exhibitor booth setup, or a short familiarisation visit around the venue district.",
       },
       {
-        title: "Day 3: Full exhibition day focused on sourcing and networking",
-        description:
-          "Start early with venue arrival before peak entry traffic. Most pharma buyers use day one to map hall priorities, meet shortlisted suppliers, and identify new API, packaging, machinery, and contract service partners. A nearby hotel and predictable commute matter here because long transfers create missed meeting windows and energy drain during the most intense show day.",
+        title: "Day 3: CPHI Milan Exhibition Day 1",
+        description: "Full exhibition day focused on sourcing and networking at Fiera Milano.",
       },
       {
-        title: "Day 4: Meetings, follow-ups, and business dinner planning",
-        description:
-          "The second show day is ideal for deeper supplier conversations, pricing follow-ups, technical discussions, and distribution talks. Many Indian business travellers also use this evening for hosted dinners or informal networking. Your hotel location should therefore support both venue access and convenient late return, especially when teams split into parallel meetings.",
+        title: "Day 4: CPHI Milan Exhibition Day 2",
+        description: "Meetings, follow-ups, and business networking evening.",
       },
       {
-        title: "Day 5: Final exhibition day and post-show wrap-up",
-        description:
-          "Day three is usually the best time to close the loop on missed booths, hold second meetings, and confirm next steps with shortlisted partners. After the event, your team can organize leads, prepare return travel documents, and decide whether to leave the same evening or stay one more night for a smoother exit. We normally recommend at least one post-show night for teams with dense schedules.",
+        title: "Day 5: CPHI Milan Exhibition Day 3",
+        description: "Final exhibition day and post-show wrap-up.",
       },
       {
-        title: "Day 6: Return to India or onward Europe business extension",
-        description:
-          "Travel back to India or continue to another European city for customer visits, audits, plant meetings, or distributor discussions. Many companies use the CPHI travel window to add one or two extra business days, and we can package those extensions without forcing a separate booking flow.",
+        title: "Day 6: Return to India",
+        description: "Travel back to India or continue to your next destination.",
       },
     ],
-    pricingIntro: [
-      "Pricing for CPHI tour packages depends on departure city, hotel class, booking lead time, visa requirements, and whether the package is designed for one delegate, a couple of executives, or a larger pharma team. We usually quote in a modular way so your team can see where the budget sits across flights, stay, local transport, and support services.",
-      "For Indian business travellers, the cheapest package is not always the best package. Hotels too far from the exhibition often add hidden fatigue and extra transfer spend. We therefore price around practical business value first, then optimise for cost without hurting the travel experience.",
-    ],
+    pricingIntro: ["Connect for more info on detailed pricing and availability for CPHI Milan 2026."],
     pricingItems: [
       {
-        label: "Economy Delegate Plan",
-        value: "From INR 1.55 lakh per person",
-        description: "Best for solo visitors who need smart hotel location, return flights, breakfast, and visa documentation support with controlled cost.",
+        label: "Inclusions",
+        value: "Connect for info",
+        description:
+          "Accommodation on Twin Sharing or Single Occupancy, Daily Buffet breakfast, Airport transfers, Fairground transfers, Indian Dinners + 1 Networking night, Milan City tour, Daily water bottles, Schengen Visa assistance, Overseas Mediclaim, Experienced Tour Leader.",
       },
       {
-        label: "Business Comfort Plan",
-        value: "From INR 1.95 lakh per person",
-        description: "Recommended for decision makers who want shorter commute times, stronger hotel quality, flexible flight options, and on-ground travel confidence.",
-      },
-      {
-        label: "Corporate Team Plan",
-        value: "Custom group quote",
-        description: "Built for 4+ travellers with aligned flights, room blocks, transfers, optional meeting room support, and centralized invoicing for procurement teams.",
+        label: "Exclusions",
+        value: "Connect for info",
+        description:
+          "Airfare, Entrances to the fairground, Lunches, Laundry, Porterage, excess baggage, expenses of personal nature, and any other items not mentioned in inclusions.",
       },
     ],
     benefits: [
       {
-        title: "Venue-smart hotel curation",
-        description: "We filter hotels by commute practicality, breakfast reliability, late check-in, and business suitability instead of generic city-centre hype.",
+        title: "Why Choose Us?",
+        description:
+          "Decades of trusted industry expertise, Personalized service tailored to your business needs, Reliable, efficient, and professional support, A commitment to making your trade fair experience exceptional.",
       },
       {
-        title: "India-focused visa support",
-        description: "Our process is written for Indian documentation realities, company letters, appointment planning, and common first-time Schengen questions.",
-      },
-      {
-        title: "Business travel coordination",
-        description: "Flights, rooming, transfers, and optional extensions are aligned to your meeting calendar rather than left as separate tasks for your team.",
-      },
-      {
-        title: "One point of accountability",
-        description: "Instead of chasing airlines, hotel desks, visa notes, and transfer vendors one by one, your team gets a single travel desk.",
+        title: "Why Exhibitors Choose Us?",
+        description:
+          "Seamless Trade Fair Participation, Tailored Exhibitor Packages, Prime Networking Opportunities, End-to-End Travel & Logistics, Marketing & Visibility Support, On-Site Assistance, Proven Expertise in MICE & Trade Fairs.",
       },
     ],
     competitorSection: [
-      "Many travel sellers position CPHI packages as if they are regular Europe holidays with one exhibition date dropped into the itinerary. That creates a mismatch for pharma travellers. The schedule becomes too loose, the hotel may be chosen for leisure appeal rather than venue efficiency, and the support language ignores business travel realities such as invitation letters, company approvals, or team arrivals from different Indian cities.",
-      "Our advantage is operational focus. We understand that your trip outcome depends on punctuality, stamina, and room availability as much as airfare. We therefore plan around the exhibition clock, not just city sightseeing value. That helps teams keep more meetings, reduce transport friction, and avoid last-minute hotel shocks when other delegates start booking aggressively.",
-      "We also keep the communication simple. Indian buyers often tell us they want a straightforward answer to three questions: what is included, what documents are needed, and what budget should be approved. Our package proposals are designed to answer those questions clearly so internal approvals move faster.",
+      "Flexi Global Holidays transforms the complexity of exhibition travel into a smoother, more personal journey. Our focus is on operational efficiency, ensuring your team arrives rested and ready for business.",
     ],
     faq: [
-      { question: "What is included in your CPHI tour packages?", answer: "Most packages include return flights, hotel stay, breakfast, visa guidance, travel insurance options, and transfer planning. Final inclusions depend on your team size and budget." },
-      { question: "Do you provide Italy visa support from India?", answer: "Yes. We help with document planning, appointment readiness, and package structuring around Schengen timelines for Indian travellers." },
-      { question: "Can you book packages from Mumbai, Delhi, Hyderabad, or Ahmedabad?", answer: "Yes. We can build departures from major Indian gateways and align multiple city departures for group travel." },
-      { question: "How early should we book a package for CPHI Milan?", answer: "Ideally 8 to 14 weeks in advance. Venue-near hotels and good flight combinations become harder to secure closer to the event." },
-      { question: "Can the package include extra nights after the event?", answer: "Yes. Many business travellers add a rest day, Europe meetings, or sightseeing after the exhibition." },
-      { question: "Do you handle group travel for pharma companies?", answer: "Yes. We create group quotes, aligned room blocks, and centralized communication for corporate teams." },
-      { question: "Is airport transfer included?", answer: "It can be included as a private or shared option depending on your budget and arrival pattern." },
-      { question: "Can you help us choose a hotel close to Fiera Milano?", answer: "Yes. Hotel proximity and commute quality are a core part of our package planning." },
-      { question: "Do you only serve exhibitors?", answer: "No. We support exhibitors, visitors, buyers, sourcing managers, and leadership teams attending for networking and meetings." },
-      { question: "How do we get a quote?", answer: "Share your city of departure, traveller count, preferred hotel standard, and expected travel dates. We will prepare a business-ready quotation." },
+      {
+        question: "What is included in the travel support?",
+        answer:
+          "We provide comprehensive support including accommodation, transfers, visa assistance, and on-ground coordination.",
+      },
+      {
+        question: "Do you handle Italy visa support?",
+        answer:
+          "Yes, we help with document planning and appointment readiness for Indian business travellers.",
+      },
+      {
+        question: "How do we get a quote?",
+        answer:
+          "Connect with us with your team size and preferred travel dates for a customized proposal.",
+      },
     ],
     supportSlugs: [
       "cphi-milan-travel-cost-from-india",
       "cphi-exhibition-italy-packages",
       "pharma-expo-milan-hotels",
-      "business-visa-for-italy-from-india",
-      "best-time-to-book-cphi-milan-flights",
-      "cphi-milan-airport-transfer-guide",
     ],
-    ctaLine: "Tell us your departure city, traveller count, and preferred hotel grade. We will turn that into a CPHI-ready package quote.",
+    ctaLine: "Connect for more info",
   },
   {
     slug: "/cphi-2026",
@@ -307,17 +290,19 @@ export const mainSeoPages: MainSeoPage[] = [
     metaDescription:
       "Book CPHI Milan tour packages from India with Milan hotel, Italy visa assistance, flights and pharma exhibition business travel support. Get a quote now.",
     heroEyebrow: "Milan-Focused Packages",
-    hookHeadline: "CPHI Milan demands more than a ticket. It needs a smart Milan business travel plan.",
+    hookHeadline: "CPHI Milan 2026 runs from 6 to 8 October 2026 at Fiera Milano, Italy. Plan your pharma exhibition travel with the right hotel, visa, transfer, and on-ground support.",
     intro: [
-      "CPHI Milan is the most important keyword for travellers who already know the event city matters. Milan is not just the host location. It shapes your airport choice, commute time, hotel budget, meeting rhythm, and overall productivity during the exhibition. For Indian companies attending a pharma exhibition in Italy, a Milan-specific package gives better control than a generic Europe booking because every decision can be aligned to the venue, local transport, and business schedule.",
-      "This page is designed for Indian business travellers who want CPHI Milan support that covers flights, hotel planning, Italy visa assistance, arrival strategy, and optional city extensions. Whether you are visiting as a sourcing team, exhibitor, distributor, or founder, the goal is simple: reduce friction and help you reach the event ready for useful conversations.",
-      "Milan travel packages for trade fair delegates should feel different from holiday packages. They should prioritize venue access, breakfast timing, room efficiency, late-night return convenience, and flexibility when meetings move. That is exactly how we plan them. We combine business travel discipline with simple communication so your team knows what to approve and when to book.",
+      "CPHI Milan 2026 is one of Europe's leading pharmaceutical exhibitions, bringing global pharma leaders, suppliers, manufacturers, buyers, and service partners together in Italy. The event is scheduled for 6 to 8 October 2026 at Fiera Milano, Milan, Italy, making it a major business travel window for Indian pharma teams planning supplier meetings, exhibitor visits, API sourcing, packaging discussions, and contract manufacturing conversations.",
+      "The exhibition covers the full pharmaceutical value chain, including APIs, excipients, intermediates, finished formulations, biotechnology solutions, contract development and manufacturing, quality control, regulatory services, advanced packaging technologies, distribution, supply chain support, and industry services. For visitors from India, a Milan-specific package gives better control than a generic Europe booking because every decision can be aligned to the venue, local transport, and business schedule.",
+      "This page is designed for Indian business travellers who want CPHI Milan support that covers flights, hotel planning, Italy visa assistance, arrival strategy, transfers, fairground movement, meals, insurance guidance, and optional city experiences. Whether you are visiting as a sourcing team, exhibitor, distributor, procurement head, export manager, or founder, the goal is simple: reduce friction and help you reach the event ready for useful conversations.",
+      "A defining era for global pharmaceutical innovation is unfolding in Milan. CPHI Milan acts as a premier international platform for pharmaceutical ingredients, APIs, biotech solutions, CDMO partnerships, packaging innovation, and professional services. Flexi Global Holidays helps turn that high-value event week into a smooth, business-ready travel experience.",
     ],
     overview: [
-      "Choosing the right Milan base can change the entire event experience. Some delegates prefer to stay closer to Fiera Milano for easy venue access, while others choose central zones that work better for client dinners or additional city meetings. The right answer depends on your schedule, not a one-size hotel list. We help you compare the trade-offs before you commit.",
+      "Visitor industries at CPHI Milan typically include pharmaceutical manufacturers, API and intermediate manufacturers, chemical and specialty ingredient companies, quality control providers, testing and regulatory services, distributors, traders, supply chain companies, healthcare companies, medical businesses, and life sciences teams. Because these visitors attend with different goals, the travel plan should be shaped around meeting purpose rather than a fixed leisure itinerary.",
+      "Choosing the right Milan base can change the entire event experience. Some delegates prefer to stay closer to Fiera Milano for easy venue access, while others choose central zones that work better for client dinners or additional city meetings. The right answer depends on your schedule, team size, and visitor role. We help you compare those trade-offs before you commit.",
       "Airport planning is another overlooked area. Depending on the final flight, your team may use Milan Malpensa, Milan Linate, or a connected European routing. Transfer time, baggage, and arrival hour can all affect the experience, especially for exhibitors or travellers carrying product literature. We package around those details to avoid the common mistake of selecting a technically cheap flight that creates an inefficient arrival.",
-      "For Indian delegates, Italy visa preparation also needs to be timed with realism. Invitation letters, company covering letters, travel insurance, hotel confirmations, and financial documentation must work as one coherent file. Good package planning supports that process by giving you a clear itinerary and stay logic early enough to avoid document inconsistency.",
-      "Finally, CPHI Milan often opens the door to value beyond the show. Milan is well placed for onward European meetings, fashion and design hospitality experiences, and short extensions that help teams unwind after an intense pharma conference travel schedule. If that matters for your company, we can shape the package accordingly while keeping the core event logistics sharp.",
+      "For Indian delegates, Schengen visa preparation also needs to be timed with realism. Invitation letters, company covering letters, travel insurance, hotel confirmations, financial documentation, and itinerary dates must work as one coherent file. Good package planning supports that process by giving you a clear travel flow early enough to avoid document inconsistency.",
+      "Our approach is built on trusted trade fair travel experience, personalized service, reliable support, and a commitment to making your event travel professional and stress-free. You focus on business while we coordinate accommodation, transfers, visa guidance, meals, fairground logistics, and on-ground assistance.",
     ],
     itinerary: [
       {
@@ -352,48 +337,49 @@ export const mainSeoPages: MainSeoPage[] = [
       },
     ],
     pricingIntro: [
-      "CPHI Milan pricing is highly sensitive to hotel zone and booking date. The same event week can show a major spread between early-booked practical stays and last-minute premium inventory.",
-      "Our role is to help you spend where it improves the business trip and save where it does not damage execution. That usually leads to better outcomes than simply chasing the lowest headline price.",
+      "CPHI Milan package details are customized according to departure city, traveller count, hotel preference, rooming pattern, visa requirements, flight timing, and whether your company is travelling as visitors, exhibitors, or a mixed business team.",
+      "Package pricing is not displayed here because event-week availability changes quickly around Fiera Milano. Please contact Flexi Global Holidays for a current, customized quote with the exact inclusions your team needs.",
     ],
     pricingItems: [
       {
-        label: "Smart Milan Package",
-        value: "From INR 1.60 lakh per person",
-        description: "Good for cost-aware delegates who still want a sensible commute and organized documentation.",
+        label: "Package inclusions",
+        value: "Contact for more information",
+        description: "Accommodation on twin sharing or single occupancy, daily buffet breakfast, airport-hotel-airport transfers as per group flight, fairground transfers as per itinerary, Indian dinners at the hotel, one networking night, Milan city tour with Duomo shopping drop, daily water bottles, Schengen visa support, overseas travellers mediclaim policy up to age 60, and services of an experienced Flexi tour leader.",
       },
       {
-        label: "Premium Venue-Access Package",
-        value: "From INR 2.05 lakh per person",
-        description: "Best for teams that value time, lower commute fatigue, and strong hotel standards during the event week.",
+        label: "Package exclusions",
+        value: "Contact for more information",
+        description: "Airfare, entrance to the fairground, lunches, laundry, porterage, excess baggage, expenses of personal nature, items listed as extras, and anything not mentioned in the inclusions are normally treated separately.",
       },
       {
-        label: "Milan + Europe Extension Package",
-        value: "Custom pricing",
-        description: "Recommended when the trip includes onward meetings or a short regional business circuit after CPHI.",
+        label: "Booking and visa information",
+        value: "Contact for more information",
+        description: "Booking confirmation, package itinerary, visa information, rooming details, transfer schedule, and document guidance are shared directly after understanding your team size, preferred travel dates, and business requirements.",
       },
     ],
     benefits: [
       {
-        title: "Milan-specific location advice",
-        description: "We help you choose between central convenience, venue proximity, and the best fit for your meeting pattern.",
+        title: "Seamless trade fair participation",
+        description: "Flights, hotels, transfers, fairground movement, meals, and support are coordinated so your team can stay focused on exhibition goals.",
       },
       {
-        title: "Airport and transfer clarity",
-        description: "Arrival routing is planned to reduce wasted time and confusion for first-time Milan business travellers.",
+        title: "Tailored exhibitor and visitor packages",
+        description: "We shape the package around visitor, exhibitor, leadership, procurement, API sourcing, and small pharma team requirements.",
       },
       {
-        title: "Italy visa alignment",
-        description: "Package documents, stay dates, and travel flow are prepared so your visa application feels coherent and professional.",
+        title: "End-to-end travel and logistics",
+        description: "Airport transfers, fairground transfers, Schengen visa support, hotel planning, insurance guidance, and city arrangements stay under one travel desk.",
       },
       {
-        title: "Designed for pharma conference travel",
-        description: "The package logic supports long exhibition days, supplier meetings, and corporate decision-making under time pressure.",
+        title: "On-site assistance and proven MICE expertise",
+        description: "An experienced Flexi tour leader and trade fair travel process help support networking, visibility, and smooth on-ground execution.",
       },
     ],
     competitorSection: [
       "The difference between a normal Milan travel package and a CPHI Milan package is intent. A tourist package sells the city. A trade fair package sells efficiency. That means the hotel must work for early starts, the itinerary must support venue timing, and every support element must reduce friction instead of adding it.",
-      "We also know Indian travellers often need a clear explanation for management: why is this hotel better, why are these dates recommended, and why should we book now? We build our quote logic so those decisions are easy to justify internally.",
-      "For companies that value credibility with travelling staff, that matters. A well-structured business trip builds confidence before departure and keeps the focus on meetings rather than troubleshooting.",
+      "Dear valued client, Flexi Global Holidays is your dedicated partner in trade fair travel solutions. Built on years of logistics, MICE, and event travel experience, we transform the complexity of exhibition travel into a smoother, more personal journey.",
+      "Our philosophy is simple: travel made personal. Whether you are travelling alone or with a team, we provide comprehensive support from logistics and accommodation to on-ground assistance so you can focus on what matters most: your business.",
+      "Why exhibitors choose Flexi: seamless participation, tailored exhibitor packages, prime networking support, end-to-end travel and logistics, marketing and visibility assistance, on-site support, and proven expertise in MICE and trade fairs.",
     ],
     faq: [
       { question: "Do you offer CPHI Milan packages from all major Indian cities?", answer: "Yes. We can structure departures from multiple Indian gateways depending on flight availability and team needs." },

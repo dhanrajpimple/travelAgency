@@ -99,7 +99,7 @@ export default function Footer() {
                 { name: 'About Us', link: '/about' },
                 { name: 'Holiday Packages', link: '/#destinations' },
                 { name: 'Trade Fairs', link: '/trade-fair' },
-                { name: 'CPHI Tour Packages', link: '/cphi-tour-packages' },
+                { name: 'CPHI Milan 2026', link: '/cphi-tour-packages' },
                 { name: 'CPHI 2026', link: '/cphi-2026' },
                 { name: 'CPHI Milan', link: '/cphi-milan-tour-packages' },
                 { name: 'CPHI China Travel', link: '/trade-fair/cphi-china' },
