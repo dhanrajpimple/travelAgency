@@ -35,11 +35,20 @@ export interface MainSeoPage {
   hookHeadline: string;
   intro: string[];
   overview: string[];
+  visitorIndustries: string[];
+  whyChooseUs: string[];
+  dearValuedClient: {
+    title: string;
+    message: string[];
+  };
   itinerary: ItineraryDay[];
   pricingIntro: string[];
   pricingItems: PricingItem[];
+  packageInclusions: string[];
+  packageExclusions: string[];
   benefits: BenefitItem[];
   competitorSection: string[];
+  seamlessParticipation: string[];
   faq: FAQItem[];
   supportSlugs: string[];
   ctaLine: string;
@@ -71,17 +80,33 @@ export const mainSeoPages: MainSeoPage[] = [
     metaDescription:
       "Explore CPHI Milan 2026, Europe’s leading pharmaceutical exhibition in Italy. It brings together global pharma leaders showcasing APIs, excipients, finished formulations, contract manufacturing, and packaging innovations.",
     heroEyebrow: "6 – 8 October, 2026 | Fiera Milano, Milan, Italy",
-    hookHeadline: "Explore CPHI Milan 2026, Europe’s leading pharmaceutical exhibition in Italy. It brings together global pharma leaders showcasing APIs, excipients, finished formulations, contract manufacturing, and packaging innovations.",
+    hookHeadline: "A Defining Era for Global Pharmaceutical Innovation in Milan. CPHI Milan 2026 is Europe’s leading pharmaceutical exhibition, bringing together the entire global pharma value chain under one roof. Hosted in Milan, the event serves as a premier international platform for pharmaceutical ingredients, APIs, biotech solutions, contract development and manufacturing (CDMO), advanced packaging technologies, and industry services.",
     intro: [
-      "CPHI Milan 2026 is Europe’s leading pharmaceutical exhibition, bringing together the entire global pharma value chain under one roof. Hosted in Milan, the event serves as a premier international platform for pharmaceutical ingredients, APIs, biotech solutions, contract development and manufacturing (CDMO), advanced packaging technologies, and industry services.",
-      "A Defining Era for Global Pharmaceutical Innovation in Milan.",
+      "Explore CPHI Milan 2026, Europe’s leading pharmaceutical exhibition in Italy. It brings together global pharma leaders showcasing APIs, excipients, finished formulations, contract manufacturing, and packaging innovations.",
     ],
-    overview: [
-      "At CPHI Milan, visitors typically come from a variety of industries and roles such as: Pharmaceutical Manufacturers, API & Intermediate Manufacturers, Chemical & Specialty Ingredient Companies, Quality Control, Testing & Regulatory Services, Distributors, Traders & Supply Chain Companies, Healthcare, Medical & Life Sciences Companies.",
-      "Dear Valued Client, We are excited to introduce Flexi Global Holidays, your dedicated partner in trade fair travel solutions. Built on decades of mastery in logistics and event management, we transform the complexities of trade fair travel into effortless, tailor-made experiences.",
-      "At Flexi Global Holidays, our philosophy is simple: Travel Made Personal. Whether you’re traveling alone or with a team, we provide comprehensive support—from logistics and accommodation to on-ground assistance—so you can focus on what matters most: your business.",
-      "We look forward to helping you make your next trade fair experience successful and stress-free. Please do not hesitate to reach out for customized travel solutions or any assistance you may require.",
+    overview: [],
+    visitorIndustries: [
+      "Pharmaceutical Manufacturers",
+      "API & Intermediate Manufacturers",
+      "Chemical & Specialty Ingredient Companies",
+      "Quality Control, Testing & Regulatory Services",
+      "Distributors, Traders & Supply Chain Companies",
+      "Healthcare, Medical & Life Sciences Companies"
     ],
+    whyChooseUs: [
+      "Decades of trusted industry expertise",
+      "Personalized service tailored to your business needs",
+      "Reliable, efficient, and professional support",
+      "A commitment to making your trade fair experience exceptional"
+    ],
+    dearValuedClient: {
+      title: "Dear Valued Client",
+      message: [
+        "We are excited to introduce Flexi Global Holidays, your dedicated partner in trade fair travel solutions. Built on decades of mastery in logistics and event management, we transform the complexities of trade fair travel into effortless, tailor-made experiences.",
+        "At Flexi Global Holidays, our philosophy is simple: Travel Made Personal. Whether you’re traveling alone or with a team, we provide comprehensive support—from logistics and accommodation to on-ground assistance—so you can focus on what matters most: your business.",
+        "We look forward to helping you make your next trade fair experience successful and stress-free. Please do not hesitate to reach out for customized travel solutions or any assistance you may require."
+      ]
+    },
     itinerary: [
       {
         title: "Day 1: Arrival in Milan",
@@ -113,32 +138,47 @@ export const mainSeoPages: MainSeoPage[] = [
     pricingIntro: ["Connect for more info on detailed pricing and availability for CPHI Milan 2026."],
     pricingItems: [
       {
-        label: "Inclusions",
-        value: "Connect for info",
-        description:
-          "Accommodation on Twin Sharing or Single Occupancy, Daily Buffet breakfast, Airport transfers, Fairground transfers, Indian Dinners + 1 Networking night, Milan City tour, Daily water bottles, Schengen Visa assistance, Overseas Mediclaim, Experienced Tour Leader.",
-      },
-      {
-        label: "Exclusions",
-        value: "Connect for info",
-        description:
-          "Airfare, Entrances to the fairground, Lunches, Laundry, Porterage, excess baggage, expenses of personal nature, and any other items not mentioned in inclusions.",
-      },
+        label: "Package Details",
+        value: "Custom Quotes",
+        description: "Get customized travel solutions for your business needs.",
+      }
+    ],
+    packageInclusions: [
+      "Accommodation on Twin Sharing or Single Occupancy",
+      "Daily Buffet breakfast",
+      "Return Airport – Hotel – Airport transfers (as per group flight)",
+      "Fairground transfers as per itinerary",
+      "Indian Dinners in the comfort of hotel + 1 Networking night",
+      "Milan City tour with Duomo shopping drop",
+      "Daily 2 (500 ml) water bottles per person",
+      "Schengen Visa",
+      "Overseas Travelers Mediclaim Policy till age 60 years",
+      "Services of an Experienced Flexi Global Holidays Leader"
+    ],
+    packageExclusions: [
+      "Airfare",
+      "Entrances to the fairground",
+      "Lunches",
+      "Laundry Porterage, excess baggage & expenses of personal nature",
+      "All Items Specified in ‘Extras’& any other items not mentioned in Inclusions."
     ],
     benefits: [
       {
         title: "Why Choose Us?",
         description:
           "Decades of trusted industry expertise, Personalized service tailored to your business needs, Reliable, efficient, and professional support, A commitment to making your trade fair experience exceptional.",
-      },
-      {
-        title: "Why Exhibitors Choose Us?",
-        description:
-          "Seamless Trade Fair Participation, Tailored Exhibitor Packages, Prime Networking Opportunities, End-to-End Travel & Logistics, Marketing & Visibility Support, On-Site Assistance, Proven Expertise in MICE & Trade Fairs.",
-      },
+      }
     ],
     competitorSection: [
       "Flexi Global Holidays transforms the complexity of exhibition travel into a smoother, more personal journey. Our focus is on operational efficiency, ensuring your team arrives rested and ready for business.",
+    ],
+    seamlessParticipation: [
+      "Tailored Exhibitor Packages",
+      "Prime Networking Opportunities",
+      "End-to-End Travel & Logistics",
+      "Marketing & Visibility Support",
+      "On-Site Assistance",
+      "Proven Expertise in MICE & Trade Fairs"
     ],
     faq: [
       {
@@ -184,6 +224,26 @@ export const mainSeoPages: MainSeoPage[] = [
       "We also encourage companies to think beyond the exhibition hall. CPHI often creates opportunities for plant visits, distributor meetings, investor conversations, or Europe market exploration in the same travel cycle. Adding a controlled extension can improve the return on travel spend. The key is to structure it in advance rather than improvising after arriving in Milan.",
       "For repeat attendees, the biggest gain is usually better execution. Teams that attended before often want improved hotel location, smoother airport transfers, or more flexible airfare. For first-time attendees, the gain is different: better visibility, fewer mistakes, and enough support to travel with confidence. Our CPHI 2026 planning process is built for both cases.",
     ],
+    visitorIndustries: [
+      "Pharmaceutical Manufacturers",
+      "API & Intermediate Manufacturers",
+      "Chemical & Specialty Ingredient Companies",
+      "Quality Control, Testing & Regulatory Services",
+      "Distributors, Traders & Supply Chain Companies",
+      "Healthcare, Medical & Life Sciences Companies"
+    ],
+    whyChooseUs: [
+      "Official-date aligned planning",
+      "Faster internal approvals",
+      "Exhibition-first logistics",
+      "Extension-ready options"
+    ],
+    dearValuedClient: {
+      title: "CPHI 2026 Planning Support",
+      message: [
+        "Plan your CPHI 2026 travel with  Flexi Global Holidays. We specialize in business travel for the pharmaceutical industry, ensuring your team arrives ready for one of the most important events in the pharma calendar."
+      ]
+    },
     itinerary: [
       {
         title: "Day 1: India departure with documentation check",
@@ -237,6 +297,18 @@ export const mainSeoPages: MainSeoPage[] = [
         description: "We quote based on traveller count, hotel mix, shared or private transfers, and whether the company needs one consolidated invoice.",
       },
     ],
+    packageInclusions: [
+      "Accommodation Options",
+      "Daily Breakfast",
+      "Airport Transfers",
+      "Schengen Visa Guidance",
+      "Travel Insurance Support"
+    ],
+    packageExclusions: [
+      "Airfare (unless requested)",
+      "Fairground Entrance Fees",
+      "Personal Expenses"
+    ],
     benefits: [
       {
         title: "Official-date aligned planning",
@@ -246,19 +318,15 @@ export const mainSeoPages: MainSeoPage[] = [
         title: "Faster internal approvals",
         description: "Our quote structure helps finance and management see inclusions, exclusions, and realistic budget bands without hidden surprises.",
       },
-      {
-        title: "Exhibition-first logistics",
-        description: "Travel timing, accommodation, and local transport are shaped around show-day performance and business meetings.",
-      },
-      {
-        title: "Extension-ready options",
-        description: "We can add Europe city meetings or recovery nights without breaking the trip into multiple unmanaged bookings.",
-      },
     ],
     competitorSection: [
       "A lot of event travel pages talk about CPHI 2026 in a broad promotional tone but stop short of helping Indian buyers make operational decisions. That leaves real questions unanswered: when should we arrive, how far should we stay from the venue, what documents will the visa process need, and what budget should we seek approval for now?",
       "We focus on those questions because they affect execution. Our planning is not built around generic destination content. It is built around travel readiness for a pharma exhibition. That makes the page more useful for business teams and helps your travel brief move from interest to action.",
-      "Another difference is how we think about risk. Flight delays, poor hotel location, and weak documentation do not just create inconvenience. They can waste a company's event investment. Planning early with a trade-fair specialist reduces that risk.",
+    ],
+    seamlessParticipation: [
+      "End-to-End Travel & Logistics",
+      "On-Site Assistance",
+      "Expert MICE Planning"
     ],
     faq: [
       { question: "When is CPHI 2026?", answer: "CPHI Milan 2026 is scheduled for 6 October 2026 to 8 October 2026 at Fiera Milano, Italy." },
@@ -298,12 +366,28 @@ export const mainSeoPages: MainSeoPage[] = [
       "A defining era for global pharmaceutical innovation is unfolding in Milan. CPHI Milan acts as a premier international platform for pharmaceutical ingredients, APIs, biotech solutions, CDMO partnerships, packaging innovation, and professional services. Flexi Global Holidays helps turn that high-value event week into a smooth, business-ready travel experience.",
     ],
     overview: [
-      "Visitor industries at CPHI Milan typically include pharmaceutical manufacturers, API and intermediate manufacturers, chemical and specialty ingredient companies, quality control providers, testing and regulatory services, distributors, traders, supply chain companies, healthcare companies, medical businesses, and life sciences teams. Because these visitors attend with different goals, the travel plan should be shaped around meeting purpose rather than a fixed leisure itinerary.",
-      "Choosing the right Milan base can change the entire event experience. Some delegates prefer to stay closer to Fiera Milano for easy venue access, while others choose central zones that work better for client dinners or additional city meetings. The right answer depends on your schedule, team size, and visitor role. We help you compare those trade-offs before you commit.",
-      "Airport planning is another overlooked area. Depending on the final flight, your team may use Milan Malpensa, Milan Linate, or a connected European routing. Transfer time, baggage, and arrival hour can all affect the experience, especially for exhibitors or travellers carrying product literature. We package around those details to avoid the common mistake of selecting a technically cheap flight that creates an inefficient arrival.",
-      "For Indian delegates, Schengen visa preparation also needs to be timed with realism. Invitation letters, company covering letters, travel insurance, hotel confirmations, financial documentation, and itinerary dates must work as one coherent file. Good package planning supports that process by giving you a clear travel flow early enough to avoid document inconsistency.",
-      "Our approach is built on trusted trade fair travel experience, personalized service, reliable support, and a commitment to making your event travel professional and stress-free. You focus on business while we coordinate accommodation, transfers, visa guidance, meals, fairground logistics, and on-ground assistance.",
+      "Visitor industries at CPHI Milan typically include pharmaceutical manufacturers, API and intermediate manufacturers, chemical & specialty ingredient companies, quality control providers, testing & regulatory services, distributors, traders, supply chain companies, healthcare companies, medical businesses, and life sciences teams. Because these visitors attend with different goals, the travel plan should be shaped around meeting purpose rather than a fixed leisure itinerary.",
     ],
+    visitorIndustries: [
+      "Pharmaceutical Manufacturers",
+      "API & Intermediate Manufacturers",
+      "Chemical & Specialty Ingredient Companies",
+      "Quality Control, Testing & Regulatory Services",
+      "Distributors, Traders & Supply Chain Companies",
+      "Healthcare, Medical & Life Sciences Companies"
+    ],
+    whyChooseUs: [
+      "Decades of trusted industry expertise",
+      "Personalized service tailored to your business needs",
+      "Reliable, efficient, and professional support",
+      "A commitment to making your trade fair experience exceptional"
+    ],
+    dearValuedClient: {
+      title: "Dear Valued Client",
+      message: [
+        "At Flexi Global Holidays, our philosophy is simple: Travel Made Personal. Whether you’re traveling alone or with a team, we provide comprehensive support—from logistics and accommodation to on-ground assistance—so you can focus on what matters most: your business."
+      ]
+    },
     itinerary: [
       {
         title: "Day 1: Arrival in Milan with airport transfer planning",
@@ -342,44 +426,46 @@ export const mainSeoPages: MainSeoPage[] = [
     ],
     pricingItems: [
       {
-        label: "Package inclusions",
-        value: "Contact for more information",
-        description: "Accommodation on twin sharing or single occupancy, daily buffet breakfast, airport-hotel-airport transfers as per group flight, fairground transfers as per itinerary, Indian dinners at the hotel, one networking night, Milan city tour with Duomo shopping drop, daily water bottles, Schengen visa support, overseas travellers mediclaim policy up to age 60, and services of an experienced Flexi tour leader.",
+        label: "Package Details",
+        value: "Customized Proposal",
+        description: "Reach out for tailored solutions.",
       },
-      {
-        label: "Package exclusions",
-        value: "Contact for more information",
-        description: "Airfare, entrance to the fairground, lunches, laundry, porterage, excess baggage, expenses of personal nature, items listed as extras, and anything not mentioned in the inclusions are normally treated separately.",
-      },
-      {
-        label: "Booking and visa information",
-        value: "Contact for more information",
-        description: "Booking confirmation, package itinerary, visa information, rooming details, transfer schedule, and document guidance are shared directly after understanding your team size, preferred travel dates, and business requirements.",
-      },
+    ],
+    packageInclusions: [
+      "Accommodation on Twin Sharing or Single Occupancy",
+      "Daily Buffet breakfast",
+      "Return Airport – Hotel – Airport transfers (as per group flight)",
+      "Fairground transfers as per itinerary",
+      "Indian Dinners + 1 Networking night",
+      "Milan City tour with Duomo shopping drop",
+      "Daily 2 (500 ml) water bottles per person",
+      "Schengen Visa",
+      "Overseas Travelers Mediclaim Policy till age 60 years",
+      "Services of an Experienced Flexi Global Holidays Leader"
+    ],
+    packageExclusions: [
+      "Airfare",
+      "Entrances to the fairground",
+      "Lunches",
+      "Laundry Porterage, excess baggage & expenses of personal nature",
+      "All Items Specified in ‘Extras’& any other items not mentioned in Inclusions."
     ],
     benefits: [
       {
         title: "Seamless trade fair participation",
         description: "Flights, hotels, transfers, fairground movement, meals, and support are coordinated so your team can stay focused on exhibition goals.",
       },
-      {
-        title: "Tailored exhibitor and visitor packages",
-        description: "We shape the package around visitor, exhibitor, leadership, procurement, API sourcing, and small pharma team requirements.",
-      },
-      {
-        title: "End-to-end travel and logistics",
-        description: "Airport transfers, fairground transfers, Schengen visa support, hotel planning, insurance guidance, and city arrangements stay under one travel desk.",
-      },
-      {
-        title: "On-site assistance and proven MICE expertise",
-        description: "An experienced Flexi tour leader and trade fair travel process help support networking, visibility, and smooth on-ground execution.",
-      },
     ],
     competitorSection: [
       "The difference between a normal Milan travel package and a CPHI Milan package is intent. A tourist package sells the city. A trade fair package sells efficiency. That means the hotel must work for early starts, the itinerary must support venue timing, and every support element must reduce friction instead of adding it.",
-      "Dear valued client, Flexi Global Holidays is your dedicated partner in trade fair travel solutions. Built on years of logistics, MICE, and event travel experience, we transform the complexity of exhibition travel into a smoother, more personal journey.",
-      "Our philosophy is simple: travel made personal. Whether you are travelling alone or with a team, we provide comprehensive support from logistics and accommodation to on-ground assistance so you can focus on what matters most: your business.",
-      "Why exhibitors choose Flexi: seamless participation, tailored exhibitor packages, prime networking support, end-to-end travel and logistics, marketing and visibility assistance, on-site support, and proven expertise in MICE and trade fairs.",
+    ],
+    seamlessParticipation: [
+      "Tailored Exhibitor Packages",
+      "Prime Networking Opportunities",
+      "End-to-End Travel & Logistics",
+      "Marketing & Visibility Support",
+      "On-Site Assistance",
+      "Proven Expertise in MICE & Trade Fairs"
     ],
     faq: [
       { question: "Do you offer CPHI Milan packages from all major Indian cities?", answer: "Yes. We can structure departures from multiple Indian gateways depending on flight availability and team needs." },

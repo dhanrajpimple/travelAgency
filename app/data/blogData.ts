@@ -112,5 +112,49 @@ export const blogPosts: BlogPost[] = [
         author: "Flexi Team",
         category: "Company News",
         aiInsight: "AI suggests: Booking through a travel agency often provides better cancellation policies and support during emergencies compared to self-booking."
+    },
+    {
+        slug: "cphi-milan-2026-guide",
+        title: "CPHI Milan 2026: A Defining Era for Global Pharmaceutical Innovation",
+        excerpt:
+            "Everything you need to know about CPHI Milan 2026, the world’s largest pharmaceutical exhibition. Discover travel tips, visitor industries, and how to maximize your business impact.",
+        date: "May 1, 2026",
+        image: "https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&q=80&w=2000",
+        category: "Events",
+        author: "Travflix Editorial",
+        content: `
+            <p>CPHI Milan 2026 is Europe’s leading pharmaceutical exhibition, bringing together the entire global pharma value chain under one roof. Hosted in Milan, the event serves as a premier international platform for pharmaceutical ingredients, APIs, biotech solutions, contract development and manufacturing (CDMO), advanced packaging technologies, and industry services.</p>
+            
+            <h2>A Defining Era for Global Pharmaceutical Innovation</h2>
+            <p>CPHI Milan 2026 is Europe’s leading pharmaceutical exhibition, bringing together the entire global pharma value chain under one roof. Hosted in Milan, the event serves as a premier international platform for pharmaceutical ingredients, APIs, biotech solutions, contract development and manufacturing (CDMO), advanced packaging technologies, and industry services.</p>
+
+            <h2>Visitor Industries</h2>
+            <p>At CPHI Milan, visitors typically come from a variety of industries and roles such as:</p>
+            <ul>
+                <li>Pharmaceutical Manufacturers</li>
+                <li>API & Intermediate Manufacturers</li>
+                <li>Chemical & Specialty Ingredient Companies</li>
+                <li>Quality Control, Testing & Regulatory Services</li>
+                <li>Distributors, Traders & Supply Chain Companies</li>
+                <li>Healthcare, Medical & Life Sciences Companies</li>
+            </ul>
+
+            <h2>Why Choose a Specialized Travel Partner?</h2>
+            <p>We are excited to introduce Travflix Tours, your dedicated partner in trade fair travel solutions. Built on decades of mastery in logistics and event management, we transform the complexities of trade fair travel into effortless, tailor-made experiences.</p>
+            <p>At Travflix Tours, our philosophy is simple: Travel Made Personal. Whether you’re traveling alone or with a team, we provide comprehensive support—from logistics and accommodation to on-ground assistance—so you can focus on what matters most: your business.</p>
+
+            <h2>Seamless Participation for Exhibitors</h2>
+            <p>Why exhibitors choose specialized support:</p>
+            <ul>
+                <li>Tailored Exhibitor Packages</li>
+                <li>Prime Networking Opportunities</li>
+                <li>End-to-End Travel & Logistics</li>
+                <li>Marketing & Visibility Support</li>
+                <li>On-Site Assistance</li>
+                <li>Proven Expertise in MICE & Trade Fairs</li>
+            </ul>
+        `,
+        tags: ["CPHI Milan", "Pharma Exhibition", "Business Travel", "Italy"],
+        seoKeywords: "CPHI Milan 2026, pharmaceutical exhibition, Milan travel packages, pharma events 2026",
     }
 ];

@@ -13,7 +13,7 @@ function CtaCard({ title, description }: { title: string; description: string })
     <div className="my-10 rounded-3xl border border-[#D4AF37]/20 bg-gradient-to-r from-[#1A2B4A] to-[#243B61] p-6 text-white shadow-xl">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
-          <h3 className="text-2xl font-bold">{title}</h3>
+          <h3 className="text-2xl font-bold text-white">{title}</h3>
           <p className="mt-2 text-sm leading-7 text-blue-100">{description}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -122,7 +122,7 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
           <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
             <div className="max-w-4xl">
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">{page.heroEyebrow}</p>
-              <h1 className="max-w-4xl text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">{page.title}</h1>
+              <h1 className="max-w-4xl text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl text-white">{page.title}</h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-blue-100">{page.hookHeadline}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/contact" className="rounded-full bg-[#D4AF37] px-6 py-3 font-semibold text-[#1A2B4A]">
@@ -154,7 +154,48 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
               ))}
             </div>
 
+            {page.visitorIndustries.length > 0 && (
+              <section className="mt-12">
+                <h2 className="text-3xl font-bold text-gray-900">Visitor Industries</h2>
+                <p className="mt-4 text-gray-700">At CPHI Milan, visitors typically come from a variety of industries and roles such as:</p>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {page.visitorIndustries.map((industry) => (
+                    <div key={industry} className="flex items-center gap-3 rounded-2xl bg-gray-50 p-4 border border-gray-100">
+                      <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
+                      <span className="text-sm font-medium text-gray-900">{industry}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             <CtaCard title="Need a quote while rates are still manageable?" description={page.ctaLine} />
+
+            {page.whyChooseUs.length > 0 && (
+              <section className="mt-12">
+                <h2 className="text-3xl font-bold text-gray-900">Why Choose Us?</h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {page.whyChooseUs.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <svg className="h-6 w-6 flex-shrink-0 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            <section className="mt-12 rounded-3xl bg-blue-50/50 p-8 border border-blue-100/50">
+              <h2 className="text-2xl font-bold text-gray-900">{page.dearValuedClient.title}</h2>
+              <div className="mt-6 space-y-4 text-base leading-8 text-gray-700 italic">
+                {page.dearValuedClient.message.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+              <p className="mt-6 font-bold text-[#1A2B4A]">— The Flexi Global Holidays Team</p>
+            </section>
 
             <section className="mt-12">
               <h2 className="text-3xl font-bold text-gray-900">Why Indian pharma teams choose this page first</h2>
@@ -183,20 +224,36 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
             <CtaCard title="Need pricing with and without flights?" description="Ask for two quote formats if your finance team wants to compare full support against land-only options." />
 
             <section className="mt-12">
-              <h2 className="text-3xl font-bold text-gray-900">Connect for more info</h2>
-              <div className="mt-6 space-y-6 text-base leading-8 text-gray-700">
-                {page.pricingIntro.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-              <div className="mt-8 grid gap-5 md:grid-cols-3">
-                {page.pricingItems.map((item) => (
-                  <div key={item.label} className="rounded-3xl border border-[#D4AF37]/20 bg-[#fffaf0] p-6">
-                    <h3 className="text-xl font-bold text-gray-900">{item.label}</h3>
-                    <p className="mt-2 text-lg font-semibold text-[#0066CC]">{item.value}</p>
-                    <p className="mt-3 text-sm leading-7 text-gray-700">{item.description}</p>
-                  </div>
-                ))}
+              <h2 className="text-3xl font-bold text-gray-900">Package Details</h2>
+              <div className="mt-8 grid gap-8 md:grid-cols-2">
+                <div className="rounded-3xl border border-[#D4AF37]/20 bg-[#fffaf0] p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <span className="h-6 w-1 bg-[#D4AF37] rounded-full" />
+                    Package Inclusions
+                  </h3>
+                  <ul className="space-y-4">
+                    {page.packageInclusions.map((item) => (
+                      <li key={item} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
+                        <span className="text-[#D4AF37] mt-1">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-3xl border border-gray-100 bg-gray-50 p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <span className="h-6 w-1 bg-gray-400 rounded-full" />
+                    Package Exclusions
+                  </h3>
+                  <ul className="space-y-4">
+                    {page.packageExclusions.map((item) => (
+                      <li key={item} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
+                        <span className="text-gray-400 mt-1">✕</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </section>
 
@@ -204,12 +261,25 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
               <h2 className="text-3xl font-bold text-gray-900">Benefits over generic competitors</h2>
               <div className="mt-6 grid gap-5 md:grid-cols-2">
                 {page.benefits.map((item) => (
-                  <div key={item.title} className="rounded-3xl border border-gray-100 p-6">
+                  <div key={item.title} className="rounded-3xl border border-gray-100 p-6 hover:border-[#D4AF37]/30 transition-colors">
                     <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-gray-700">{item.description}</p>
                   </div>
                 ))}
               </div>
+              {page.seamlessParticipation.length > 0 && (
+                <div className="mt-8 rounded-3xl bg-[#1A2B4A] p-8 text-white">
+                  <h3 className="text-xl font-bold text-white mb-6">Seamless Trade Fair Participation</h3>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {page.seamlessParticipation.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <div className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+                        <span className="text-sm font-medium text-blue-100">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="mt-8 space-y-6 text-base leading-8 text-gray-700">
                 {page.competitorSection.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -218,35 +288,6 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
             </section>
 
             <CtaCard title="Want a fast comparison quote?" description="Send your city, dates, traveller count, and preferred hotel style. We will reply with a practical cost range." />
-
-            <section className="mt-12">
-              <h2 className="text-3xl font-bold text-gray-900">Testimonials from business travellers</h2>
-              <div className="mt-8 grid gap-5 md:grid-cols-3">
-                {[
-                  {
-                    name: "Rohan Mehta",
-                    company: "API Export Team",
-                    quote: "The biggest difference was commute planning. We got more useful meetings because the hotel and transfer setup was sensible.",
-                  },
-                  {
-                    name: "Sonal Shah",
-                    company: "Packaging Procurement",
-                    quote: "Visa guidance and schedule clarity made approvals much easier inside our company.",
-                  },
-                  {
-                    name: "Ankit Bansal",
-                    company: "Pharma Leadership Delegate",
-                    quote: "It felt like business travel support, not a holiday package with random extras.",
-                  },
-                ].map((item) => (
-                  <div key={item.name} className="rounded-3xl bg-[#1A2B4A] p-6 text-white">
-                    <p className="text-sm leading-7 text-blue-100">"{item.quote}"</p>
-                    <p className="mt-5 font-semibold">{item.name}</p>
-                    <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]">{item.company}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
 
             <section className="mt-12">
               <h2 className="text-3xl font-bold text-gray-900">Frequently asked questions</h2>
