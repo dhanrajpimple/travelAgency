@@ -5,6 +5,8 @@ export async function loader() {
 
   const robotsTxt = `User-agent: *
 Allow: /
+Allow: /__manifest*
+Allow: /*_data=*
 Disallow: /?*
 Disallow: /*?*
 

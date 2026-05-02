@@ -160,13 +160,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "@id": `${CONFIG.SITE_URL}/#website`,
-      url: CONFIG.SITE_URL,
-      name: "Flexi Global Holidays",
-      alternateName: "Flexi Global",
-      publisher: {
+      "url": CONFIG.SITE_URL,
+      "name": "Flexi Global Holidays",
+      "alternateName": ["Flexi Global", "Flexi Global Holidays India"],
+      "publisher": {
         "@id": `${CONFIG.SITE_URL}/#organization`,
       },
-      inLanguage: "en-IN",
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${CONFIG.SITE_URL}/?s={search_term_string}`
+        },
+        "query-input": "required name=search_term_string"
+      }
     },
   ];
 
@@ -183,8 +191,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Flexi Global Holidays" />
-        <meta name="application-name" content="Flexi Global Holidays" />
         <meta name="msapplication-TileColor" content="#1A2B4A" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="dcterms.audience" content="Travelers, Tourists, Business Travelers, Honeymooners" />
