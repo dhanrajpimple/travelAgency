@@ -7,6 +7,42 @@ import { CONFIG } from "~/config/constants";
 import type { MainSeoPage } from "~/data/cphiSeo";
 import { mainSeoPages, supportSeoPages } from "~/data/cphiSeo";
 import expoImage from "~/assets/sxpo.webp";
+import { Check, X as Close, ArrowRight, Shield, Clock, Award, Users } from "lucide-react";
+
+// Trade Fair Images
+import tradefair1 from "~/assets/upcomingtradefair (1).webp";
+import tradefair2 from "~/assets/upcomingtradefair (2).webp";
+import tradefair3 from "~/assets/upcomingtradefair (3).webp";
+import tradefair4 from "~/assets/upcomingtradefair (4).webp";
+import tradefair5 from "~/assets/upcomingtradefair (5).webp";
+import tradefair6 from "~/assets/upcomingtradefair (6).webp";
+import tradefair7 from "~/assets/upcomingtradefair (7).webp";
+import tradefair8 from "~/assets/upcomingtradefair (8).webp";
+import tradefair9 from "~/assets/upcomingtradefair (9).webp";
+import tradefair10 from "~/assets/upcomingtradefair (10).webp";
+import tradefair11 from "~/assets/upcomingtradefair (11).webp";
+import tradefair12 from "~/assets/upcomingtradefair (12).webp";
+import tradefair13 from "~/assets/upcomingtradefair (13).webp";
+import tradefair14 from "~/assets/upcomingtradefair (14).webp";
+
+// Client Images
+import c1 from "~/assets/brand1.webp";
+import c2 from "~/assets/brand2.webp";
+import c3_1 from "~/assets/brand3.webp";
+import c3_2 from "~/assets/brand4.webp";
+import c3_3 from "~/assets/brand5.webp";
+import c3_4 from "~/assets/brand6.webp";
+import c3_6 from "~/assets/brand7.webp";
+import c3_7 from "~/assets/brand8.webp";
+import c3_8 from "~/assets/brand9.webp";
+
+const upcomingTradeFairImages = [
+  tradefair1, tradefair2, tradefair3, tradefair4, tradefair5, 
+  tradefair6, tradefair7, tradefair8, tradefair9, tradefair10, 
+  tradefair11, tradefair12, tradefair13, tradefair14
+];
+
+const clientImages = [c1, c2, c3_1, c3_2, c3_3, c3_4, c3_6, c3_7, c3_8];
 
 function CtaCard({ title, description }: { title: string; description: string }) {
   return (
@@ -110,6 +146,237 @@ export function buildMainPageSchema(page: MainSeoPage) {
 export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
   const relatedPages = supportSeoPages.filter((item) => page.supportSlugs.includes(item.slug));
   const siblings = mainSeoPages.filter((item) => item.slug !== page.slug);
+  const isHub = page.slug === "/cphi-tour-packages";
+
+  if (isHub) {
+    return (
+      <div className="min-h-screen bg-white text-gray-900">
+        <Navigation />
+        
+        {/* Centered Premium Hero */}
+        <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={expoImage} alt={page.title} className="h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1A2B4A]/90 via-[#1A2B4A]/80 to-[#1A2B4A]/60" />
+          </div>
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
+            <p className="mb-6 text-sm font-bold uppercase tracking-[0.3em] text-[#D4AF37] animate-hero-fadeIn">
+              {page.heroEyebrow}
+            </p>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-8 leading-tight animate-hero-fadeInScale">
+              {page.title}
+            </h1>
+            <p className="text-lg sm:text-xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed animate-hero-fadeUp">
+              {page.hookHeadline}
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mb-12 text-[#D4AF37]">
+              <span className="flex items-center gap-2 text-sm sm:text-base font-semibold">
+                <Users className="w-5 h-5" /> 1000+ Travelers
+              </span>
+              <span className="flex items-center gap-2 text-sm sm:text-base font-semibold">
+                <Shield className="w-5 h-5" /> Visa Success Guarantee
+              </span>
+              <span className="flex items-center gap-2 text-sm sm:text-base font-semibold">
+                <Award className="w-5 h-5" /> 10+ Years Expertise
+              </span>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-hero-fadeUp">
+              <Link
+                to="/contact"
+                className="bg-gradient-to-r from-[#D4AF37] to-[#C9A634] text-[#1A2B4A] rounded-full px-8 py-4 text-lg font-bold hover:scale-105 active:scale-95 transition-transform shadow-xl"
+              >
+                Get Custom Quote
+              </Link>
+              <a
+                href={`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hello, I need details for CPHI Milan 2026.`)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full px-8 py-4 text-lg font-bold bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-[#1A2B4A] transition-all"
+              >
+                WhatsApp Now
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* CPHI Specialist Options */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our CPHI Travel Solutions</h2>
+              <p className="text-lg text-gray-600">Tailored packages for exhibitors, visitors, and corporate delegations.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Exhibition Specialist",
+                  desc: "Complete support for exhibitors including booth setup days, baggage planning, and prime venue access.",
+                  link: "/cphi-milan-tour-packages",
+                  image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+                  tag: "Most Popular"
+                },
+                {
+                  title: "Budget & Planning 2026",
+                  desc: "Early-bird roadmap for CPHI 2026 with realistic budget bands and long-term accommodation strategy.",
+                  link: "/cphi-2026",
+                  image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+                  tag: "Best Value"
+                },
+                {
+                  title: "Corporate Delegation",
+                  desc: "Managed group travel from multiple Indian cities with consolidated invoicing and VIP transfers.",
+                  link: "/contact",
+                  image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80",
+                  tag: "Groups Only"
+                }
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2">
+                  <div className="h-56 relative">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                    <div className="absolute top-4 right-4 bg-[#D4AF37] text-[#1A2B4A] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                      {item.tag}
+                    </div>
+                  </div>
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{item.desc}</p>
+                    <Link
+                      to={item.link}
+                      className="inline-flex items-center gap-2 font-bold text-[#0066CC] hover:gap-3 transition-all"
+                    >
+                      View Details <ArrowRight className="w-5 h-5" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Dynamic Pricing & Package Details */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Package Inclusions & Details</h2>
+                <p className="text-lg text-gray-600 mb-12">{page.pricingIntro[0]}</p>
+                
+                <div className="space-y-6">
+                  {page.packageInclusions.map((item, i) => (
+                    <div key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-blue-50/50 border border-blue-100 hover:border-[#D4AF37]/30 transition-colors">
+                      <div className="mt-1 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-gray-700 font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-[#1A2B4A] rounded-[40px] p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/10 rounded-bl-full" />
+                <h3 className="text-2xl font-bold mb-8 text-white">Estimated Budget Bands</h3>
+                <div className="space-y-8">
+                  {page.pricingItems.map((item, i) => (
+                    <div key={i} className="border-b border-white/10 pb-6 last:border-0 last:pb-0">
+                      <p className="text-blue-200 text-sm font-semibold uppercase tracking-wider mb-2">{item.label}</p>
+                      <p className="text-3xl font-bold text-[#D4AF37] mb-2">{item.value}</p>
+                      <p className="text-blue-100/70 text-sm leading-relaxed">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+                <Link
+                  to="/contact"
+                  className="mt-12 block w-full bg-white text-[#1A2B4A] text-center py-4 rounded-full font-bold text-lg hover:bg-[#D4AF37] transition-colors"
+                >
+                  Request Final Quote
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trade Fair Gallery (Authority Section) */}
+       
+
+        {/* Client Trust Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-16 italic">"Trusted by India's leading pharmaceutical companies"</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all">
+              {clientImages.map((img, i) => (
+                <div key={i} className="h-16 flex items-center justify-center">
+                  <img src={img} alt="Client" className="max-h-full max-w-full object-contain" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="py-20">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="bg-gradient-to-r from-[#1A2B4A] to-[#243B61] rounded-[40px] p-12 text-center text-white shadow-2xl relative overflow-hidden">
+              <div className="relative z-10">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to secure your CPHI Milan 2026 travel?</h2>
+                <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                  Share your team size and preferred dates. We reply with a focused cost range within 24 business hours.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link to="/contact" className="bg-[#D4AF37] text-[#1A2B4A] px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform">
+                    Start Custom Proposal
+                  </Link>
+                  <a href={`tel:${CONFIG.PHONE_PRIMARY}`} className="bg-white/10 backdrop-blur-sm border border-white/30 px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all">
+                    Call {CONFIG.PHONE_PRIMARY}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Footer />
+        <StickyQuoteButton />
+        <WhatsAppButton />
+
+        <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee-infinite {
+            animation: marquee 40s linear infinite;
+          }
+          .animate-hero-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+          }
+          .animate-hero-fadeInScale {
+            animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+          .animate-hero-fadeUp {
+            animation: fadeUp 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+          }
+          @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+        `}</style>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-gray-900">
