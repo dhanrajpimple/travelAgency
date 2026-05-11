@@ -63,7 +63,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       "@type": "Organization",
       "@id": `${CONFIG.SITE_URL}/#organization`,
       name: "Flexi Global Holidays",
-      alternateName: ["Flexi Global", "Flexi Global Holidays India"],
+      alternateName: "Flexi Global Holidays",
       legalName: "Flexi Global Holidays",
       url: CONFIG.SITE_URL,
       logo: {
@@ -100,7 +100,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       "@type": "TravelAgency",
       "@id": `${CONFIG.SITE_URL}/#travel-agency`,
       name: "Flexi Global Holidays",
-      alternateName: "Flexi Global",
+      alternateName: "Flexi Global Holidays",
       parentOrganization: {
         "@id": `${CONFIG.SITE_URL}/#organization`,
       },
@@ -162,7 +162,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       "@id": `${CONFIG.SITE_URL}/#website`,
       "url": CONFIG.SITE_URL,
       "name": "Flexi Global Holidays",
-      "alternateName": ["Flexi Global", "Flexi Global Holidays India"],
+      "alternateName": "Flexi Global Holidays",
       "publisher": {
         "@id": `${CONFIG.SITE_URL}/#organization`,
       },
