@@ -57,7 +57,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const path = location.pathname === "/" ? "/" : location.pathname.replace(/\/+$/, "");
   const canonicalUrl = `${CONFIG.SITE_URL}${path}`;
   const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+  const homeUrl = `${CONFIG.SITE_URL}/`;
   const siteSchemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Flexi Global Holidays",
+      alternateName: "Flexi Global Holidays",
+      url: homeUrl,
+    },
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -65,7 +73,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       name: "Flexi Global Holidays",
       alternateName: "Flexi Global Holidays",
       legalName: "Flexi Global Holidays",
-      url: CONFIG.SITE_URL,
+      url: homeUrl,
       logo: {
         "@type": "ImageObject",
         url: `${CONFIG.SITE_URL}/logo.png`,
@@ -106,7 +114,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       },
       description:
         "Flexi Global Holidays is a travel agency in India offering domestic and international tour packages, visa services, hotel bookings, MICE travel, and trade fair travel planning.",
-      url: CONFIG.SITE_URL,
+      url: homeUrl,
       logo: `${CONFIG.SITE_URL}/logo.png`,
       image: `${CONFIG.SITE_URL}/logo.png`,
       priceRange: "$$",
@@ -156,26 +164,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         ],
       },
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": `${CONFIG.SITE_URL}/#website`,
-      "url": CONFIG.SITE_URL,
-      "name": "Flexi Global Holidays",
-      "alternateName": "Flexi Global Holidays",
-      "publisher": {
-        "@id": `${CONFIG.SITE_URL}/#organization`,
-      },
-      "inLanguage": "en-IN",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": `${CONFIG.SITE_URL}/?s={search_term_string}`
-        },
-        "query-input": "required name=search_term_string"
-      }
-    },
   ];
 
   return (
@@ -186,6 +174,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="theme-color" content="#1A2B4A" />
         {/* Google Search Console Verification */}
         <meta name="google-site-verification" content="v_aJnz3t-yWWYyzmUJ7EaClu6MCY0jXfNeJ_7DruQa8" />
+
         {/* Additional SEO Meta Tags */}
         <meta name="format-detection" content="telephone=yes" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -213,12 +202,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
             />
           </>
         ) : null}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(siteSchemas)
-          }}
-        />
+        {siteSchemas.map((schema, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema)
+            }}
+          />
+        ))}
       </head>
       <body>
         {children}
