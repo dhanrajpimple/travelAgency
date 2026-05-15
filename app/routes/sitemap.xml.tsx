@@ -4,7 +4,7 @@ import { blogPosts } from "~/data/blogData";
 import { mainSeoPages, supportSeoPages } from "~/data/cphiSeo";
 
 export async function loader() {
-  const siteUrl = CONFIG.SITE_URL;
+  const siteUrl = CONFIG.SITE_URL.replace(/\/+$/, "");
   const currentDate = new Date().toISOString().split('T')[0];
 
   // Static routes with priorities
@@ -75,7 +75,7 @@ export async function loader() {
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 ${allRoutes.map(route => {
-    const url = route.path === "/" ? siteUrl : `${siteUrl}${route.path}`;
+    const url = route.path === "/" ? `${siteUrl}/` : `${siteUrl}${route.path}`;
     return `  <url>
     <loc>${url}</loc>
     <lastmod>${currentDate}</lastmod>

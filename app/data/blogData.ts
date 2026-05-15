@@ -16,9 +16,41 @@ export interface BlogPost {
     aiInsight?: string; // Added AI-powered suggestion/insight
     relatedRoute?: string;
     relatedLabel?: string;
+    tags?: string[];
+    seoKeywords?: string;
 }
 
 export const blogPosts: BlogPost[] = [
+    {
+        slug: "best-international-tour-packages-from-india",
+        title: "Best International Tour Packages from India: Dubai, Thailand, Bali, Singapore and Europe",
+        excerpt: "Compare the most searched international tour packages from India, including Dubai, Thailand, Bali, Singapore and Europe, with practical tips on budget, visa planning, best travel time and booking support.",
+        content: "International tour packages from India are among the most searched travel topics because travellers want a simple way to compare destinations, budgets, visas, flights, hotels and sightseeing before they book. Dubai, Thailand, Bali, Singapore and Europe continue to be popular because they work well for families, honeymoon couples, first-time international travellers and corporate incentive groups.\n\nDubai is a strong choice for travellers who want luxury hotels, shopping, desert safari, Burj Khalifa, theme parks and short flight duration from India. It is ideal for families and first-time international travellers because the itinerary can be comfortable, structured and easy to manage. Thailand is popular for Bangkok, Pattaya, Phuket and Krabi because it combines nightlife, beaches, island tours, shopping and value-for-money hotels.\n\nBali is one of the most searched honeymoon and couple destinations from India. Travellers usually look for private pool villas, beach clubs, Ubud stays, water sports, Tanah Lot, Nusa Penida and sunset experiences. Singapore is a good match for families because Universal Studios, Sentosa, Gardens by the Bay, Marina Bay Sands and city tours can be planned in a clean and efficient itinerary.\n\nEurope tour packages from India are usually searched by travellers planning Switzerland, Paris, Italy, Netherlands, Austria or multi-country group tours. Europe needs stronger planning because Schengen visa timelines, hotel location, train or coach routing and seasonal pricing can change the final budget. Families and senior travellers should start early so the itinerary stays relaxed and visa documents are prepared on time.\n\nWhen comparing international holiday packages, do not look only at the lowest price. Check hotel category, location, room type, meal plan, airport transfers, sightseeing inclusions, visa support, travel insurance, cancellation policy and on-trip assistance. A slightly better planned package can save time and stress during the journey.\n\nFlexi Global Holidays helps travellers compare international tour packages from India based on travel month, departure city, budget, traveller type and preferred pace. Whether you are planning Dubai, Thailand, Bali, Singapore, Europe or another destination, the team can help build a practical itinerary with flights, hotels, visa guidance, transfers and sightseeing support.",
+        date: "May 15, 2026",
+        image: heroBeach,
+        author: "Flexi Global Holidays Team",
+        category: "International Travel",
+        aiInsight: "AI suggests: Travellers usually compare Dubai, Thailand, Bali, Singapore and Europe first, so shortlist by visa timeline, total budget and ideal travel month before choosing the final destination.",
+        relatedRoute: "/contact",
+        relatedLabel: "Plan an International Tour Package",
+        tags: ["International Tour Packages", "Dubai", "Thailand", "Bali", "Singapore", "Europe"],
+        seoKeywords: "international tour packages from India, Dubai tour package, Thailand package from India, Bali honeymoon package, Singapore family package, Europe tour package from India"
+    },
+    {
+        slug: "first-time-travel-guide-from-india",
+        title: "First-Time Travel Guide from India: Passport, Visa, Flights, Hotels and Packing Tips",
+        excerpt: "A practical first-time travel guide for Indian travellers covering passport validity, visa documents, flight booking, hotel selection, travel insurance, foreign currency, packing and airport preparation.",
+        content: "First-time travel from India can feel exciting and confusing at the same time. Most travellers search for passport validity, visa documents, flight booking tips, hotel selection, travel insurance, foreign currency and packing lists before their first domestic or international trip. A clear checklist makes the full journey easier and reduces last-minute stress.\n\nStart with passport validity if you are travelling internationally. Many countries expect the passport to be valid for at least six months from the travel date. Keep scanned copies of your passport, visa, tickets, hotel vouchers, insurance and ID proof in your email or cloud storage. For domestic trips, keep government ID proof ready and check name spelling across bookings.\n\nVisa planning should begin early. Every country has different requirements, but common documents include passport, photographs, bank statements, employment or business proof, travel itinerary, hotel confirmation, flight details and insurance. For Schengen, UK, USA, Dubai, Singapore, Thailand and Australia travel, document quality and timing can affect approval comfort.\n\nBook flights after comparing total journey time, baggage allowance, arrival time and airport transfers. A cheap flight with a difficult arrival hour may increase hotel or taxi cost. For hotels, check location before star rating. A well-located hotel near attractions, public transport, business venue or beach area can make the trip smoother than a distant property with a lower room rate.\n\nTravel insurance is useful for medical emergencies, baggage issues, flight delays and unexpected disruption. Carry some local currency for small expenses, but also inform your bank before international travel so your card works smoothly. Pack light, keep medicines in your hand baggage, check plug adapter needs and leave some space for shopping.\n\nFlexi Global Holidays can help first-time travellers with destination selection, visa guidance, flight options, hotel booking, itinerary planning, airport transfers and travel support. Whether you are planning your first international holiday, honeymoon, family vacation or business trip, a guided plan helps you travel with more confidence.",
+        date: "May 15, 2026",
+        image: familyVacation,
+        author: "Flexi Global Holidays Team",
+        category: "Travel Tips",
+        aiInsight: "AI suggests: First-time travellers should verify passport validity, visa documents and hotel location before paying for flights, because these three items shape the rest of the trip.",
+        relatedRoute: "/visa",
+        relatedLabel: "Explore Visa Services",
+        tags: ["First-Time Travel", "Passport", "Visa", "Flights", "Hotels", "Packing Tips"],
+        seoKeywords: "first time international travel from India, travel checklist India, passport visa flight hotel tips, packing tips for international travel, first time traveller guide"
+    },
     {
         slug: "cphi-milan-2026-travel-package-guide",
         title: "CPHI Milan 2026 Travel Package Guide for Indian Pharma Delegates",

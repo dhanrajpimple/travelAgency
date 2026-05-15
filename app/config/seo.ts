@@ -15,9 +15,10 @@ export interface SEOData {
 }
 
 export function generateSEOTags(data: SEOData) {
-  const siteUrl = CONFIG.SITE_URL;
+  const siteUrl = CONFIG.SITE_URL.replace(/\/+$/, "");
   const defaultImage = `${siteUrl}/logo.png`;
-  const fullUrl = data.url ? `${siteUrl}${data.url}` : siteUrl;
+  const path = data.url ? (data.url.startsWith("/") ? data.url : `/${data.url}`) : "/";
+  const fullUrl = path === "/" ? `${siteUrl}/` : `${siteUrl}${path.replace(/\/+$/, "")}`;
   const imageUrl = data.image || defaultImage;
 
   return [

@@ -1,7 +1,7 @@
 import { CONFIG } from "~/config/constants";
 
 export async function loader() {
-  const siteUrl = CONFIG.SITE_URL;
+  const siteUrl = CONFIG.SITE_URL.replace(/\/+$/, "");
 
   const robotsTxt = `User-agent: *
 Allow: /

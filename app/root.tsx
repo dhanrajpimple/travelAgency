@@ -11,22 +11,18 @@ import {
 // removed missing local type import; using inline types below
 import "./app.css";
 import { CONFIG } from "./config/constants";
+import { generateSEOTags } from "./config/seo";
 
-export const meta = () => [
-  { title: "Flexi Global Holidays | Travel Agency, Tour Packages, Trade Fair Travel" },
-  { name: "description", content: "Flexi Global Holidays is a travel agency in India offering international holidays, domestic tours, hotel bookings, visa support, MICE solutions, and trade fair travel services including CPHI China support." },
-  { name: "keywords", content: "travel agency India, travel agency Indore, international tour packages, domestic tour packages, trade fair travel, CPHI China travel, visa assistance, hotel bookings, Flexi Global Holidays" },
-  { name: "application-name", content: "Flexi Global Holidays" },
-  { name: "apple-mobile-web-app-title", content: "Flexi Global Holidays" },
-  { property: "og:title", content: "Flexi Global Holidays | Travel Agency and Trade Fair Travel" },
-  { property: "og:description", content: "International holidays, domestic tours, visa support, hotel bookings, and business travel services from Flexi Global Holidays." },
-  { property: "og:image", content: `${CONFIG.SITE_URL}/logo.png` },
-  { property: "og:type", content: "website" },
-  { property: "og:site_name", content: "Flexi Global Holidays" },
-  { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Flexi Global Holidays | Travel Agency and Trade Fair Travel" },
-  { name: "twitter:description", content: "Book international holidays, domestic tours, and trade fair travel with Flexi Global Holidays." },
-];
+export const meta = () =>
+  generateSEOTags({
+    title: "Flexi Global Holidays | Travel Agency, Tour Packages, Trade Fair Travel",
+    description:
+      "Flexi Global Holidays is a travel agency in India offering international holidays, domestic tours, hotel bookings, visa support, MICE solutions, and trade fair travel services including CPHI China support.",
+    keywords:
+      "travel agency India, travel agency Indore, international tour packages, domestic tour packages, trade fair travel, CPHI China travel, visa assistance, hotel bookings, Flexi Global Holidays",
+    url: "/",
+    type: "website",
+  });
 
 
 export const links = () => [
@@ -54,10 +50,11 @@ export const links = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
+  const siteUrl = CONFIG.SITE_URL.replace(/\/+$/, "");
   const path = location.pathname === "/" ? "/" : location.pathname.replace(/\/+$/, "");
-  const canonicalUrl = `${CONFIG.SITE_URL}${path}`;
+  const canonicalUrl = path === "/" ? `${siteUrl}/` : `${siteUrl}${path}`;
   const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
-  const homeUrl = `${CONFIG.SITE_URL}/`;
+  const homeUrl = `${siteUrl}/`;
   const siteSchemas = [
     {
       "@context": "https://schema.org",
@@ -69,16 +66,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "@id": `${CONFIG.SITE_URL}/#organization`,
+      "@id": `${siteUrl}/#organization`,
       name: "Flexi Global Holidays",
       alternateName: "Flexi Global Holidays",
       legalName: "Flexi Global Holidays",
       url: homeUrl,
       logo: {
         "@type": "ImageObject",
-        url: `${CONFIG.SITE_URL}/logo.png`,
+        url: `${siteUrl}/logo.png`,
       },
-      image: `${CONFIG.SITE_URL}/logo.png`,
+      image: `${siteUrl}/logo.png`,
       email: CONFIG.EMAIL,
       telephone: CONFIG.PHONE_PRIMARY,
       sameAs: [
@@ -106,17 +103,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
     {
       "@context": "https://schema.org",
       "@type": "TravelAgency",
-      "@id": `${CONFIG.SITE_URL}/#travel-agency`,
+      "@id": `${siteUrl}/#travel-agency`,
       name: "Flexi Global Holidays",
       alternateName: "Flexi Global Holidays",
       parentOrganization: {
-        "@id": `${CONFIG.SITE_URL}/#organization`,
+        "@id": `${siteUrl}/#organization`,
       },
       description:
         "Flexi Global Holidays is a travel agency in India offering domestic and international tour packages, visa services, hotel bookings, MICE travel, and trade fair travel planning.",
       url: homeUrl,
-      logo: `${CONFIG.SITE_URL}/logo.png`,
-      image: `${CONFIG.SITE_URL}/logo.png`,
+      logo: `${siteUrl}/logo.png`,
+      image: `${siteUrl}/logo.png`,
       priceRange: "$$",
       foundingDate: "2016",
       telephone: CONFIG.PHONE_PRIMARY,
@@ -172,6 +169,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1A2B4A" />
+        <meta name="application-name" content="Flexi Global Holidays" />
+        <meta name="apple-mobile-web-app-title" content="Flexi Global Holidays" />
         {/* Google Search Console Verification */}
         <meta name="google-site-verification" content="v_aJnz3t-yWWYyzmUJ7EaClu6MCY0jXfNeJ_7DruQa8" />
 

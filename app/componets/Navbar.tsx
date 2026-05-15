@@ -51,7 +51,7 @@ export default function Navigation() {
             {/* Logo Image */}
             <Link to="/" className="flex items-center">
               <div className="bg-[#F5F5F5] rounded-lg">
-                <img src={logo} alt="Flexi Global" className="h-14  lg:h-20 w-auto object-contain" />
+                <img src={logo} alt="Flexi Global Holidays" className="h-14  lg:h-20 w-auto object-contain" />
               </div>
             </Link>
 
