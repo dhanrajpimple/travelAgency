@@ -9,6 +9,26 @@ create table if not exists public.contact_us (
   updated_at timestamptz not null default now()
 );
 
+alter table public.contact_us enable row level security;
+
+grant insert on table public.contact_us to anon;
+grant insert on table public.contact_us to authenticated;
+grant usage, select on sequence public.contact_us_id_seq to anon;
+grant usage, select on sequence public.contact_us_id_seq to authenticated;
+
+drop policy if exists "Anyone can submit contact enquiries" on public.contact_us;
+
+create policy "Anyone can submit contact enquiries"
+on public.contact_us
+for insert
+to anon, authenticated
+  with check (
+  length(trim(name)) >= 3
+  and email ~* '^[^[:space:]@]+@[^[:space:]@]+\.[^[:space:]@]+$'
+  and length(regexp_replace(phone, '[^0-9]', '', 'g')) between 10 and 15
+  and length(trim(message)) >= 10
+);
+
 create or replace function public.set_contact_us_updated_at()
 returns trigger
 language plpgsql

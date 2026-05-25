@@ -20,6 +20,14 @@ type ContactPayload = {
   message: string;
 };
 
+type ContactInsertRow = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  isRead: boolean;
+};
+
 function cleanEnvValue(value: string | undefined) {
   return value?.trim().replace(/^["']|["']$/g, "");
 }
@@ -50,6 +58,14 @@ async function saveContactToSupabase(
   supabaseUrl: string,
   supabaseKey: string
 ) {
+  const row: ContactInsertRow = {
+    name: payload.name,
+    email: payload.email,
+    phone: payload.phone,
+    message: payload.message,
+    isRead: false,
+  };
+
   const response = await fetch(`${supabaseUrl.replace(/\/+$/, "")}/rest/v1/contact_us`, {
     method: "POST",
     headers: {
@@ -58,10 +74,7 @@ async function saveContactToSupabase(
       "Content-Type": "application/json",
       Prefer: "return=minimal",
     },
-    body: JSON.stringify({
-      ...payload,
-      isRead: false,
-    }),
+    body: JSON.stringify(row),
   });
 
   if (!response.ok) {
@@ -152,10 +165,10 @@ export async function action({ request }: Route.ActionArgs): Promise<ContactActi
     console.error("Formspree contact email failed", formspreeResult.reason);
   }
 
-  if (supabaseResult.status === "rejected" && formspreeResult.status === "rejected") {
+  if (supabaseResult.status === "rejected") {
     return {
       ok: false,
-      message: "We could not send your message right now. Please try again or contact us directly.",
+      message: "We could not save your enquiry right now. Please try again or contact us directly.",
     };
   }
 
