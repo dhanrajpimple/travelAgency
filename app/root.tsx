@@ -10,6 +10,7 @@ import {
 
 // removed missing local type import; using inline types below
 import "./app.css";
+import TripEnquiryPopup from "./components/TripEnquiryPopup";
 import { CONFIG } from "./config/constants";
 import { generateSEOTags } from "./config/seo";
 
@@ -213,6 +214,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <TripEnquiryPopup pathname={location.pathname} />
         <ScrollRestoration />
         <Scripts />
       </body>

@@ -1,10 +1,169 @@
 import type { Route } from "./+types/contact";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
+import TripEnquiryForm from "~/components/TripEnquiryForm";
 import WhatsAppButton from "~/components/WhatsAppButton";
 import { CONFIG } from "~/config/constants";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { generateSEOTags } from "~/config/seo";
+
+export type ContactActionData = {
+  ok: boolean;
+  message: string;
+  fieldErrors?: Partial<Record<"name" | "email" | "phone" | "message", string>>;
+};
+
+type ContactPayload = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
+
+function cleanEnvValue(value: string | undefined) {
+  return value?.trim().replace(/^["']|["']$/g, "");
+}
+
+function getContactConfig() {
+  const env = import.meta.env;
+
+  return {
+    supabaseUrl: cleanEnvValue(
+      process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || env.SUPABASE_URL || env.VITE_SUPABASE_URL
+    ),
+    supabaseKey: cleanEnvValue(
+      process.env.SUPABASE_SERVICE_ROLE_KEY ||
+      process.env.SUPABASE_ANON_KEY ||
+      process.env.VITE_SUPABASE_ANON_KEY ||
+      env.SUPABASE_SERVICE_ROLE_KEY ||
+      env.SUPABASE_ANON_KEY ||
+      env.VITE_SUPABASE_ANON_KEY
+    ),
+    formspreeEndpoint: cleanEnvValue(
+      process.env.FORMSPREE_ENDPOINT || process.env.VITE_FORMSPREE_ENDPOINT || env.FORMSPREE_ENDPOINT || env.VITE_FORMSPREE_ENDPOINT
+    ),
+  };
+}
+
+async function saveContactToSupabase(
+  payload: ContactPayload,
+  supabaseUrl: string,
+  supabaseKey: string
+) {
+  const response = await fetch(`${supabaseUrl.replace(/\/+$/, "")}/rest/v1/contact_us`, {
+    method: "POST",
+    headers: {
+      apikey: supabaseKey,
+      Authorization: `Bearer ${supabaseKey}`,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    },
+    body: JSON.stringify({
+      ...payload,
+      isRead: false,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+}
+
+async function sendContactToFormspree(payload: ContactPayload, formspreeEndpoint: string) {
+  const response = await fetch(formspreeEndpoint, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ...payload,
+      _subject: `New travel enquiry from ${payload.name}`,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+}
+
+export async function action({ request }: Route.ActionArgs): Promise<ContactActionData> {
+  const formData = await request.formData();
+  const name = String(formData.get("name") || "").trim();
+  const email = String(formData.get("email") || "").trim();
+  const phone = String(formData.get("phone") || "").trim();
+  const message = String(formData.get("message") || "").trim();
+  const digitsOnly = phone.replace(/\D/g, "");
+  const fieldErrors: ContactActionData["fieldErrors"] = {};
+
+  if (!name) {
+    fieldErrors.name = "Name is required.";
+  } else if (name.length < 3) {
+    fieldErrors.name = "Please enter at least 3 characters.";
+  }
+
+  if (!email) {
+    fieldErrors.email = "Email address is required.";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    fieldErrors.email = "Please enter a valid email address.";
+  }
+
+  if (!phone) {
+    fieldErrors.phone = "Phone number is required.";
+  } else if (digitsOnly.length < 10 || digitsOnly.length > 15) {
+    fieldErrors.phone = "Please enter a valid phone number.";
+  }
+
+  if (!message) {
+    fieldErrors.message = "Message is required.";
+  } else if (message.length < 10) {
+    fieldErrors.message = "Please enter at least 10 characters.";
+  }
+
+  if (Object.keys(fieldErrors).length > 0) {
+    return {
+      ok: false,
+      message: "Please check the highlighted fields.",
+      fieldErrors,
+    };
+  }
+
+  const { supabaseUrl, supabaseKey, formspreeEndpoint } = getContactConfig();
+
+  if (!supabaseUrl || !supabaseKey || !formspreeEndpoint) {
+    return {
+      ok: false,
+      message: "Contact form is not configured yet. Please call or email us directly.",
+    };
+  }
+
+  const payload = { name, email, phone, message };
+
+  const [supabaseResult, formspreeResult] = await Promise.allSettled([
+    saveContactToSupabase(payload, supabaseUrl, supabaseKey),
+    sendContactToFormspree(payload, formspreeEndpoint),
+  ]);
+
+  if (supabaseResult.status === "rejected") {
+    console.error("Supabase contact_us insert failed", supabaseResult.reason);
+  }
+
+  if (formspreeResult.status === "rejected") {
+    console.error("Formspree contact email failed", formspreeResult.reason);
+  }
+
+  if (supabaseResult.status === "rejected" && formspreeResult.status === "rejected") {
+    return {
+      ok: false,
+      message: "We could not send your message right now. Please try again or contact us directly.",
+    };
+  }
+
+  return {
+    ok: true,
+    message: "Thank you. Our travel expert will contact you shortly.",
+  };
+}
 
 export function meta({}: Route.MetaArgs) {
   return generateSEOTags({
@@ -105,6 +264,10 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="mx-auto max-w-5xl rounded-2xl border border-gray-200 bg-white p-5 shadow-xl md:p-8">
+            <TripEnquiryForm />
           </div>
         </div>
       </section>
