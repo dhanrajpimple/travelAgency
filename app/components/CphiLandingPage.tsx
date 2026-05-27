@@ -1,8 +1,7 @@
 import { Link } from "react-router";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
-import StickyQuoteButton from "~/components/StickyQuoteButton";
-import WhatsAppButton from "~/components/WhatsAppButton";
+import FloatingEnquiryWidget from "~/components/FloatingEnquiryWidget";
 import { CONFIG } from "~/config/constants";
 import type { MainSeoPage } from "~/data/cphiSeo";
 import { mainSeoPages, supportSeoPages } from "~/data/cphiSeo";
@@ -322,7 +321,7 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
           <div className="max-w-5xl mx-auto px-4">
             <div className="bg-gradient-to-r from-[#1A2B4A] to-[#243B61] rounded-[40px] p-12 text-center text-white shadow-2xl relative overflow-hidden">
               <div className="relative z-10">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to secure your CPHI Milan 2026 travel?</h2>
+                <h2 className="text-3xl text-white sm:text-4xl font-bold mb-6">Ready to secure your CPHI Milan 2026 travel?</h2>
                 <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
                   Share your team size and preferred dates. We reply with a focused cost range within 24 business hours.
                 </p>
@@ -340,8 +339,7 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
         </section>
 
         <Footer />
-        <StickyQuoteButton />
-        <WhatsAppButton />
+        <FloatingEnquiryWidget />
 
         <style>{`
           @keyframes marquee {
@@ -608,8 +606,7 @@ export default function CphiLandingPage({ page }: { page: MainSeoPage }) {
         </section>
       </main>
       <Footer />
-      <StickyQuoteButton />
-      <WhatsAppButton />
+      <FloatingEnquiryWidget />
     </div>
   );
 }

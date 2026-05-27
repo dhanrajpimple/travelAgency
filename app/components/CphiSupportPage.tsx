@@ -1,8 +1,7 @@
 import { Link } from "react-router";
 import Navigation from "~/componets/Navbar";
 import Footer from "~/components/Footer";
-import StickyQuoteButton from "~/components/StickyQuoteButton";
-import WhatsAppButton from "~/components/WhatsAppButton";
+import FloatingEnquiryWidget from "~/components/FloatingEnquiryWidget";
 import { CONFIG } from "~/config/constants";
 import type { MainSeoPage, SupportSeoPage } from "~/data/cphiSeo";
 import { getMainSeoPageBySlug, mainSeoPages } from "~/data/cphiSeo";
@@ -174,8 +173,7 @@ export default function CphiSupportPage({ page }: { page: SupportSeoPage }) {
         </div>
       </main>
       <Footer />
-      <StickyQuoteButton />
-      <WhatsAppButton />
+      <FloatingEnquiryWidget />
     </div>
   );
 }
