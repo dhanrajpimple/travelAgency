@@ -117,6 +117,7 @@ export default function Navigation() {
               <Link to="/about" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">About Us</Link>
               <Link to="/trade-fair" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">Trade Fair</Link>
               <Link to="/cphi-tour-packages" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">CPHI Milan 2026</Link>
+              <Link to="/cphi-package-tour-from-india" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">CPHI Tour From India</Link>
               <Link to="/hotels" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">Hotels</Link>
 
               <Link to="/contact" className="hover:text-[#D4AF37] transition-colors duration-200 font-medium">Contact Us</Link>
@@ -255,6 +256,13 @@ export default function Navigation() {
               onClick={() => setIsOpen(false)}
             >
               CPHI Milan 2026
+            </Link>
+            <Link 
+              to="/cphi-package-tour-from-india" 
+              className="block text-white text-lg font-semibold py-3.5 px-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-[#D4AF37]/50 active:bg-white/25 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+              onClick={() => setIsOpen(false)}
+            >
+              CPHI Tour From India
             </Link>
             <Link 
               to="/hotels" 

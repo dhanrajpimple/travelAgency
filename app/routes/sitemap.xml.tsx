@@ -16,6 +16,7 @@ export async function loader() {
     { path: "/visa", priority: "0.8", changefreq: "weekly" },
     { path: "/trade-fair", priority: "0.8", changefreq: "weekly" },
     { path: "/trade-fair/cphi-china", priority: "0.95", changefreq: "weekly" },
+    { path: "/cphi-package-tour-from-india", priority: "0.95", changefreq: "weekly" },
     { path: "/mice", priority: "0.7", changefreq: "monthly" },
     { path: "/blog", priority: "0.7", changefreq: "weekly" },
     { path: "/terms", priority: "0.5", changefreq: "monthly" },

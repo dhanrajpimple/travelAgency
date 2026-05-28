@@ -9,6 +9,7 @@ export default [
   route("cphi-tour-packages", "routes/cphi-tour-packages.tsx"),
   route("cphi-2026", "routes/cphi-2026.tsx"),
   route("cphi-milan-tour-packages", "routes/cphi-milan-tour-packages.tsx"),
+  route("cphi-package-tour-from-india", "routes/cphi-package-tour-from-india.tsx"),
   route("guides/:slug", "routes/guides.$slug.tsx"),
   route("trade-fair", "routes/trade-fair.tsx"),
   route("trade-fair/cphi-china", "routes/trade-fair.cphi-china.tsx"),
