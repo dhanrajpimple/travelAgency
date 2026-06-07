@@ -16,7 +16,7 @@ import { generateSEOTags } from "./config/seo";
 
 export const meta = () =>
   generateSEOTags({
-    title: "Flexi Global Holidays | Travel Agency, Tour Packages, Trade Fair Travel",
+    title: `${CONFIG.BUSINESS_NAME} | Travel Agency, Tour Packages, Trade Fair Travel`,
     description:
       "Flexi Global Holidays is a travel agency in India offering international holidays, domestic tours, hotel bookings, visa support, MICE solutions, and trade fair travel services including CPHI China support.",
     keywords:
@@ -56,21 +56,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const canonicalUrl = path === "/" ? `${siteUrl}/` : `${siteUrl}${path}`;
   const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
   const homeUrl = `${siteUrl}/`;
+  const businessName = CONFIG.BUSINESS_NAME;
   const siteSchemas = [
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "Flexi Global Holidays",
-      alternateName: "Flexi Global Holidays",
+      "@id": `${siteUrl}/#website`,
+      name: businessName,
+      alternateName: CONFIG.BUSINESS_ALTERNATE_NAMES,
       url: homeUrl,
+      publisher: {
+        "@id": `${siteUrl}/#organization`,
+      },
+      inLanguage: "en-IN",
     },
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
-      name: "Flexi Global Holidays",
-      alternateName: "Flexi Global Holidays",
-      legalName: "Flexi Global Holidays",
+      name: businessName,
+      alternateName: CONFIG.BUSINESS_ALTERNATE_NAMES,
+      legalName: businessName,
       url: homeUrl,
       logo: {
         "@type": "ImageObject",
@@ -105,8 +111,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       "@context": "https://schema.org",
       "@type": "TravelAgency",
       "@id": `${siteUrl}/#travel-agency`,
-      name: "Flexi Global Holidays",
-      alternateName: "Flexi Global Holidays",
+      name: businessName,
+      alternateName: CONFIG.BUSINESS_ALTERNATE_NAMES,
       parentOrganization: {
         "@id": `${siteUrl}/#organization`,
       },
@@ -170,8 +176,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1A2B4A" />
-        <meta name="application-name" content="Flexi Global Holidays" />
-        <meta name="apple-mobile-web-app-title" content="Flexi Global Holidays" />
+        <meta name="application-name" content={businessName} />
+        <meta name="apple-mobile-web-app-title" content={businessName} />
         {/* Google Search Console Verification */}
         <meta name="google-site-verification" content="v_aJnz3t-yWWYyzmUJ7EaClu6MCY0jXfNeJ_7DruQa8" />
 

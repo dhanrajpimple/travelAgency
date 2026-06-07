@@ -16,6 +16,7 @@ export interface SEOData {
 
 export function generateSEOTags(data: SEOData) {
   const siteUrl = CONFIG.SITE_URL.replace(/\/+$/, "");
+  const businessName = CONFIG.BUSINESS_NAME;
   const defaultImage = `${siteUrl}/logo.png`;
   const path = data.url ? (data.url.startsWith("/") ? data.url : `/${data.url}`) : "/";
   const fullUrl = path === "/" ? `${siteUrl}/` : `${siteUrl}${path.replace(/\/+$/, "")}`;
@@ -26,7 +27,9 @@ export function generateSEOTags(data: SEOData) {
     { title: data.title },
     { name: "description", content: data.description },
     { name: "keywords", content: data.keywords || "travel, tour packages, holiday packages, travel agency, India tours, international tours, Flexi Global Holidays" },
-    { name: "author", content: data.author || "Flexi Global Holidays" },
+    { name: "author", content: data.author || businessName },
+    { name: "application-name", content: businessName },
+    { name: "apple-mobile-web-app-title", content: businessName },
     { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
     { name: "googlebot", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
     { name: "language", content: "English" },
@@ -39,7 +42,7 @@ export function generateSEOTags(data: SEOData) {
     { property: "og:image:alt", content: data.imageAlt || data.title },
     { property: "og:url", content: fullUrl },
     { property: "og:type", content: data.type || "website" },
-    { property: "og:site_name", content: "Flexi Global Holidays" },
+    { property: "og:site_name", content: businessName },
     { property: "og:locale", content: "en_IN" },
     
     // Twitter Card Tags
@@ -67,7 +70,7 @@ export function generateSEOTags(data: SEOData) {
 
 // Default SEO data for the site
 export const defaultSEO = {
-  siteName: "Flexi Global Holidays",
+  siteName: CONFIG.BUSINESS_NAME,
   siteUrl: CONFIG.SITE_URL,
   defaultImage: `${CONFIG.SITE_URL}/logo.png`,
   defaultDescription: "Premium travel agency offering domestic and international tour packages, hotel bookings, visa services, and MICE solutions.",

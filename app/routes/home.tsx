@@ -6,6 +6,7 @@ import { Link } from "react-router";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, lazy, Suspense } from "react";
 import { CardSkeleton } from "~/components/LoadingSkeleton";
+import { CONFIG } from "~/config/constants";
 import { generateSEOTags } from "~/config/seo";
 // Trade Fair Images
 import tradefair1 from "~/assets/upcomingtradefair (1).webp";
@@ -40,8 +41,8 @@ import corporateTravelImg from "~/assets/corporate-travel.webp";
 
 export function meta({ }: Route.MetaArgs) {
   return generateSEOTags({
-    title: "Flexi Global Holidays - Best Travel Agency in Indore | Tour Packages India & International",
-    description: "Flexi Global Holidays: Your top travel agency in Indore for domestic & international tour packages. Specializing in Dubai, Thailand, Europe & Bali tours. Best prices for hotel bookings, visa services, and MICE. Book your dream vacation today!",
+    title: `${CONFIG.BUSINESS_NAME} - Best Travel Agency in Indore | Tour Packages India & International`,
+    description: `${CONFIG.BUSINESS_NAME}: Your top travel agency in Indore for domestic & international tour packages. Specializing in Dubai, Thailand, Europe & Bali tours. Best prices for hotel bookings, visa services, and MICE. Book your dream vacation today!`,
     keywords: "best travel agency in Indore, tour packages from India, international holiday packages, domestic tours India, Dubai tour packages, Thailand holiday packages, Europe tour agent, Bali vacation packages, travel agency near me, hotel booking services, visa assistance, MICE travel solutions, Flexi Global Holidays",
     url: "/",
     type: "website"
@@ -248,8 +249,11 @@ export default function Home() {
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
           <h1 className="font-display text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 sm:mb-5 leading-tight animate-hero-fadeInScale">
-            Your Journey Begins Here
+            {CONFIG.BUSINESS_NAME}
           </h1>
+          <p className="text-base sm:text-2xl md:text-3xl text-white/90 font-semibold mb-3 sm:mb-5 animate-hero-fadeIn">
+            Your Journey Begins Here
+          </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-5 sm:mb-8 text-[#D4AF37] animate-hero-fadeIn">
             <span className="flex items-center gap-1.5 text-xs sm:text-base">

@@ -25,6 +25,7 @@ export const CONFIG = {
   
   // Business Info
   BUSINESS_NAME: "Flexi Global Holidays",
+  BUSINESS_ALTERNATE_NAMES: ["Flexi Global", "Flexi Holidays"],
   BUSINESS_TYPE: "Travel Agency",
   FOUNDED_YEAR: "2016",
   
